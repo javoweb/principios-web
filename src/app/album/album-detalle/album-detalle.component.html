@@ -1,0 +1,61 @@
+<div id="albumDetails" *ngIf="this.album !== null">
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6 text-center">
+      <img src="{{ this.album.cover}}" style="max-width: 30%;" />
+    </div>
+
+    <div class="col-sm-12 col-md-6 ">
+      <div class="col-sm-12">
+        <span><p class="font-weight-bold d-inline">Album:</p> {{this.album.name}}</span>
+      </div>
+      <div class="col-sm-12">
+        <span><p class="font-weight-bold d-inline">Artista:</p> {{ getPerformerName(this.album) }}</span>
+      </div>
+      <div class="col-sm-12">
+        <span><p class="font-weight-bold d-inline">Fecha Lanzamiento:</p> {{ this.album.releaseDate }}</span>
+      </div>
+      <div class="col-sm-12">
+        <span><p class="font-weight-bold d-inline">Genero:</p> {{ this.album.genre }}</span>
+      </div>
+      <div class="col-sm-12">
+        <span><p class="font-weight-bold d-inline">Casa Discografica:</p> {{ this.album.recordLabel }}</span>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+    <div class="col-sm-12">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of this.album.comments" ><p class="font-weight-bold d-inline">Calificación:</p><p class="d-inline">{{ item.rating }}</p><hr> {{ item.description }}</li>
+      </ul>
+
+    </div>
+
+
+    <br>
+
+  <div class="col-sm-12 text-center">
+
+      <div class="col-sm-6" style="margin: 0 auto">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Duración</th>
+            </tr>
+          </thead>
+          <tbody  >
+            <tr *ngFor="let item of this.album.tracks">
+              <td>{{item.name}}</td>
+              <td>{{item.duration}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+</div>
