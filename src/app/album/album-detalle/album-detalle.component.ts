@@ -15,7 +15,7 @@ export class AlbumDetalleComponent implements OnInit {
   constructor(private albumService:AlbumService) { }
 
   ngOnInit() {
-    this.getAlbum();
+    //this.getAlbum();
   }
 
   getAlbum(): void{
