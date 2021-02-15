@@ -82,7 +82,7 @@ describe('Service: Album', () => {
 
 
   afterEach(() => {
-      httpTestingController.verify();
+      httpTestingController.verify({ignoreCancelled: true});
     });
 
   it('Test Get ALL Albums',()=>{
