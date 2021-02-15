@@ -87,11 +87,8 @@ describe('Service: Album', () => {
 
   it('Test Get ALL Albums',()=>{
 
-    let result: Album[];
-
-
     albumService.getAlbums().subscribe(t => {
-      result=t;
+      expect(t.length).toBe(3);
     })
 
     const req = httpTestingController.expectOne({
@@ -108,11 +105,9 @@ describe('Service: Album', () => {
 
   it('Test Get Single Albums',()=>{
 
-    let result: Album;
-
 
     albumService.getAlbum(album.id).subscribe(t => {
-      result=t;
+      expect(t).toBe(album);
     })
 
     const req = httpTestingController.expectOne({
