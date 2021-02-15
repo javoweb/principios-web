@@ -18,6 +18,7 @@ describe('Service: Album', () => {
   let albumService: AlbumService;
   let baseUrl = environment.baseUrl+"albums";
   let album: Album;
+  let albums: Array<Album>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -65,6 +66,10 @@ describe('Service: Album', () => {
       ]
   };
 
+  albums=[];
+  albums.push(album);
+  albums.push(album);
+  albums.push(album);
 
   });
 
@@ -76,15 +81,14 @@ describe('Service: Album', () => {
       ));
 
 
-
+  afterEach(() => {
+      httpTestingController.verify({ignoreCancelled: true});
+    });
 
   it('Test Get ALL Albums',()=>{
 
-    let result: Album[];
-
-
     albumService.getAlbums().subscribe(t => {
-      result=t;
+      expect(t.length).toBe(3);
     })
 
     const req = httpTestingController.expectOne({
@@ -92,9 +96,8 @@ describe('Service: Album', () => {
       url: baseUrl
     });
        
-    req.flush([album]);
-
-    expect(result[0].id).toEqual(100);
+    expect(req.request.method).toEqual('GET');
+    req.flush(albums);
 
 
   });
@@ -102,21 +105,18 @@ describe('Service: Album', () => {
 
   it('Test Get Single Albums',()=>{
 
-    let result: Album;
-
 
     albumService.getAlbum(album.id).subscribe(t => {
-      result=t;
+      expect(t).toBe(album);
     })
 
     const req = httpTestingController.expectOne({
       method: "GET",
       url: baseUrl+"/"+album.id
     });
-       
-    req.flush(album);
 
-    expect(result.id).toEqual(album.id);
+    expect(req.request.method).toEqual('GET');
+    req.flush(album);
 
 
   });
