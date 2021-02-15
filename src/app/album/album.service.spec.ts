@@ -18,6 +18,7 @@ describe('Service: Album', () => {
   let albumService: AlbumService;
   let baseUrl = environment.baseUrl+"albums";
   let album: Album;
+  let albums: Array<Album>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -65,6 +66,10 @@ describe('Service: Album', () => {
       ]
   };
 
+  albums=[];
+  albums.push(album);
+  albums.push(album);
+  albums.push(album);
 
   });
 
@@ -76,7 +81,9 @@ describe('Service: Album', () => {
       ));
 
 
-
+  afterEach(() => {
+      httpTestingController.verify();
+    });
 
   it('Test Get ALL Albums',()=>{
 
@@ -92,9 +99,8 @@ describe('Service: Album', () => {
       url: baseUrl
     });
        
-    req.flush([album]);
-
-    expect(result[0].id).toEqual(100);
+    expect(req.request.method).toEqual('GET');
+    req.flush(albums);
 
 
   });
@@ -113,10 +119,9 @@ describe('Service: Album', () => {
       method: "GET",
       url: baseUrl+"/"+album.id
     });
-       
-    req.flush(album);
 
-    expect(result.id).toEqual(album.id);
+    expect(req.request.method).toEqual('GET');
+    req.flush(album);
 
 
   });
