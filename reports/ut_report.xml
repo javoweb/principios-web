@@ -1,17 +1,17 @@
 <testExecutions version="1">
-  <file path="src/app/album/album.service.spec.ts">
-    <testCase name="Service: Album Test Get Single Albums" duration="66"/>
-    <testCase name="Service: Album Test Get ALL Albums" duration="3"/>
-  </file>
   <file path="src/app/album/album-listar/album-listar.component.spec.ts">
-    <testCase name="AlbumListarComponent should create" duration="23"/>
-  </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should have as title 'My Vinils'" duration="29"/>
-    <testCase name="AppComponent should create the app" duration="9"/>
-    <testCase name="AppComponent should render h1 title" duration="9"/>
+    <testCase name="AlbumListarComponent should create" duration="116"/>
   </file>
   <file path="src/app/album/album-detalle/album-detalle.component.spec.ts">
-    <testCase name="AlbumDetalleComponent should create" duration="10"/>
+    <testCase name="AlbumDetalleComponent should create" duration="12"/>
+  </file>
+  <file path="src/app/album/album.service.spec.ts">
+    <testCase name="Service: Album Test Get ALL Albums" duration="6"/>
+    <testCase name="Service: Album Test Get Single Albums" duration="5"/>
+  </file>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should render h1 title" duration="29"/>
+    <testCase name="AppComponent should create the app" duration="12"/>
+    <testCase name="AppComponent should have as title 'My Vinils'" duration="10"/>
   </file>
 </testExecutions>
