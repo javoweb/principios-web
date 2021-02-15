@@ -26,5 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
+      name: Install Dependencies
     - run: npm run build -- --prod
+      name: Build check
     - run: npm run test -- --watch=false --code-coverage true 
+      name: Run unittests
