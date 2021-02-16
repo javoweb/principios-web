@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Album } from '../album'
-import { AlbumService } from  '../album.service'
+import { Album } from '../album';
+import { AlbumService } from '../album.service';
 
 
 @Component({
@@ -10,25 +10,25 @@ import { AlbumService } from  '../album.service'
 })
 export class AlbumDetalleComponent implements OnInit {
 
-  album: Album=null;
+  album: Album = null;
 
-  constructor(private albumService:AlbumService) { }
+  constructor(private albumService: AlbumService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getAlbum();
   }
 
   getAlbum(): void{
 
-    this.albumService.getAlbum(100).subscribe(album=>{
-      this.album=album;
+    this.albumService.getAlbum(100).subscribe(album => {
+      this.album = album;
     });
 
   }
 
-  public getPerformerName(album:Album):string{
+  public getPerformerName(album: Album): string{
 
-    return album.performers.map((x)=>x.name ).join(",");
+    return album.performers.map((x) => x.name ).join(',');
 
   }
 

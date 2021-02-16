@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Album } from '../album'
-import { AlbumService } from  '../album.service'
+import { Album } from '../album';
+import { AlbumService } from '../album.service';
 
 @Component({
   selector: 'app-album-listar',
@@ -9,25 +9,25 @@ import { AlbumService } from  '../album.service'
 })
 export class AlbumListarComponent implements OnInit {
 
-  albums: Array<Album>=[];
+  albums: Array<Album> = [];
 
-  constructor(private albumService:AlbumService) { }
+  constructor(private albumService: AlbumService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
    this.getAlbums();
   }
 
   getAlbums(): void{
 
-    this.albumService.getAlbums().subscribe(albums=>{
-      this.albums=albums;
+    this.albumService.getAlbums().subscribe(albums => {
+      this.albums = albums;
     });
 
   }
 
-  public getPerformerName(album:Album):string{
+  public getPerformerName(album: Album): string {
 
-    return album.performers.map((x)=>x.name ).join(",");
+    return album.performers.map((x) => x.name ).join(',');
 
   }
 

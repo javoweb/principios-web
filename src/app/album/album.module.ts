@@ -7,7 +7,7 @@ import {AlbumDetalleComponent} from './album-detalle/album-detalle.component';
   imports: [
     CommonModule
   ],
-  declarations: [AlbumListarComponent,AlbumDetalleComponent],
-  exports: [AlbumListarComponent,AlbumDetalleComponent]
+  declarations: [AlbumListarComponent, AlbumDetalleComponent],
+  exports: [AlbumListarComponent, AlbumDetalleComponent]
 })
 export class AlbumModule { }
