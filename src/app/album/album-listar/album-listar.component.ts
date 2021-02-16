@@ -14,7 +14,7 @@ export class AlbumListarComponent implements OnInit {
   constructor(private albumService:AlbumService) { }
 
   ngOnInit() {
-    //this.getAlbums();
+   this.getAlbums();
   }
 
   getAlbums(): void{

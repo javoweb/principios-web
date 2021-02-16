@@ -77,9 +77,6 @@ describe('Service: Album', () => {
 
   });
 
-
-
-
   afterEach(() => {
     httpMock.verify({ignoreCancelled: true});
     });
