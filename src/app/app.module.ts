@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlbumModule } from './album/album.module';
+import { ArtistaModule } from './artista/artista.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AlbumModule } from './album/album.module';
     BrowserModule,
     AlbumModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ArtistaModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
