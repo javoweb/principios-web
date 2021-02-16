@@ -1,4 +1,4 @@
-import { TestBed, getTestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import {
  HttpTestingController,
@@ -12,7 +12,6 @@ import { Musico } from './musico';
 import { environment } from '../../environments/environment';
 
 describe('MusicoService', () => {
- let injector: TestBed;
  let service: MusicoService;
  let httpMock: HttpTestingController;
  const apiUrl = environment.baseUrl + 'musicians';
@@ -23,9 +22,8 @@ describe('MusicoService', () => {
      providers: [MusicoService],
    });
 
-   injector = getTestBed();
-   service = injector.get(MusicoService);
-   httpMock = injector.get(HttpTestingController);
+   service = TestBed.inject(MusicoService);
+   httpMock = TestBed.inject(HttpTestingController);
  });
 
  afterEach(() => {
