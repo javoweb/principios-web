@@ -11,10 +11,10 @@ export class BandaService {
 
   private apiUrl = environment.baseUrl + 'bands';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getBandas(): Observable<Banda[]>{
-    return this.http.get<Banda[]>(this.apiUrl)
+    return this.http.get<Banda[]>(this.apiUrl);
   }
 
 }

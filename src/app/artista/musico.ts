@@ -1,4 +1,4 @@
-import { Artista } from "./artista";
+import { Artista } from './artista';
 
 export class Musico extends Artista {
   birthDate: Date;

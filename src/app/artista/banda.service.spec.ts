@@ -1,21 +1,21 @@
-import { TestBed, getTestBed } from "@angular/core/testing";
+import { TestBed, getTestBed } from '@angular/core/testing';
 
 import {
  HttpTestingController,
  HttpClientTestingModule,
-} from "@angular/common/http/testing";
+} from '@angular/common/http/testing';
 
-import faker from "faker";
+import faker from 'faker';
 
-import { BandaService } from "./banda.service";
-import { Banda } from "./banda";
-import { environment } from "../../environments/environment";
+import { BandaService } from './banda.service';
+import { Banda } from './banda';
+import { environment } from '../../environments/environment';
 
-describe("BandaService", () => {
+describe('BandaService', () => {
  let injector: TestBed;
  let service: BandaService;
  let httpMock: HttpTestingController;
- let apiUrl = environment.baseUrl + "bands";
+ const apiUrl = environment.baseUrl + 'bands';
 
  beforeEach(() => {
    TestBed.configureTestingModule({
@@ -32,12 +32,12 @@ describe("BandaService", () => {
    httpMock.verify();
  });
 
- it("getBandas() should return 10 records", () => {
-   let mockPosts: Banda[] = [];
+ it('getBandas() should return 10 records', () => {
+   const mockPosts: Banda[] = [];
 
    for (let i = 0; i < 10; i++) {
 
-     let banda = new Banda(
+     const banda = new Banda(
        faker.random.number(),
        faker.name.findName(),
        faker.internet.url(),
@@ -52,19 +52,19 @@ describe("BandaService", () => {
    });
 
    const req = httpMock.expectOne(apiUrl);
-   expect(req.request.method).toBe("GET");
+   expect(req.request.method).toBe('GET');
    req.flush(mockPosts);
  });
 
- it("getBandas() should return 0 records", () => {
-  let mockPosts: Banda[] = [];
+ it('getBandas() should return 0 records', () => {
+  const mockPosts: Banda[] = [];
 
   service.getBandas().subscribe((bandas) => {
     expect(bandas.length).toBe(0);
   });
 
   const req = httpMock.expectOne(apiUrl);
-  expect(req.request.method).toBe("GET");
+  expect(req.request.method).toBe('GET');
   req.flush(mockPosts);
 });
 });

@@ -11,10 +11,10 @@ export class MusicoService {
 
   private apiUrl = environment.baseUrl + 'musicians';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getMusicos(): Observable<Musico[]> {
-    return this.http.get<Musico[]>(this.apiUrl)
+    return this.http.get<Musico[]>(this.apiUrl);
 }
 
 }

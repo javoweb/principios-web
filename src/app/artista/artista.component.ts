@@ -16,19 +16,19 @@ export class ArtistaComponent implements OnInit {
   bandas: Array<Banda>;
   musicos: Array<Musico>;
 
-  getBandaList() {
-    this.bandaService.getBandas().subscribe(bandas =>{
+  getBandaList(): void {
+    this.bandaService.getBandas().subscribe(bandas => {
       this.bandas = bandas;
-    })
+    });
   }
 
-  getMusicoList(){
+  getMusicoList(): void{
     this.musicoService.getMusicos().subscribe(musicos => {
       this.musicos = musicos;
-    })
+    });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getBandaList();
     this.getMusicoList();
   }

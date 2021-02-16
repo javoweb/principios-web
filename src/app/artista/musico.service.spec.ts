@@ -1,21 +1,21 @@
-import { TestBed, getTestBed } from "@angular/core/testing";
+import { TestBed, getTestBed } from '@angular/core/testing';
 
 import {
  HttpTestingController,
  HttpClientTestingModule,
-} from "@angular/common/http/testing";
+} from '@angular/common/http/testing';
 
-import faker from "faker";
+import faker from 'faker';
 
-import { MusicoService } from "./musico.service";
-import { Musico } from "./musico";
-import { environment } from "../../environments/environment";
+import { MusicoService } from './musico.service';
+import { Musico } from './musico';
+import { environment } from '../../environments/environment';
 
-describe("MusicoService", () => {
+describe('MusicoService', () => {
  let injector: TestBed;
  let service: MusicoService;
  let httpMock: HttpTestingController;
- let apiUrl = environment.baseUrl + "musicians";
+ const apiUrl = environment.baseUrl + 'musicians';
 
  beforeEach(() => {
    TestBed.configureTestingModule({
@@ -32,12 +32,12 @@ describe("MusicoService", () => {
    httpMock.verify();
  });
 
- it("getMusicos() should return 10 records", () => {
-   let mockPosts: Musico[] = [];
+ it('getMusicos() should return 10 records', () => {
+   const mockPosts: Musico[] = [];
 
    for (let i = 0; i < 10; i++) {
 
-     let musico = new Musico(
+     const musico = new Musico(
        faker.random.number(),
        faker.name.findName(),
        faker.internet.url(),
@@ -52,19 +52,19 @@ describe("MusicoService", () => {
    });
 
    const req = httpMock.expectOne(apiUrl);
-   expect(req.request.method).toBe("GET");
+   expect(req.request.method).toBe('GET');
    req.flush(mockPosts);
  });
 
- it("getMusicos() should return 0 records", () => {
-  let mockPosts: Musico[] = [];
+ it('getMusicos() should return 0 records', () => {
+  const mockPosts: Musico[] = [];
 
   service.getMusicos().subscribe((musicos) => {
     expect(musicos.length).toBe(0);
   });
 
   const req = httpMock.expectOne(apiUrl);
-  expect(req.request.method).toBe("GET");
+  expect(req.request.method).toBe('GET');
   req.flush(mockPosts);
 });
 });
