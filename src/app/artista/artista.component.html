@@ -2,7 +2,7 @@
   <span *ngIf=" bandas.length > 0 || musicos.length > 0 " class="font-weight-bold" > Artistas (Total encontrados: {{ bandas.length + musicos.length }}) </span>
   <span *ngIf=" bandas.length == 0  && musicos.length == 0" class="font-weight-bold" > No se ha encontrado ningun Artista  </span>
 </div>
-<table id="albumList" class="table table-striped">
+<table id="albumList" class="table table-striped" aria-describedby="istado de artistas">
   <thead>
     <tr>
       <th scope="col"> </th>

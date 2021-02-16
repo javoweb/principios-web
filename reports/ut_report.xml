@@ -1,20 +1,20 @@
 <testExecutions version="1">
-  <file path="src/app/album/album.service.spec.ts">
-    <testCase name="Service: Album Test Get Single Albums" duration="36"/>
-    <testCase name="Service: Album Test Get ALL Albums" duration="2"/>
+  <file path="src/app/album/album-detalle/album-detalle.component.spec.ts">
+    <testCase name="AlbumDetalleComponent should create" duration="47"/>
   </file>
   <file path="src/app/album/album-listar/album-listar.component.spec.ts">
-    <testCase name="AlbumListarComponent should create" duration="14"/>
+    <testCase name="AlbumListarComponent should create" duration="6"/>
   </file>
-  <file path="src/app/album/album-detalle/album-detalle.component.spec.ts">
-    <testCase name="AlbumDetalleComponent should create" duration="7"/>
+  <file path="src/app/album/album.service.spec.ts">
+    <testCase name="Service: Album Test Get ALL Albums" duration="4"/>
+    <testCase name="Service: Album Test Get Single Albums" duration="3"/>
   </file>
   <file path="src/app/artista/musico.service.spec.ts">
-    <testCase name="MusicoService getMusicos() should return 10 records" duration="4"/>
     <testCase name="MusicoService getMusicos() should return 0 records" duration="3"/>
+    <testCase name="MusicoService getMusicos() should return 10 records" duration="4"/>
   </file>
   <file path="src/app/artista/banda.service.spec.ts">
-    <testCase name="BandaService getBandas() should return 0 records" duration="1"/>
+    <testCase name="BandaService getBandas() should return 0 records" duration="2"/>
     <testCase name="BandaService getBandas() should return 10 records" duration="2"/>
   </file>
 </testExecutions>

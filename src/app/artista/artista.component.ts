@@ -13,8 +13,8 @@ export class ArtistaComponent implements OnInit {
 
   constructor(private bandaService: BandaService, private musicoService: MusicoService) { }
 
-  bandas: Array<Banda>;
-  musicos: Array<Musico>;
+  bandas: Array<Banda> = [];
+  musicos: Array<Musico> = [];
 
   getBandaList(): void {
     this.bandaService.getBandas().subscribe(bandas => {
