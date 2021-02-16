@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlbumModule } from './album/album.module';
+import { CollectorModule } from './collector/collector.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AlbumModule } from './album/album.module';
   imports: [
     BrowserModule,
     AlbumModule,
+    CollectorModule,
     AppRoutingModule,
     HttpClientModule
   ],

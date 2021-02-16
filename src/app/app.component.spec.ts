@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlbumModule } from './album/album.module';
 
+import { CollectorModule } from './collector/collector.module';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -18,6 +20,7 @@ describe('AppComponent', () => {
         RouterTestingModule,
         BrowserModule,
         AlbumModule,
+        CollectorModule,
         AppRoutingModule,
         HttpClientModule
       ],
