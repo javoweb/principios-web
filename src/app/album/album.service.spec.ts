@@ -14,7 +14,8 @@ import { of } from 'rxjs';
 import { Album } from './album';
 
 describe('Service: Album', () => {
-  let httpTestingController: HttpTestingController;
+  let injector: TestBed;
+  let httpMock: HttpTestingController;
   let albumService: AlbumService;
   let baseUrl = environment.baseUrl+"albums";
   let album: Album;
@@ -26,7 +27,10 @@ describe('Service: Album', () => {
       providers: [AlbumService],
     });
 
-    httpTestingController = TestBed.get(HttpTestingController)
+
+    injector = getTestBed();
+    albumService = injector.get(AlbumService);
+    httpMock = injector.get(HttpTestingController)
 
     album={
       "id": 100,
@@ -73,16 +77,8 @@ describe('Service: Album', () => {
 
   });
 
-  beforeEach(inject(
-        [AlbumService],
-        (service: AlbumService) => {
-          albumService = service;
-        }
-      ));
-
-
   afterEach(() => {
-      httpTestingController.verify({ignoreCancelled: true});
+    httpMock.verify({ignoreCancelled: true});
     });
 
   it('Test Get ALL Albums',()=>{
@@ -91,7 +87,7 @@ describe('Service: Album', () => {
       expect(t.length).toBe(3);
     })
 
-    const req = httpTestingController.expectOne({
+    const req = httpMock.expectOne({
       method: "GET",
       url: baseUrl
     });
@@ -110,7 +106,7 @@ describe('Service: Album', () => {
       expect(t).toBe(album);
     })
 
-    const req = httpTestingController.expectOne({
+    const req = httpMock.expectOne({
       method: "GET",
       url: baseUrl+"/"+album.id
     });
