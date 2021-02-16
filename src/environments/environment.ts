@@ -3,5 +3,5 @@ const port = '3000';
 
 export const environment = {
   production: false,
- baseUrl:`http://${host}:${port}/`
+  baseUrl: `http://${host}:${port}/`
 };

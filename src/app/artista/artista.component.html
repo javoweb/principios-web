@@ -1,0 +1,22 @@
+<div class="alert alert-secondary" role="alert">
+  <span *ngIf=" bandas.length > 0 || musicos.length > 0 " class="font-weight-bold" > Artistas (Total encontrados: {{ bandas.length + musicos.length }}) </span>
+  <span *ngIf=" bandas.length == 0  && musicos.length == 0" class="font-weight-bold" > No se ha encontrado ningun Artista  </span>
+</div>
+<table id="albumList" class="table table-striped" aria-describedby="istado de artistas">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">Nombre</th>
+    </tr>
+  </thead>
+  <tbody  >
+    <tr *ngFor="let item of bandas">
+      <th scope="row"><p class="font-weight-bold" title="Expand" style="cursor: pointer;"  >+</p></th>
+      <td>{{item.name}}</td>
+    </tr>
+    <tr *ngFor="let item of musicos">
+      <th scope="row"><p class="font-weight-bold" title="Expand" style="cursor: pointer;"  >+</p></th>
+      <td>{{item.name}}</td>
+    </tr>
+  </tbody>
+</table>

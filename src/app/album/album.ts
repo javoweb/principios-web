@@ -1,6 +1,6 @@
 import { Track } from './track';
-import { Comment } from './comment'
-import { Performer } from '../performer/performer'
+import { Comment } from './comment';
+import { Performer } from '../performer/performer';
 
 export class Album {
   id: number;
@@ -14,7 +14,8 @@ export class Album {
   performers: Performer[];
   comments: Comment[];
 
-  constructor(id: number,
+  constructor(
+    id: number,
     name: string,
     cover: string,
     releaseDate: string,
@@ -23,19 +24,20 @@ export class Album {
     recordLabel: string,
     tracks: Track[],
     performers: Performer[],
-    comments: Comment[])
+    comments: Comment[]
+  )
     {
 
-      this.id=id;
-      this.name=name;
-      this.cover=cover;
-      this.releaseDate=releaseDate;
-      this.description=description;
-      this.genre=genre;
-      this.recordLabel=recordLabel;
-      this.tracks=tracks;
-      this.performers=performers;
-      this.comments=comments;
+      this.id = id;
+      this.name = name;
+      this.cover = cover;
+      this.releaseDate = releaseDate;
+      this.description = description;
+      this.genre = genre;
+      this.recordLabel = recordLabel;
+      this.tracks = tracks;
+      this.performers = performers;
+      this.comments = comments;
     }
 
 
