@@ -18,8 +18,8 @@ export class CollectorService {
     return this.http.get<Collector[]>(this.apiUrl);
   }
 
-  public getCollector(id:number): Observable<Collector> {
-    return this.http.get<Collector>(this.apiUrl+"/"+id);
+  public getCollector(id: number): Observable<Collector> {
+    return this.http.get<Collector>(this.apiUrl + '/' + id);
   }
 
 }
