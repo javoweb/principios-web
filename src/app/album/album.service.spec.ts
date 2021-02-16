@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async, inject, getTestBed, fakeAsync } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { environment } from 'src/environments/environment';
 import { AlbumService } from './album.service';
 import {
@@ -8,13 +8,9 @@ import {
   HttpClientTestingModule,
 } from '@angular/common/http/testing';
 
-import {delay} from 'rxjs/operators';
-import { of } from 'rxjs';
-
 import { Album } from './album';
 
 describe('Service: Album', () => {
-  let injector: TestBed;
   let httpMock: HttpTestingController;
   let albumService: AlbumService;
   const baseUrl = environment.baseUrl + 'albums';
@@ -28,9 +24,8 @@ describe('Service: Album', () => {
     });
 
 
-    injector = getTestBed();
-    albumService = injector.get(AlbumService);
-    httpMock = injector.get(HttpTestingController);
+    albumService = TestBed.inject(AlbumService);
+    httpMock = TestBed.inject(HttpTestingController);
 
     album = {
       id: 100,

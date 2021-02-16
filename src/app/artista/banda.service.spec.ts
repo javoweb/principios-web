@@ -1,4 +1,4 @@
-import { TestBed, getTestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import {
  HttpTestingController,
@@ -12,7 +12,6 @@ import { Banda } from './banda';
 import { environment } from '../../environments/environment';
 
 describe('BandaService', () => {
- let injector: TestBed;
  let service: BandaService;
  let httpMock: HttpTestingController;
  const apiUrl = environment.baseUrl + 'bands';
@@ -23,9 +22,8 @@ describe('BandaService', () => {
      providers: [BandaService],
    });
 
-   injector = getTestBed();
-   service = injector.get(BandaService);
-   httpMock = injector.get(HttpTestingController);
+   service = TestBed.inject(BandaService);
+   httpMock = TestBed.inject(HttpTestingController);
  });
 
  afterEach(() => {
