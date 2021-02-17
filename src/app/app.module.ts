@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { AlbumModule } from './album/album.module';
 import { CollectorModule } from './collector/collector.module';
 import { ArtistaModule } from './artista/artista.module';
-import { ArtistaComponent } from './artista/artista.component';
 @NgModule({
   declarations: [
     AppComponent
@@ -18,8 +17,7 @@ import { ArtistaComponent } from './artista/artista.component';
     CollectorModule,
     AppRoutingModule,
     HttpClientModule,
-    ArtistaModule,
-    ArtistaComponent
+    ArtistaModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
