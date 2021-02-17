@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlbumModule } from './album/album.module';
+import { CollectorModule } from './collector/collector.module';
 import { ArtistaModule } from './artista/artista.module';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ArtistaModule } from './artista/artista.module';
   imports: [
     BrowserModule,
     AlbumModule,
+    CollectorModule,
     AppRoutingModule,
     HttpClientModule,
     ArtistaModule
