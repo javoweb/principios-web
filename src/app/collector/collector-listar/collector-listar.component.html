@@ -1,0 +1,20 @@
+
+<div class="alert alert-secondary" role="alert">
+  <span *ngIf=" collectors.length > 0 " class="font-weight-bold" > Coleccionistas (Total encontrados: {{ collectors.length }}) </span>
+  <span *ngIf=" collectors.length == 0 " class="font-weight-bold" > No se ha encontrado ningun coleccionista  </span>
+</div>
+
+<table id="albumList" class="table table-striped" aria-describedby="album detail view">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+    </tr>
+  </thead>
+  <tbody  >
+    <tr *ngFor="let item of collectors">
+      <th scope="row"><p class="font-weight-bold" title="Expand" style="cursor: pointer;"  >+</p></th>
+      <td>{{item.name}}</td>
+    </tr>
+  </tbody>
+</table>

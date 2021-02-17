@@ -13,6 +13,7 @@ import { ArtistaModule } from './artista/artista.module';
 import { AlbumService } from './album/album.service';
 import { BandaService } from './artista/banda.service';
 import { MusicoService } from './artista/musico.service';
+import { CollectorModule } from './collector/collector.module';
 import { Album } from './album/album';
 import { Track } from './album/track';
 import { Comment } from './album/comment';
@@ -36,6 +37,7 @@ const MUSICO_OBJECT: Musico[] = [new Musico(1, 'dsf', 'sdg', 'asdf', new Date)]
 
 let fixture: ComponentFixture<AppComponent>
 
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -44,6 +46,7 @@ describe('AppComponent', () => {
         BrowserModule,
         AlbumModule,
         ArtistaModule,
+        CollectorModule,
         AppRoutingModule,
         HttpClientModule
       ],
