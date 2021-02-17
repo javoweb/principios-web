@@ -20,6 +20,10 @@ import { Comment } from './album/comment';
 import { Performer } from './performer/performer';
 import { Banda } from './artista/banda';
 import { Musico } from './artista/musico';
+import { Collector } from './collector/collector';
+import { CollectorService } from './collector/collector.service';
+
+const COLLECTOR_OBJECT: Collector[] = [new Collector(1, 'Juan Perez', 32323, 'p@p.cl')];
 const ALBUM_OBJECT: Album[] = [new Album(
   1, 'dfd', 'sdfsd', 'dfd', 'dsfd', 'dfsd', 'dfds',
   [new Track(1, 'sdfs', 'sdfsd')],
@@ -32,10 +36,10 @@ const SALBUM_OBJECT: Album = new Album(
   [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd', 'sdfsd')],
   [new Comment(1, 'dsfs', 5)]
 );
-const BANDA_OBJECT: Banda[] = [new Banda(1, 'dsf', 'sdg', 'asdf', new Date)]
-const MUSICO_OBJECT: Musico[] = [new Musico(1, 'dsf', 'sdg', 'asdf', new Date)]
+const BANDA_OBJECT: Banda[] = [new Banda(1, 'dsf', 'sdg', 'asdf', new Date())];
+const MUSICO_OBJECT: Musico[] = [new Musico(1, 'dsf', 'sdg', 'asdf', new Date())];
 
-let fixture: ComponentFixture<AppComponent>
+let fixture: ComponentFixture<AppComponent>;
 
 
 describe('AppComponent', () => {
@@ -60,10 +64,12 @@ describe('AppComponent', () => {
     const albumService = TestBed.inject(AlbumService);
     const bandaService = TestBed.inject(BandaService);
     const musicoService = TestBed.inject(MusicoService);
-    spyOn(albumService, "getAlbums").and.returnValue(of(ALBUM_OBJECT))
-    spyOn(albumService, "getAlbum").and.returnValue(of(SALBUM_OBJECT))
-    spyOn(musicoService, "getMusicos").and.returnValue(of(MUSICO_OBJECT))
-    spyOn(bandaService, "getBandas").and.returnValue(of(BANDA_OBJECT))
+    const collectorService = TestBed.inject(CollectorService);
+    spyOn(albumService, 'getAlbums').and.returnValue(of(ALBUM_OBJECT));
+    spyOn(albumService, 'getAlbum').and.returnValue(of(SALBUM_OBJECT));
+    spyOn(musicoService, 'getMusicos').and.returnValue(of(MUSICO_OBJECT));
+    spyOn(bandaService, 'getBandas').and.returnValue(of(BANDA_OBJECT));
+    spyOn(collectorService, 'getCollectors').and.returnValue(of(COLLECTOR_OBJECT));
   }));
 
   it('should create the app', async(() => {

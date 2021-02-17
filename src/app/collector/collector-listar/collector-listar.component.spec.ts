@@ -3,7 +3,6 @@ import { CollectorListarComponent } from './collector-listar.component';
 import { of } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { CollectorService } from '../collector.service';
-import { Observable } from 'rxjs';
 import { Collector } from '../collector';
 
 const COLLECTOR_OBJECT: Collector[] = [new Collector(1, 'Juan Perez', 32323, 'p@p.cl')];
