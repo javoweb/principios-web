@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Album } from '../album';
 import { AlbumService } from '../album.service';
 
@@ -10,6 +10,8 @@ import { AlbumService } from '../album.service';
 })
 export class AlbumDetalleComponent implements OnInit {
 
+  @Input() albumID: number | null = null;
+
   album: Album = null;
 
   constructor(private albumService: AlbumService) { }
@@ -20,9 +22,12 @@ export class AlbumDetalleComponent implements OnInit {
 
   getAlbum(): void{
 
-    this.albumService.getAlbum(100).subscribe(album => {
-      this.album = album;
-    });
+    if (this.albumID !== null )
+    {
+      this.albumService.getAlbum(100).subscribe(album => {
+        this.album = album;
+      });
+    }
 
   }
 

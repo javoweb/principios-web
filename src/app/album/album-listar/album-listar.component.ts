@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import 'bootstrap';
+import * as $ from 'jquery';
+import { Component, OnInit, AfterViewChecked, AfterViewInit, DoCheck  } from '@angular/core';
 import { Album } from '../album';
 import { AlbumService } from '../album.service';
 
@@ -7,14 +9,22 @@ import { AlbumService } from '../album.service';
   templateUrl: './album-listar.component.html',
   styleUrls: ['./album-listar.component.scss']
 })
-export class AlbumListarComponent implements OnInit {
+export class AlbumListarComponent implements OnInit, DoCheck {
 
+  selectedAlbumID: number | null = null;
   albums: Array<Album> = [];
 
   constructor(private albumService: AlbumService) { }
 
+
+  ngDoCheck(): void {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+
+
+
   ngOnInit(): void {
-   this.getAlbums();
+      this.getAlbums();
   }
 
   getAlbums(): void{
@@ -30,5 +40,31 @@ export class AlbumListarComponent implements OnInit {
     return album.performers.map((x) => x.name ).join(',');
 
   }
+
+  public displayAlbum(id: number): void
+  {
+      if (this.selectedAlbumID === id)
+      {
+        this.selectedAlbumID = null;
+      }
+      else
+      {
+        this.selectedAlbumID = id;
+      }
+  }
+
+  public CharToShow(id: number): string {
+
+    if (id === this.selectedAlbumID)
+    {
+        return '-';
+    }
+    else
+    {
+      return '+';
+    }
+
+  }
+
 
 }
