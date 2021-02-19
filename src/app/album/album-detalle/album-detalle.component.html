@@ -39,14 +39,14 @@
   <div class="col-sm-12 text-center">
 
       <div class="col-sm-6" style="margin: 0 auto">
-        <table class="table table-striped" aria-describedby="album master view">
-          <thead>
+        <table class="table details-table-striped" aria-describedby="album detail view">
+          <thead class="details">
             <tr>
               <th scope="col">Nombre</th>
               <th scope="col">Duración</th>
             </tr>
           </thead>
-          <tbody  >
+          <tbody  class="details" >
             <tr *ngFor="let item of this.album.tracks">
               <td>{{item.name}}</td>
               <td>{{item.duration}}</td>
