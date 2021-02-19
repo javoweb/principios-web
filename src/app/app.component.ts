@@ -1,5 +1,5 @@
 
-import { Component , DoCheck, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 
 
 
@@ -9,14 +9,10 @@ import { Component , DoCheck, OnInit} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   title = 'My Vinils';
 
-
-  ngOnInit(): void {
-
-  }
 
 
 }

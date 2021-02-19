@@ -1,27 +1,23 @@
-import 'bootstrap';
-import * as $ from 'jquery';
-import { Component, OnInit, AfterViewChecked, AfterViewInit, DoCheck  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Album } from '../album';
 import { AlbumService } from '../album.service';
+
+
+
 
 @Component({
   selector: 'app-album-listar',
   templateUrl: './album-listar.component.html',
   styleUrls: ['./album-listar.component.scss']
 })
-export class AlbumListarComponent implements OnInit, DoCheck {
+export class AlbumListarComponent implements OnInit {
+
+
 
   selectedAlbumID: number | null = null;
   albums: Array<Album> = [];
 
   constructor(private albumService: AlbumService) { }
-
-
-  ngDoCheck(): void {
-    $('[data-toggle="tooltip"]').tooltip();
-  }
-
-
 
   ngOnInit(): void {
       this.getAlbums();

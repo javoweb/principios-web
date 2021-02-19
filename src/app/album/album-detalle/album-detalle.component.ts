@@ -24,7 +24,7 @@ export class AlbumDetalleComponent implements OnInit {
 
     if (this.albumID !== null )
     {
-      this.albumService.getAlbum(100).subscribe(album => {
+      this.albumService.getAlbum(this.albumID).subscribe(album => {
         this.album = album;
       });
     }
