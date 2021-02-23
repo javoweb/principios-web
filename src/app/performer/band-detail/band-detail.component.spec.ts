@@ -34,7 +34,7 @@ describe('BandDetailComponent', () => {
     fixture = TestBed.createComponent(BandDetailComponent);
     prizeService = TestBed.inject(PrizeService);
     bandService = TestBed.inject(BandService);
-    spyOn(prizeService, 'getPrize').and.returnValue(of(PRIZE_OBJECT))
+    spyOn(prizeService, 'getPrize').and.returnValue(of(PRIZE_OBJECT));
     spyOn(bandService, 'getBands').and.returnValue(of([BANDA_OBJECT]));
     component = fixture.componentInstance;
     fixture.detectChanges();

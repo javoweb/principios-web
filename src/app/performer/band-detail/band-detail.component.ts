@@ -16,7 +16,7 @@ export class BandDetailComponent implements OnInit {
   prizes: Prize[] = [];
 
   public getPrizes(): void {
-    this.prizes = []
+    this.prizes = [];
     if (this.band != null) {
       this.band.performerPrizes.forEach(performerPrize => {
         this.prizeService.getPrize(performerPrize.id).subscribe(prize => {
@@ -27,7 +27,7 @@ export class BandDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getPrizes()
+    this.getPrizes();
   }
 
 }

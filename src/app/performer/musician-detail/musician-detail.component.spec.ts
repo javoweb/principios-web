@@ -34,7 +34,7 @@ describe('MusicianDetailComponent', () => {
     fixture = TestBed.createComponent(MusicianDetailComponent);
     prizeService = TestBed.inject(PrizeService);
     musicianService = TestBed.inject(MusicianService);
-    spyOn(prizeService, 'getPrize').and.returnValue(of(PRIZE_OBJECT))
+    spyOn(prizeService, 'getPrize').and.returnValue(of(PRIZE_OBJECT));
     spyOn(musicianService, 'getMusicians').and.returnValue(of([MUSICIAN_OBJECT]));
     component = fixture.componentInstance;
     fixture.detectChanges();

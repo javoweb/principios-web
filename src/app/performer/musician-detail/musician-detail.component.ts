@@ -16,7 +16,7 @@ export class MusicianDetailComponent implements OnInit {
   prizes: Prize[] = [];
 
   public getPrizes(): void {
-    this.prizes = []
+    this.prizes = [];
     if (this.musician != null) {
       this.musician.performerPrizes.forEach(performerPrize => {
         this.prizeService.getPrize(performerPrize.id).subscribe(prize => {

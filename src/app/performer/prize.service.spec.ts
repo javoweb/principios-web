@@ -39,7 +39,7 @@ describe('PrizeService', () => {
       []
     );
 
-    const id: number = faker.random.number()
+    const id: number = faker.random.number();
 
     service.getPrize(id).subscribe((prize) => {
       expect(prize.name).toBe(mockPosts.name);

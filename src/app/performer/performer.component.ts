@@ -54,7 +54,7 @@ export class PerformerComponent implements OnInit {
 
   public charToShow(index: number, kind: string = 'musician'): string {
 
-    if (kind == 'musician') {
+    if (kind === 'musician') {
       if (this.selectedMusician != null && this.musicos[index].id === this.selectedMusician.id)
       {
           return '-';

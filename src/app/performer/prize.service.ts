@@ -9,12 +9,12 @@ import { Prize } from './prize';
 })
 export class PrizeService {
 
-  private apiURL = environment.baseUrl + 'prizes/'
+  private apiURL = environment.baseUrl + 'prizes/';
 
   constructor( private http: HttpClient) { }
 
   getPrize(id: number): Observable<Prize> {
-    return this.http.get<Prize>(this.apiURL + id.toString())
+    return this.http.get<Prize>(this.apiURL + id.toString());
   }
 
 }
