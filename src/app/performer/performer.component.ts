@@ -32,19 +32,23 @@ export class PerformerComponent implements OnInit {
 
   displayMusician(index: number): void {
     if (this.selectedMusician != null && this.selectedMusician.id === this.musicos[index].id) {
-      this.selectedMusician = null
+      this.selectedMusician = null;
+      this.selectedBand = null;
     }
     else {
-      this.selectedMusician = this.musicos[index]
+      this.selectedMusician = this.musicos[index];
+      this.selectedBand = null;
     }
   }
 
   displayBand(index: number): void {
     if (this.selectedBand != null && this.selectedBand.id === this.bandas[index].id) {
-      this.selectedBand = null
+      this.selectedBand = null;
+      this.selectedMusician = null;
     }
     else {
-      this.selectedBand = this.bandas[index]
+      this.selectedBand = this.bandas[index];
+      this.selectedMusician = null;
     }
   }
 

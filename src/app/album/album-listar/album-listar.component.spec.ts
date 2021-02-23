@@ -3,7 +3,6 @@ import { AlbumListarComponent } from './album-listar.component';
 import { of } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { AlbumService } from '../album.service';
-import { Observable } from 'rxjs';
 import { Album } from '../album';
 import { Track } from '../track';
 import { Comment } from '../comment';

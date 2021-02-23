@@ -1,59 +1,37 @@
 <testExecutions version="1">
-  <file path="src/app/album/album-listar/album-listar.component.spec.ts">
-    <testCase name="AlbumListarComponent should create" duration="70"/>
+  <file path="src/app/performer/prize.service.spec.ts">
+    <testCase name="PrizeService getPrizes() should return correct records" duration="57"/>
   </file>
   <file path="src/app/album/album-detalle/album-detalle.component.spec.ts">
-    <testCase name="AlbumDetalleComponent should create" duration="4"/>
+    <testCase name="AlbumDetalleComponent should create" duration="12"/>
   </file>
-  <file path="src/app/collector/collector.service.spec.ts">
-    <testCase name="Service: Collector Test todos los Collectors" duration="4"/>
+  <file path="src/app/album/album-listar/album-listar.component.spec.ts">
+    <testCase name="AlbumListarComponent should create" duration="9"/>
   </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="136"/>
-    <testCase name="AppComponent should have as title 'My Vinils'" duration="9"/>
-    <testCase name="AppComponent should render h1 title" duration="11"/>
+  <file path="src/app/performer/band.service.spec.ts">
+    <testCase name="BandService getBands() should return 0 records" duration="2"/>
+    <testCase name="BandService getBands() should return 10 records" duration="3"/>
   </file>
   <file path="src/app/album/album.service.spec.ts">
-    <testCase name="Service: Album Test Get Single Albums" duration="3"/>
+    <testCase name="Service: Album Test Get Single Albums" duration="4"/>
     <testCase name="Service: Album Test Get ALL Albums" duration="2"/>
   </file>
-  <file path="src/app/performer/band-detail/band-detail.component.spec.ts">
-    <testCase name="BandDetailComponent should create" duration="60">
-      <failure message="Error">NullInjectorError: R3InjectorError(DynamicTestModule)[PrizeService -&gt; HttpClient -&gt; HttpClient]: 
-  NullInjectorError: No provider for HttpClient!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'PrizeService', 'HttpClient', 'HttpClient' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.PrizeService_Factory [as factory] (ng:///PrizeService/ɵfac.js:5:40)
-    at R3Injector.hydrate (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at NgModuleRef$1.get (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
-    at Object.get (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:22102:1)
-
-Error: Expected undefined to be truthy.
-    at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/src/app/performer/band-detail/band-detail.component.spec.ts:26:23)
-    at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:292:1)
-</failure>
-    </testCase>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should render h1 title" duration="128"/>
+    <testCase name="AppComponent should have as title 'My Vinils'" duration="9"/>
+    <testCase name="AppComponent should create the app" duration="8"/>
   </file>
   <file path="src/app/collector/collector-listar/collector-listar.component.spec.ts">
     <testCase name="CollectorListarComponent should create" duration="4"/>
   </file>
-  <file path="src/app/performer/band.service.spec.ts">
-    <testCase name="BandService getBands() should return 0 records" duration="1"/>
-    <testCase name="BandService getBands() should return 10 records" duration="2"/>
+  <file path="src/app/performer/band-detail/band-detail.component.spec.ts">
+    <testCase name="BandDetailComponent should create" duration="4"/>
   </file>
   <file path="src/app/performer/musician.service.spec.ts">
     <testCase name="MusicianService getMusicians() should return 10 records" duration="2"/>
     <testCase name="MusicianService getMusicians() should return 0 records" duration="2"/>
   </file>
-  <file path="src/app/performer/prize.service.spec.ts">
-    <testCase name="PrizeService getPrizes() should return correct records" duration="2"/>
+  <file path="src/app/collector/collector.service.spec.ts">
+    <testCase name="Service: Collector Test todos los Collectors" duration="2"/>
   </file>
 </testExecutions>

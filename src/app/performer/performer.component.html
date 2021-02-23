@@ -10,14 +10,23 @@
     </tr>
   </thead>
   <tbody  >
-    <tr *ngFor="let item of bandas, let index = index">
-      <td>
-        <p data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayBand(index)"  >
-          {{ charToShow(index, "band") }}
-        </p>
-      </td>
-      <td>{{item.name}}</td>
-    </tr>
+    <ng-container  *ngFor="let item of bandas, let index = index">
+      <tr>
+        <td>
+          <p data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayBand(index)"  >
+            {{ charToShow(index, "band") }}
+          </p>
+        </td>
+        <td>{{item.name}}</td>
+      </tr>
+      <tr *ngIf="(selectedBand != null && item.id==selectedBand.id)" colspan="5">
+        <td colspan="5">
+          <div class="w-100 p-2 m-0" style="background-color: #fff;">
+                <app-band-detail [band]=(item)></app-band-detail>
+          </div>
+        </td>
+      </tr>
+    </ng-container>
     <tr *ngFor="let item of musicos, let index = index">
       <td>
         <p data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayMusician(index)"  >
