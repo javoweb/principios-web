@@ -7,22 +7,22 @@ import {
 
 import faker from 'faker';
 
-import { MusicoService } from './musico.service';
-import { Musico } from './musico';
+import { MusicianService } from './musician.service';
+import { Musician } from './musician';
 import { environment } from '../../environments/environment';
 
-describe('MusicoService', () => {
- let service: MusicoService;
+describe('MusicianService', () => {
+ let service: MusicianService;
  let httpMock: HttpTestingController;
  const apiUrl = environment.baseUrl + 'musicians';
 
  beforeEach(() => {
    TestBed.configureTestingModule({
      imports: [HttpClientTestingModule],
-     providers: [MusicoService],
+     providers: [MusicianService],
    });
 
-   service = TestBed.inject(MusicoService);
+   service = TestBed.inject(MusicianService);
    httpMock = TestBed.inject(HttpTestingController);
  });
 
@@ -30,12 +30,12 @@ describe('MusicoService', () => {
    httpMock.verify();
  });
 
- it('getMusicos() should return 10 records', () => {
-   const mockPosts: Musico[] = [];
+ it('getMusicians() should return 10 records', () => {
+   const mockPosts: Musician[] = [];
 
    for (let i = 0; i < 10; i++) {
 
-     const musico = new Musico(
+     const musico = new Musician(
        faker.random.number(),
        faker.name.findName(),
        faker.internet.url(),
@@ -45,7 +45,7 @@ describe('MusicoService', () => {
      mockPosts.push(musico);
    }
 
-   service.getMusicos().subscribe((musicos) => {
+   service.getMusicians().subscribe((musicos) => {
      expect(musicos.length).toBe(10);
    });
 
@@ -54,10 +54,10 @@ describe('MusicoService', () => {
    req.flush(mockPosts);
  });
 
- it('getMusicos() should return 0 records', () => {
-  const mockPosts: Musico[] = [];
+ it('getMusicians() should return 0 records', () => {
+  const mockPosts: Musician[] = [];
 
-  service.getMusicos().subscribe((musicos) => {
+  service.getMusicians().subscribe((musicos) => {
     expect(musicos.length).toBe(0);
   });
 

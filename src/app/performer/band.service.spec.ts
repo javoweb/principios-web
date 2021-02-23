@@ -7,22 +7,22 @@ import {
 
 import faker from 'faker';
 
-import { BandaService } from './banda.service';
-import { Banda } from './banda';
+import { BandService } from './band.service';
+import { Band } from './band';
 import { environment } from '../../environments/environment';
 
-describe('BandaService', () => {
- let service: BandaService;
+describe('BandService', () => {
+ let service: BandService;
  let httpMock: HttpTestingController;
  const apiUrl = environment.baseUrl + 'bands';
 
  beforeEach(() => {
    TestBed.configureTestingModule({
      imports: [HttpClientTestingModule],
-     providers: [BandaService],
+     providers: [BandService],
    });
 
-   service = TestBed.inject(BandaService);
+   service = TestBed.inject(BandService);
    httpMock = TestBed.inject(HttpTestingController);
  });
 
@@ -30,12 +30,12 @@ describe('BandaService', () => {
    httpMock.verify();
  });
 
- it('getBandas() should return 10 records', () => {
-   const mockPosts: Banda[] = [];
+ it('getBands() should return 10 records', () => {
+   const mockPosts: Band[] = [];
 
    for (let i = 0; i < 10; i++) {
 
-     const banda = new Banda(
+     const banda = new Band(
        faker.random.number(),
        faker.name.findName(),
        faker.internet.url(),
@@ -45,7 +45,7 @@ describe('BandaService', () => {
      mockPosts.push(banda);
    }
 
-   service.getBandas().subscribe((bandas) => {
+   service.getBands().subscribe((bandas) => {
      expect(bandas.length).toBe(10);
    });
 
@@ -54,10 +54,10 @@ describe('BandaService', () => {
    req.flush(mockPosts);
  });
 
- it('getBandas() should return 0 records', () => {
-  const mockPosts: Banda[] = [];
+ it('getBands() should return 0 records', () => {
+  const mockPosts: Band[] = [];
 
-  service.getBandas().subscribe((bandas) => {
+  service.getBands().subscribe((bandas) => {
     expect(bandas.length).toBe(0);
   });
 

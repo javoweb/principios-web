@@ -1,12 +1,12 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ArtistaComponent } from './artista.component';
+import { PerformerComponent } from './performer.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [ArtistaComponent],
-  exports: [ArtistaComponent]
+  declarations: [PerformerComponent],
+  exports: [PerformerComponent]
 })
-export class ArtistaModule { }
+export class PerformerModule { }

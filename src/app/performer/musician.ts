@@ -1,6 +1,6 @@
-import { Artista } from './artista';
+import { Performer } from './performer';
 
-export class Musico extends Artista {
+export class Musician extends Performer {
   birthDate: Date;
   constructor(id: number, name: string, image: string, description: string, birthDate: Date){
     super(id, name, image, description);

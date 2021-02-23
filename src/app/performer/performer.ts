@@ -1,21 +1,18 @@
 export class Performer {
-
   id: number;
   name: string;
   image: string;
   description: string;
-  birthDate: string;
 
-  constructor(
+  public constructor(
     id: number,
     name: string,
     image: string,
-    description: string,
-    birthDate: string
+    description: string
   ) {
+    this.id = id;
     this.name = name;
     this.image = image;
     this.description = description;
-    this.birthDate = birthDate;
   }
 }
