@@ -1,18 +1,18 @@
-<div id="albumDetails" *ngIf="band !== null">
+<div id="albumDetails" *ngIf="musician !== null">
 
   <div class="row">
     <div class="col-sm-12 col-md-6 text-center">
-      <img *ngIf="band.image.length > 10" alt="Imagen de la Banda" src="{{ band.image }}" style="max-width: 30%;" />
-      <img *ngIf="band.image.length <= 10" alt="Imagen de la Banda no disponible"
+      <img *ngIf="musician.image.length > 10" alt="Imagen de la musiciana" src="{{ musician.image }}" style="max-width: 30%;" />
+      <img *ngIf="musician.image.length <= 10" alt="Imagen de la musiciana no disponible"
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/300px-Imagen_no_disponible.svg.png" style="max-width: 30%;" />
     </div>
 
     <div class="col-sm-12 col-md-6 ">
       <div class="col-sm-12">
-        <span><p class="font-weight-bold d-inline">Artista:</p> {{ band.name }}</span>
+        <span><p class="font-weight-bold d-inline">Artista:</p> {{ musician.name }}</span>
       </div>
       <div class="col-sm-12">
-        <span><p class="font-weight-bold d-inline">Fecha de Formación:</p> {{ band.creationDate }}</span>
+        <span><p class="font-weight-bold d-inline">Fecha de Nacimiento:</p> {{ musician.birthDate }}</span>
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@
 
   <br>
     <div class="container col-sm-8">
-        <p class="font-weight-bold d-inline">Descripción: </p><p class="d-inline">{{ band.description }}</p>
+        <p class="font-weight-bold d-inline">Descripción: </p><p class="d-inline">{{ musician.description }}</p>
     </div>
   <br>
 

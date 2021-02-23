@@ -1,4 +1,4 @@
-import { PerformerPrize } from "./performerPrize";
+import { PerformerPrize } from './performerPrize';
 
 export class Prize {
   organization: string;
