@@ -1,20 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Musico } from './musico';
+import { Musician } from './musician';
 import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MusicoService {
+export class MusicianService {
 
   private apiUrl = environment.baseUrl + 'musicians';
 
   constructor(private http: HttpClient) { }
 
-  getMusicos(): Observable<Musico[]> {
-    return this.http.get<Musico[]>(this.apiUrl);
+  getMusicians(): Observable<Musician[]> {
+    return this.http.get<Musician[]>(this.apiUrl);
 }
 
 }

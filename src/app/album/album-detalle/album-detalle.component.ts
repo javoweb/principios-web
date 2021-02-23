@@ -5,8 +5,7 @@ import { AlbumService } from '../album.service';
 
 @Component({
   selector: 'app-album-detalle',
-  templateUrl: './album-detalle.component.html',
-  styleUrls: ['./album-detalle.component.scss']
+  templateUrl: './album-detalle.component.html'
 })
 export class AlbumDetalleComponent implements OnInit {
 

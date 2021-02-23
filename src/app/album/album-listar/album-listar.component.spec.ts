@@ -3,7 +3,6 @@ import { AlbumListarComponent } from './album-listar.component';
 import { of } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { AlbumService } from '../album.service';
-import { Observable } from 'rxjs';
 import { Album } from '../album';
 import { Track } from '../track';
 import { Comment } from '../comment';
@@ -11,7 +10,7 @@ import { Performer } from '../../performer/performer';
 const ALBUM_OBJECT: Album[] = [new Album(
   1, 'dfd', 'sdfsd', 'dfd', 'dsfd', 'dfsd', 'dfds',
   [new Track(1, 'sdfs', 'sdfsd')],
-  [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd', 'sdfsd')],
+  [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd')],
   [new Comment(1, 'dsfs', 5)]
 )];
 

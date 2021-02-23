@@ -1,0 +1,48 @@
+<div class="alert alert-secondary" role="alert">
+  <span *ngIf=" bandas.length > 0 || musicos.length > 0 " class="font-weight-bold" > Artistas (Total encontrados: {{ bandas.length + musicos.length }}) </span>
+  <span *ngIf=" bandas.length == 0  && musicos.length == 0" class="font-weight-bold" > No se ha encontrado ningun Performer  </span>
+</div>
+<table id="performerList" class="table table-striped" aria-describedby="listado de artistas">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">Nombre</th>
+    </tr>
+  </thead>
+  <tbody  >
+    <ng-container *ngFor="let item of bandas, let index = index">
+      <tr>
+        <td>
+          <p data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayBand(index)"  >
+            {{ charToShow(index, "band") }}
+          </p>
+        </td>
+        <td>{{item.name}}</td>
+      </tr>
+      <tr *ngIf="(selectedBand != null && item.id==selectedBand.id)" colspan="5">
+        <td colspan="5">
+          <div class="w-100 p-2 m-0" style="background-color: #fff;">
+                <app-band-detail [band]=(item)></app-band-detail>
+          </div>
+        </td>
+      </tr>
+    </ng-container>
+    <ng-container *ngFor="let item of musicos, let index = index">
+      <tr>
+        <td>
+          <p data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayMusician(index)"  >
+            {{ charToShow(index, "musician") }}
+          </p>
+        </td>
+        <td>{{item.name}}</td>
+      </tr>
+      <tr *ngIf="(selectedMusician != null && item.id==selectedMusician.id)" colspan="5">
+        <td colspan="5">
+          <div class="w-100 p-2 m-0" style="background-color: #fff;">
+                <app-musician-detail [musician]=(item)></app-musician-detail>
+          </div>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

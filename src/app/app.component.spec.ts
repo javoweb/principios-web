@@ -1,4 +1,4 @@
-import { TestBed, async, ComponentFixtureAutoDetect, ComponentFixture } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { APP_BASE_HREF } from '@angular/common';
@@ -9,17 +9,17 @@ import { of } from 'rxjs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlbumModule } from './album/album.module';
-import { ArtistaModule } from './artista/artista.module';
+import { PerformerModule } from './performer/performer.module';
 import { AlbumService } from './album/album.service';
-import { BandaService } from './artista/banda.service';
-import { MusicoService } from './artista/musico.service';
+import { BandService } from './performer/band.service';
+import { MusicianService } from './performer/musician.service';
 import { CollectorModule } from './collector/collector.module';
 import { Album } from './album/album';
 import { Track } from './album/track';
 import { Comment } from './album/comment';
 import { Performer } from './performer/performer';
-import { Banda } from './artista/banda';
-import { Musico } from './artista/musico';
+import { Band } from './performer/band';
+import { Musician } from './performer/musician';
 import { Collector } from './collector/collector';
 import { CollectorService } from './collector/collector.service';
 
@@ -27,17 +27,17 @@ const COLLECTOR_OBJECT: Collector[] = [new Collector(1, 'Juan Perez', 32323, 'p@
 const ALBUM_OBJECT: Album[] = [new Album(
   1, 'dfd', 'sdfsd', 'dfd', 'dsfd', 'dfsd', 'dfds',
   [new Track(1, 'sdfs', 'sdfsd')],
-  [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd', 'sdfsd')],
+  [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd')],
   [new Comment(1, 'dsfs', 5)]
 )];
 const SALBUM_OBJECT: Album = new Album(
   1, 'dfd', 'sdfsd', 'dfd', 'dsfd', 'dfsd', 'dfds',
   [new Track(1, 'sdfs', 'sdfsd')],
-  [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd', 'sdfsd')],
+  [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd')],
   [new Comment(1, 'dsfs', 5)]
 );
-const BANDA_OBJECT: Banda[] = [new Banda(1, 'dsf', 'sdg', 'asdf', new Date())];
-const MUSICO_OBJECT: Musico[] = [new Musico(1, 'dsf', 'sdg', 'asdf', new Date())];
+const BANDA_OBJECT: Band[] = [new Band(1, 'dsf', 'sdg', 'asdf', new Date(), [])];
+const MUSICO_OBJECT: Musician[] = [new Musician(1, 'dsf', 'sdg', 'asdf', new Date())];
 
 let fixture: ComponentFixture<AppComponent>;
 
@@ -49,7 +49,7 @@ describe('AppComponent', () => {
         RouterTestingModule,
         BrowserModule,
         AlbumModule,
-        ArtistaModule,
+        PerformerModule,
         CollectorModule,
         AppRoutingModule,
         HttpClientModule
@@ -62,13 +62,13 @@ describe('AppComponent', () => {
 
     fixture = TestBed.createComponent(AppComponent);
     const albumService = TestBed.inject(AlbumService);
-    const bandaService = TestBed.inject(BandaService);
-    const musicoService = TestBed.inject(MusicoService);
+    const bandaService = TestBed.inject(BandService);
+    const musicoService = TestBed.inject(MusicianService);
     const collectorService = TestBed.inject(CollectorService);
     spyOn(albumService, 'getAlbums').and.returnValue(of(ALBUM_OBJECT));
     spyOn(albumService, 'getAlbum').and.returnValue(of(SALBUM_OBJECT));
-    spyOn(musicoService, 'getMusicos').and.returnValue(of(MUSICO_OBJECT));
-    spyOn(bandaService, 'getBandas').and.returnValue(of(BANDA_OBJECT));
+    spyOn(musicoService, 'getMusicians').and.returnValue(of(MUSICO_OBJECT));
+    spyOn(bandaService, 'getBands').and.returnValue(of(BANDA_OBJECT));
     spyOn(collectorService, 'getCollectors').and.returnValue(of(COLLECTOR_OBJECT));
   }));
 

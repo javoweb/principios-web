@@ -11,7 +11,7 @@ import { Performer } from '../../performer/performer';
 const ALBUM_OBJECT: Album = new Album(
   1, 'dfd', 'sdfsd', 'dfd', 'dsfd', 'dfsd', 'dfds',
   [new Track(1, 'sdfs', 'sdfsd')],
-  [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd', 'sdfsd')],
+  [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd')],
   [new Comment(1, 'dsfs', 5)]
 );
 
