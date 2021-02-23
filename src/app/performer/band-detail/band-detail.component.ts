@@ -5,8 +5,7 @@ import { PrizeService } from '../prize.service';
 
 @Component({
   selector: 'app-band-detail',
-  templateUrl: './band-detail.component.html',
-  styleUrls: ['./band-detail.component.scss']
+  templateUrl: './band-detail.component.html'
 })
 export class BandDetailComponent implements OnInit {
 

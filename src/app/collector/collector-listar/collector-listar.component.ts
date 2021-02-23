@@ -5,8 +5,7 @@ import { CollectorService } from '../collector.service';
 
 @Component({
   selector: 'app-collector-listar',
-  templateUrl: './collector-listar.component.html',
-  styleUrls: ['./collector-listar.component.css']
+  templateUrl: './collector-listar.component.html'
 })
 export class CollectorListarComponent implements OnInit {
 

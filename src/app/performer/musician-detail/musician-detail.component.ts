@@ -6,7 +6,6 @@ import { PrizeService } from '../prize.service';
 @Component({
   selector: 'app-musician-detail',
   templateUrl: './musician-detail.component.html',
-  styleUrls: ['./musician-detail.component.scss']
 })
 export class MusicianDetailComponent implements OnInit {
 
