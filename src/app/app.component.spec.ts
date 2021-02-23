@@ -36,7 +36,7 @@ const SALBUM_OBJECT: Album = new Album(
   [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd')],
   [new Comment(1, 'dsfs', 5)]
 );
-const BANDA_OBJECT: Band[] = [new Band(1, 'dsf', 'sdg', 'asdf', new Date())];
+const BANDA_OBJECT: Band[] = [new Band(1, 'dsf', 'sdg', 'asdf', new Date(), [])];
 const MUSICO_OBJECT: Musician[] = [new Musician(1, 'dsf', 'sdg', 'asdf', new Date())];
 
 let fixture: ComponentFixture<AppComponent>;

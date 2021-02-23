@@ -40,7 +40,8 @@ describe('BandService', () => {
        faker.name.findName(),
        faker.internet.url(),
        faker.lorem.sentence(),
-       faker.date.past()
+       faker.date.past(),
+       []
      );
      mockPosts.push(banda);
    }

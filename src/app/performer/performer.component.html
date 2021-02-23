@@ -2,7 +2,7 @@
   <span *ngIf=" bandas.length > 0 || musicos.length > 0 " class="font-weight-bold" > Artistas (Total encontrados: {{ bandas.length + musicos.length }}) </span>
   <span *ngIf=" bandas.length == 0  && musicos.length == 0" class="font-weight-bold" > No se ha encontrado ningun Performer  </span>
 </div>
-<table id="albumList" class="table table-striped" aria-describedby="istado de artistas">
+<table id="performerList" class="table table-striped" aria-describedby="listado de artistas">
   <thead>
     <tr>
       <th scope="col"> </th>
@@ -10,12 +10,20 @@
     </tr>
   </thead>
   <tbody  >
-    <tr *ngFor="let item of bandas">
-      <th scope="row"><p class="font-weight-bold" title="Expand" style="cursor: pointer;"  >+</p></th>
+    <tr *ngFor="let item of bandas, let index = index">
+      <td>
+        <p data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayBand(index)"  >
+          {{ charToShow(index, "band") }}
+        </p>
+      </td>
       <td>{{item.name}}</td>
     </tr>
-    <tr *ngFor="let item of musicos">
-      <th scope="row"><p class="font-weight-bold" title="Expand" style="cursor: pointer;"  >+</p></th>
+    <tr *ngFor="let item of musicos, let index = index">
+      <td>
+        <p data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayMusician(index)"  >
+          {{ charToShow(index, "musician") }}
+        </p>
+      </td>
       <td>{{item.name}}</td>
     </tr>
   </tbody>

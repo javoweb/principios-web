@@ -15,6 +15,8 @@ export class PerformerComponent implements OnInit {
 
   bandas: Array<Band> = [];
   musicos: Array<Musician> = [];
+  selectedMusician: Musician | null = null;
+  selectedBand: Band | null = null;
 
   getBandList(): void {
     this.bandaService.getBands().subscribe(bandas => {
@@ -26,6 +28,48 @@ export class PerformerComponent implements OnInit {
     this.musicoService.getMusicians().subscribe(musicos => {
       this.musicos = musicos;
     });
+  }
+
+  displayMusician(index: number): void {
+    if (this.selectedMusician != null && this.selectedMusician.id === this.musicos[index].id) {
+      this.selectedMusician = null
+    }
+    else {
+      this.selectedMusician = this.musicos[index]
+    }
+  }
+
+  displayBand(index: number): void {
+    if (this.selectedBand != null && this.selectedBand.id === this.bandas[index].id) {
+      this.selectedBand = null
+    }
+    else {
+      this.selectedBand = this.bandas[index]
+    }
+  }
+
+  public charToShow(index: number, kind: string = 'musician'): string {
+
+    if (kind == 'musician') {
+      if (this.selectedMusician != null && this.musicos[index].id === this.selectedMusician.id)
+      {
+          return '-';
+      }
+      else
+      {
+        return '+';
+      }}
+    else {
+      if (this.selectedBand != null && this.bandas[index].id === this.selectedBand.id)
+      {
+          return '-';
+      }
+      else
+      {
+        return '+';
+      }
+    }
+
   }
 
   ngOnInit(): void {
