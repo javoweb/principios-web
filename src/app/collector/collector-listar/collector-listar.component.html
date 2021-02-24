@@ -7,14 +7,31 @@
 <table id="albumList" class="table table-striped" aria-describedby="album detail view">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col"></th>
       <th scope="col">Nombre</th>
     </tr>
   </thead>
   <tbody  >
-    <tr *ngFor="let item of collectors">
-      <th scope="row"><p class="font-weight-bold" title="Expand" style="cursor: pointer;"  >+</p></th>
-      <td>{{item.name}}</td>
-    </tr>
+
+    <ng-container *ngFor="let item of collectors">
+      <tr>
+        <td >
+          <p data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayCollector(item.id)"  >
+            {{ CharToShow(item.id) }}
+          </p>
+        </td>
+        <td>{{item.name}}</td>
+      </tr>
+
+      <tr *ngIf="(item.id==selectedCollectorID)" colspan="5">
+        <td colspan="2">
+          <div class="w-100 p-2 m-0" style="background-color: #fff;">
+            <app-collector-detalle [collectorID]=(item.id)></app-collector-detalle>
+          </div>
+        </td>
+      </tr>
+    </ng-container>
+
+
   </tbody>
 </table>

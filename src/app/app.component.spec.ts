@@ -22,8 +22,14 @@ import { Band } from './performer/band';
 import { Musician } from './performer/musician';
 import { Collector } from './collector/collector';
 import { CollectorService } from './collector/collector.service';
+import { PerformerPrize } from './performer/performerPrize';
 
-const COLLECTOR_OBJECT: Collector[] = [new Collector(1, 'Juan Perez', 32323, 'p@p.cl')];
+
+const PERFORMER_PRIZE_OBJECT = new PerformerPrize(12, new Date());
+const FAVORITE_PERFORMER_OBJECT = new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd', [PERFORMER_PRIZE_OBJECT]);
+const SCOLLECTOR_OBJECT: Collector = new Collector(1, 'Juan Perez', 32323, 'p@p.cl', [FAVORITE_PERFORMER_OBJECT]);
+const COLLECTOR_OBJECT: Collector[] = [new Collector(1, 'Juan Perez', 32323, 'p@p.cl', [FAVORITE_PERFORMER_OBJECT])];
+
 const ALBUM_OBJECT: Album[] = [new Album(
   1, 'dfd', 'sdfsd', 'dfd', 'dsfd', 'dfsd', 'dfds',
   [new Track(1, 'sdfs', 'sdfsd')],
@@ -70,6 +76,7 @@ describe('AppComponent', () => {
     spyOn(musicoService, 'getMusicians').and.returnValue(of(MUSICO_OBJECT));
     spyOn(bandaService, 'getBands').and.returnValue(of(BANDA_OBJECT));
     spyOn(collectorService, 'getCollectors').and.returnValue(of(COLLECTOR_OBJECT));
+    spyOn(collectorService, 'getCollector').and.returnValue(of(SCOLLECTOR_OBJECT));
   }));
 
   it('should create the app', async(() => {

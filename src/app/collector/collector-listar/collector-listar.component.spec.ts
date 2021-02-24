@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CollectorService } from '../collector.service';
 import { Collector } from '../collector';
 
-const COLLECTOR_OBJECT: Collector[] = [new Collector(1, 'Juan Perez', 32323, 'p@p.cl')];
+const COLLECTOR_OBJECT: Collector[] = [new Collector(1, 'Juan Perez', 32323, 'p@p.cl', [])];
 
 describe('CollectorListarComponent', () => {
   let component: CollectorListarComponent;

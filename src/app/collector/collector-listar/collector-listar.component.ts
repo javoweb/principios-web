@@ -9,7 +9,7 @@ import { CollectorService } from '../collector.service';
 })
 export class CollectorListarComponent implements OnInit {
 
-
+  selectedCollectorID: number | null = null;
   collectors: Array<Collector> = [];
   constructor(private collectorService: CollectorService) { }
 
@@ -22,6 +22,31 @@ export class CollectorListarComponent implements OnInit {
     this.collectorService.getCollectors().subscribe(collectors => {
       this.collectors = collectors;
     });
+
+  }
+
+  public displayCollector(id: number): void
+  {
+      if (this.selectedCollectorID === id)
+      {
+        this.selectedCollectorID = null;
+      }
+      else
+      {
+        this.selectedCollectorID = id;
+      }
+  }
+
+  public CharToShow(id: number): string {
+
+    if (id === this.selectedCollectorID)
+    {
+        return '-';
+    }
+    else
+    {
+      return '+';
+    }
 
   }
 
