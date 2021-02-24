@@ -3,6 +3,10 @@
 import { TestBed, async, inject, getTestBed, fakeAsync } from '@angular/core/testing';
 import { environment } from 'src/environments/environment';
 import { CollectorService } from './collector.service';
+import { Performer } from './../performer/performer';
+import { PerformerPrize } from './../performer/performerPrize';
+
+
 import {
   HttpTestingController,
   HttpClientTestingModule,
@@ -29,11 +33,15 @@ describe('Service: Collector', () => {
     collectorService = TestBed.inject(CollectorService);
     httpMock = TestBed.inject(HttpTestingController);
 
+    const PERFORMER_PRIZE_OBJECT = new PerformerPrize(12, new Date());
+    const FAVORITE_PERFORMER_OBJECT = new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd', [PERFORMER_PRIZE_OBJECT]);
+
     collector = {
       id: 100,
       name: 'Juan Perez',
       telephone : 1234555,
-      email : 'jp@mail.cl'
+      email : 'jp@mail.cl',
+      favoritePerformers: [FAVORITE_PERFORMER_OBJECT]
     };
 
     collectors = [];
@@ -64,7 +72,22 @@ describe('Service: Collector', () => {
 
   });
 
+  it('Test one Collector', () => {
 
 
+    collectorService.getCollector(collector.id).subscribe(t => {
+      expect(t).toBe(collector);
+    });
+
+    const req = httpMock.expectOne({
+      method: 'GET',
+      url: baseUrl + '/' + collector.id
+    });
+
+    expect(req.request.method).toEqual('GET');
+    req.flush(collector);
+
+
+  });
 
 });
