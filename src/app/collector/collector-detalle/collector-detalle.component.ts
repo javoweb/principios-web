@@ -4,8 +4,7 @@ import { CollectorService } from '../collector.service';
 
 @Component({
   selector: 'app-collector-detalle',
-  templateUrl: './collector-detalle.component.html',
-  styleUrls: ['./collector-detalle.component.css']
+  templateUrl: './collector-detalle.component.html'
 })
 export class CollectorDetalleComponent implements OnInit {
 
