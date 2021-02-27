@@ -6,8 +6,7 @@ import { MusicianService } from './musician.service';
 
 @Component({
   selector: 'app-performer',
-  templateUrl: './performer.component.html',
-  styleUrls: ['./performer.component.css']
+  templateUrl: './performer.component.html'
 })
 export class PerformerComponent implements OnInit {
 
