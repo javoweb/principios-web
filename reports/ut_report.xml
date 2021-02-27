@@ -1,44 +1,44 @@
 <testExecutions version="1">
-  <file path="src/app/album/album.service.spec.ts">
-    <testCase name="Service: Album Test Get ALL Albums" duration="84"/>
-    <testCase name="Service: Album Test Get Single Albums" duration="4"/>
+  <file path="src/app/performer/prize.service.spec.ts">
+    <testCase name="PrizeService getPrizes() should return correct records" duration="91"/>
   </file>
-  <file path="src/app/performer/band-detail/band-detail.component.spec.ts">
-    <testCase name="BandDetailComponent should create" duration="15"/>
+  <file path="src/app/performer/musician-detail/musician-detail.component.spec.ts">
+    <testCase name="MusicianDetailComponent should create" duration="14"/>
+  </file>
+  <file path="src/app/collector/collector-listar/collector-listar.component.spec.ts">
+    <testCase name="CollectorListarComponent should create" duration="13"/>
+  </file>
+  <file path="src/app/performer/musician.service.spec.ts">
+    <testCase name="MusicianService getMusicians() should return 0 records" duration="29"/>
+    <testCase name="MusicianService getMusicians() should return 10 records" duration="4"/>
   </file>
   <file path="src/app/collector/collector-detalle/collector-detalle.component.spec.ts">
     <testCase name="CollectorDetalleComponent should create" duration="7"/>
   </file>
-  <file path="src/app/album/album-listar/album-listar.component.spec.ts">
-    <testCase name="AlbumListarComponent should create" duration="14"/>
-  </file>
-  <file path="src/app/performer/prize.service.spec.ts">
-    <testCase name="PrizeService getPrizes() should return correct records" duration="4"/>
-  </file>
   <file path="src/app/album/album-detalle/album-detalle.component.spec.ts">
-    <testCase name="AlbumDetalleComponent should create" duration="6"/>
-  </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should render h1 title" duration="43"/>
-    <testCase name="AppComponent should create the app" duration="9"/>
-    <testCase name="AppComponent should have as title 'My Vinils'" duration="9"/>
-  </file>
-  <file path="src/app/performer/musician-detail/musician-detail.component.spec.ts">
-    <testCase name="MusicianDetailComponent should create" duration="5"/>
-  </file>
-  <file path="src/app/performer/musician.service.spec.ts">
-    <testCase name="MusicianService getMusicians() should return 10 records" duration="4"/>
-    <testCase name="MusicianService getMusicians() should return 0 records" duration="3"/>
+    <testCase name="AlbumDetalleComponent should create" duration="5"/>
   </file>
   <file path="src/app/collector/collector.service.spec.ts">
-    <testCase name="Service: Collector Test todos los Collectors" duration="2"/>
-    <testCase name="Service: Collector Test one Collector" duration="3"/>
+    <testCase name="Service: Collector Test todos los Collectors" duration="3"/>
+    <testCase name="Service: Collector Test one Collector" duration="4"/>
+  </file>
+  <file path="src/app/performer/band-detail/band-detail.component.spec.ts">
+    <testCase name="BandDetailComponent should create" duration="7"/>
+  </file>
+  <file path="src/app/album/album-listar/album-listar.component.spec.ts">
+    <testCase name="AlbumListarComponent should create" duration="9"/>
+  </file>
+  <file path="src/app/album/album.service.spec.ts">
+    <testCase name="Service: Album Test Get ALL Albums" duration="1"/>
+    <testCase name="Service: Album Test Get Single Albums" duration="2"/>
   </file>
   <file path="src/app/performer/band.service.spec.ts">
-    <testCase name="BandService getBands() should return 0 records" duration="2"/>
+    <testCase name="BandService getBands() should return 0 records" duration="3"/>
     <testCase name="BandService getBands() should return 10 records" duration="2"/>
   </file>
-  <file path="src/app/collector/collector-listar/collector-listar.component.spec.ts">
-    <testCase name="CollectorListarComponent should create" duration="6"/>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="49"/>
+    <testCase name="AppComponent should render h1 title" duration="9"/>
+    <testCase name="AppComponent should have as title 'My Vinils'" duration="9"/>
   </file>
 </testExecutions>
