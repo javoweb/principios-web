@@ -147,3 +147,13 @@ body
   background-color: #002c5e !important;
   border-color: #002c5e !important ;
 }
+
+caption
+{
+  display: none;
+}
+
+.tableExpandColumn
+{
+  width: 50px;
+}
