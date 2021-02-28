@@ -1,9 +1,9 @@
-<h1 class="mt-2">Listado de Albumes</h1>
+<h3 class="mt-2">Listado de Albumes</h3>
 <div class="alert alert-secondary" role="alert">
   <span *ngIf=" albums.length > 0 " class="font-weight-bold" > Álbumes (Total encontrados: {{ albums.length }}) </span>
   <span *ngIf=" albums.length == 0 " class="font-weight-bold" > No se ha encontrado ningun álbum  </span>
 </div>
-<table id="albumList" class="table table-striped" aria-describedby="album detail view">
+<table id="albumList" class="table table-striped" aria-label="Listado de álbumes">
   <thead>
     <tr>
       <th scope="col"></th>
@@ -17,9 +17,9 @@
     <ng-container *ngFor="let item of albums">
       <tr>
         <td >
-             <p data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayAlbum(item.id)"  >
+             <button data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayAlbum(item.id)"  >
                 {{ CharToShow(item.id) }}
-              </p>
+              </button  >
         </td>
         <td>{{item.name}}</td>
         <td>{{item.genre}}</td>

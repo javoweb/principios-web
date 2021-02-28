@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {CollectorListarComponent} from '../collector/collector-listar/collector-listar.component';
+import {AlbumListarComponent} from '../album/album-listar/album-listar.component';
+
 
 const routes: Routes = [
-  { path: 'collectors', component: CollectorListarComponent },
+  { path: 'albums', component: AlbumListarComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class CollectorRoutingModule { }
+export class AlbumRoutingModule { }
 
 

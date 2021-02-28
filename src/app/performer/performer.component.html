@@ -1,9 +1,9 @@
-<h1 class="mt-2">Listado de Artistas</h1>
+<h3 class="mt-2">Listado de Artistas</h3>
 <div class="alert alert-secondary" role="alert">
   <span *ngIf=" bandas.length > 0 || musicos.length > 0 " class="font-weight-bold" > Artistas (Total encontrados: {{ bandas.length + musicos.length }}) </span>
   <span *ngIf=" bandas.length == 0  && musicos.length == 0" class="font-weight-bold" > No se ha encontrado ningun Performer  </span>
 </div>
-<table id="performerList" class="table table-striped" aria-describedby="listado de artistas">
+<table id="performerList" class="table table-striped" aria-label="Listado de artistas">
   <thead>
     <tr>
       <th scope="col"> </th>
@@ -14,9 +14,9 @@
     <ng-container *ngFor="let item of bandas, let index = index">
       <tr>
         <td>
-          <p data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayBand(index)"  >
+          <button data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayBand(index)"  >
             {{ charToShow(index, "band") }}
-          </p>
+          </button>
         </td>
         <td>{{item.name}}</td>
       </tr>
@@ -31,9 +31,9 @@
     <ng-container *ngFor="let item of musicos, let index = index">
       <tr>
         <td>
-          <p data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayMusician(index)"  >
+          <button data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayMusician(index)"  >
             {{ charToShow(index, "musician") }}
-          </p>
+          </button>
         </td>
         <td>{{item.name}}</td>
       </tr>

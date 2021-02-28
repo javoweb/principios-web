@@ -8,6 +8,8 @@ import { Album } from '../album';
 import { Track } from '../track';
 import { Comment } from '../comment';
 import { Performer } from '../../performer/performer';
+
+
 const ALBUM_OBJECT: Album = new Album(
   1, 'dfd', 'sdfsd', 'dfd', 'dsfd', 'dfsd', 'dfds',
   [new Track(1, 'sdfs', 'sdfsd')],
@@ -18,7 +20,8 @@ const ALBUM_OBJECT: Album = new Album(
 describe('AlbumDetalleComponent', () => {
   let component: AlbumDetalleComponent;
   let fixture: ComponentFixture<AlbumDetalleComponent>;
-  let albumService: AlbumService;
+
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -28,12 +31,15 @@ describe('AlbumDetalleComponent', () => {
       providers: [AlbumService]
     })
     .compileComponents();
+
+    const albumService = TestBed.inject(AlbumService);
+    spyOn(albumService, 'getAlbum').and.returnValue(of(ALBUM_OBJECT));
+
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AlbumDetalleComponent);
-    albumService = TestBed.inject(AlbumService);
-    spyOn(albumService, 'getAlbum').and.returnValue(of(ALBUM_OBJECT));
+
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -42,4 +48,16 @@ describe('AlbumDetalleComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Get Performer Name', () => {
+    expect(component.getPerformerName(ALBUM_OBJECT)).toBe(ALBUM_OBJECT.performers[0].name);
+  });
+
+
+  it('Get Album', () => {
+    component.albumID = 1;
+    component.getAlbum();
+    expect(component.album).not.toBeNull();
+  });
+
 });
