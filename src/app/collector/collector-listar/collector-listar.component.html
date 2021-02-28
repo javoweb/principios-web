@@ -1,10 +1,10 @@
-<h1 class="mt-2">Listado de Coleccionistas</h1>
+<h3 class="mt-2">Listado de Coleccionistas</h3>
 <div class="alert alert-secondary" role="alert">
   <span *ngIf=" collectors.length > 0 " class="font-weight-bold" > Coleccionistas (Total encontrados: {{ collectors.length }}) </span>
   <span *ngIf=" collectors.length == 0 " class="font-weight-bold" > No se ha encontrado ningun coleccionista  </span>
 </div>
 
-<table id="albumList" class="table table-striped" aria-describedby="album detail view">
+<table id="collectorList" class="table table-striped" aria-label="Lsitado de coleccionistas">
   <thead>
     <tr>
       <th scope="col"></th>
@@ -16,9 +16,9 @@
     <ng-container *ngFor="let item of collectors">
       <tr>
         <td >
-          <p data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayCollector(item.id)"  >
+          <button data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayCollector(item.id)"  >
             {{ CharToShow(item.id) }}
-          </p>
+          </button>
         </td>
         <td>{{item.name}}</td>
       </tr>

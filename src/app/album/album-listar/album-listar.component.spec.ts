@@ -36,7 +36,23 @@ describe('AlbumListarComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Select album', () => {
+    component.displayAlbum(1);
+    expect(component.selectedAlbumID).toBe(1);
+    component.displayAlbum(1);
+    expect(component.selectedAlbumID).toBeNull();
+  });
+
+
+  it('Test char to show', () => {
+    component.displayAlbum(1);
+    expect(component.CharToShow(1)).toBe('-');
+    expect(component.CharToShow(2)).toBe('+');
+  });
+
 });
