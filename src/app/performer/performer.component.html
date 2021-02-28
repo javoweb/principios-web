@@ -3,10 +3,10 @@
   <span *ngIf=" bandas.length > 0 || musicos.length > 0 " class="font-weight-bold" > Artistas (Total encontrados: {{ bandas.length + musicos.length }}) </span>
   <span *ngIf=" bandas.length == 0  && musicos.length == 0" class="font-weight-bold" > No se ha encontrado ningun Performer  </span>
 </div>
-<table id="performerList" class="table table-striped" aria-label="Listado de artistas">
+<table id="performerList" class="table table-striped" aria-label="Listado de artistas" summary="Listado de artistas">
   <thead>
     <tr>
-      <th scope="col"> </th>
+      <th scope="col" width="60px">+/-</th>
       <th scope="col">Nombre</th>
     </tr>
   </thead>

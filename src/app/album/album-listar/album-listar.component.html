@@ -3,10 +3,10 @@
   <span *ngIf=" albums.length > 0 " class="font-weight-bold" > Álbumes (Total encontrados: {{ albums.length }}) </span>
   <span *ngIf=" albums.length == 0 " class="font-weight-bold" > No se ha encontrado ningun álbum  </span>
 </div>
-<table id="albumList" class="table table-striped" aria-label="Listado de álbumes">
+<table id="albumList" class="table table-striped" aria-label="Listado de álbumes" summary="Listado de álbumes">
   <thead>
     <tr>
-      <th scope="col"></th>
+      <th scope="col" width="60px">+/-</th>
       <th scope="col">Nombre</th>
       <th scope="col">Genero</th>
       <th scope="col">Discografica</th>
