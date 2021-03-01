@@ -32,4 +32,19 @@ describe('CollectorListarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Select collector', () => {
+    component.displayCollector(1);
+    expect(component.selectedCollectorID).toBe(1);
+    component.displayCollector(1);
+    expect(component.selectedCollectorID).toBeNull();
+  });
+
+
+  it('Test char to show', () => {
+    component.displayCollector(1);
+    expect(component.CharToShow(1)).toBe('-');
+    expect(component.CharToShow(2)).toBe('+');
+  });
+
 });
