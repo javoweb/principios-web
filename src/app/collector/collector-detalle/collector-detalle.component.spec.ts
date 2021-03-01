@@ -41,4 +41,12 @@ describe('CollectorDetalleComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Get Collector', () => {
+    component.collectorID = 1;
+    component.getCollector();
+    expect(component.collector).not.toBeNull();
+  });
+
+
 });
