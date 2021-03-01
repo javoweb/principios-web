@@ -43,4 +43,9 @@ describe('MusicianDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('getPrizes', () => {
+    component.musician = MUSICIAN_OBJECT;
+    component.getPrizes();
+  });
 });
