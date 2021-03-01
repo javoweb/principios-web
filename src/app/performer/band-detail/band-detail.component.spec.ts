@@ -43,4 +43,9 @@ describe('BandDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('getPrizes', () => {
+    component.band = BANDA_OBJECT;
+    component.getPrizes();
+  });
 });
