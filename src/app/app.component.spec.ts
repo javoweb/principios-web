@@ -84,14 +84,14 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'My Vinils'`, async(() => {
+  it(`should have as title 'My Vinyls'`, async(() => {
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('My Vinils');
+    expect(app.title).toEqual('My Vinyls');
   }));
 
   it('should render h1 title', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('#mainTitle').textContent).toContain('My Vinils');
+    expect(compiled.querySelector('#mainTitle').textContent).toContain('My Vinyls');
   });
 });
