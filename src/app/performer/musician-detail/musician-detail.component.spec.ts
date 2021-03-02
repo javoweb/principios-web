@@ -47,5 +47,6 @@ describe('MusicianDetailComponent', () => {
   it('getPrizes', () => {
     component.musician = MUSICIAN_OBJECT;
     component.getPrizes();
+    expect(component.prizes).not.toBeNull();
   });
 });

@@ -10,7 +10,7 @@ export class Prize {
     organization: string,
     name: string,
     description: string,
-    performerPrizes: PerformerPrize[] = []
+    performerPrizes: PerformerPrize[]
   ) {
       this.organization = organization;
       this.name = name;
