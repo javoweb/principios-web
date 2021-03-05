@@ -7,19 +7,19 @@
 
     <div class="col-sm-12 col-md-6 ">
       <div class="col-sm-12">
-        <span><p class="font-weight-bold d-inline">Album:</p> {{this.album.name}}</span>
+        <span><p class="font-weight-bold d-inline" i18n>Album:</p> {{this.album.name}}</span>
       </div>
       <div class="col-sm-12">
-        <span><p class="font-weight-bold d-inline">Artista:</p> {{ getPerformerName(this.album) }}</span>
+        <span><p class="font-weight-bold d-inline" i18n>Artista:</p> {{ getPerformerName(this.album) }}</span>
       </div>
       <div class="col-sm-12">
-        <span><p class="font-weight-bold d-inline">Fecha Lanzamiento:</p> {{ this.album.releaseDate }}</span>
+        <span><p class="font-weight-bold d-inline" i18n>Fecha Lanzamiento:</p> {{ this.album.releaseDate }}</span>
       </div>
       <div class="col-sm-12">
-        <span><p class="font-weight-bold d-inline">Genero:</p> {{ this.album.genre }}</span>
+        <span><p class="font-weight-bold d-inline" i18n>Genero:</p> {{ this.album.genre }}</span>
       </div>
       <div class="col-sm-12">
-        <span><p class="font-weight-bold d-inline">Casa Discografica:</p> {{ this.album.recordLabel }}</span>
+        <span><p class="font-weight-bold d-inline" i18n>Casa Discografica:</p> {{ this.album.recordLabel }}</span>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@
   <br>
     <div class="col-sm-12">
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let item of this.album.comments" ><p class="font-weight-bold d-inline">Calificación:</p><p class="d-inline">{{ item.rating }}</p><hr> {{ item.description }}</li>
+        <li class="list-group-item" *ngFor="let item of this.album.comments" ><p class="font-weight-bold d-inline" i18n>Calificación:</p><p class="d-inline">{{ item.rating }}</p><hr> {{ item.description }}</li>
       </ul>
 
     </div>
@@ -39,12 +39,12 @@
   <div class="col-sm-12 text-center">
 
       <div class="col-sm-6" style="margin: 0 auto">
-        <table class="table details-table-striped" aria-label="Detalle de un album" >
-          <caption>Detalle de un album</caption>
+        <table class="table details-table-striped" i18n-aria-label aria-label="Detalle de un album" >
+          <caption  i18n>Detalle de un album</caption>
           <thead class="details">
             <tr>
-              <th scope="col">Nombre</th>
-              <th scope="col">Duración</th>
+              <th scope="col"  i18n>Nombre</th>
+              <th scope="col" i18n>Duración</th>
             </tr>
           </thead>
           <tbody  class="details" >

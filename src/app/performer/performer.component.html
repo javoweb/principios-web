@@ -1,21 +1,21 @@
-<h3 class="mt-2">Listado de Artistas</h3>
+<h3 class="mt-2" i18n>Listado de Artistas</h3>
 <div class="alert alert-secondary" role="alert">
-  <span *ngIf=" bandas.length > 0 || musicos.length > 0 " class="font-weight-bold" > Artistas (Total encontrados: {{ bandas.length + musicos.length }}) </span>
-  <span *ngIf=" bandas.length == 0  && musicos.length == 0" class="font-weight-bold" > No se ha encontrado ningun artista </span>
+  <span *ngIf=" bandas.length > 0 || musicos.length > 0 " class="font-weight-bold" > <ng-container i18n>Artistas (Total encontrados:</ng-container> {{ bandas.length + musicos.length }}) </span>
+  <span *ngIf=" bandas.length == 0  && musicos.length == 0" class="font-weight-bold" > <ng-container i18n>No se ha encontrado ningun artista</ng-container></span>
 </div>
-<table id="performerList" class="table table-striped" aria-label="Listado de artistas" >
-  <caption>Listado de artistas</caption>
+<table id="performerList" class="table table-striped" i18n-aria-label aria-label="Listado de artistas" >
+  <caption i18n>Listado de artistas</caption>
   <thead>
     <tr>
       <th scope="col"  class="tableExpandColumn" >+/-</th>
-      <th scope="col">Nombre</th>
+      <th scope="col" i18n>Nombre</th>
     </tr>
   </thead>
   <tbody  >
     <ng-container *ngFor="let item of bandas, let index = index">
       <tr>
         <td>
-          <button data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayBand(index)"  >
+          <button data-toggle="tooltip" class="gridSelector font-weight-bold" i18n-title title="Expand/Collapse" style="cursor: pointer;" (click)="displayBand(index)"  >
             {{ charToShow(index, "band") }}
           </button>
         </td>
@@ -32,7 +32,7 @@
     <ng-container *ngFor="let item of musicos, let index = index">
       <tr>
         <td>
-          <button data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayMusician(index)"  >
+          <button data-toggle="tooltip" class="gridSelector font-weight-bold" i18n-title title="Expand/Collapse" style="cursor: pointer;" (click)="displayMusician(index)"  >
             {{ charToShow(index, "musician") }}
           </button>
         </td>
