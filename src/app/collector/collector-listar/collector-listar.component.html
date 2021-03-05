@@ -1,15 +1,15 @@
-<h3 class="mt-2">Listado de Coleccionistas</h3>
+<h3 class="mt-2" i18n>Listado de Coleccionistas</h3>
 <div class="alert alert-secondary" role="alert">
-  <span *ngIf=" collectors.length > 0 " class="font-weight-bold" > Coleccionistas (Total encontrados: {{ collectors.length }}) </span>
-  <span *ngIf=" collectors.length == 0 " class="font-weight-bold" > No se ha encontrado ningun coleccionista  </span>
+  <span *ngIf=" collectors.length > 0 " class="font-weight-bold" > <ng-container  i18n>Coleccionistas (Total encontrados:</ng-container> {{ collectors.length }}) </span>
+  <span *ngIf=" collectors.length == 0 " class="font-weight-bold" > <ng-container  i18n>No se ha encontrado ningun coleccionista</ng-container> </span>
 </div>
 
-<table id="collectorList" class="table table-striped" aria-label="Listado de coleccionistas" >
-  <caption>Listado de coleccionistas</caption>
+<table id="collectorList" class="table table-striped" i18n-aria-label aria-label="Listado de coleccionistas" >
+  <caption i18n>Listado de coleccionistas</caption>
   <thead>
     <tr>
       <th scope="col"  class="tableExpandColumn" >+/-</th>
-      <th scope="col">Nombre</th>
+      <th scope="col" i18n>Nombre</th>
     </tr>
   </thead>
   <tbody  >
@@ -17,7 +17,7 @@
     <ng-container *ngFor="let item of collectors">
       <tr>
         <td >
-          <button data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayCollector(item.id)"  >
+          <button data-toggle="tooltip" class="gridSelector font-weight-bold" i18n-title title="Expand/Collapse" style="cursor: pointer;" (click)="displayCollector(item.id)"  >
             {{ CharToShow(item.id) }}
           </button>
         </td>

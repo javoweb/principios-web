@@ -2,17 +2,17 @@
 
   <div class="row">
     <div class="col-sm-12 col-md-6 text-center">
-      <img *ngIf="band.image.length > 10" alt="Imagen de la Banda" src="{{ band.image }}" style="max-width: 30%;" />
-      <img *ngIf="band.image.length <= 10" alt="Imagen de la Banda no disponible"
+      <img *ngIf="band.image.length > 10" i18n-alt alt="Imagen de la Banda" src="{{ band.image }}" style="max-width: 30%;" />
+      <img *ngIf="band.image.length <= 10" i18n-alt alt="Imagen de la Banda no disponible"
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/300px-Imagen_no_disponible.svg.png" style="max-width: 30%;" />
     </div>
 
     <div class="col-sm-12 col-md-6 ">
       <div class="col-sm-12">
-        <span><p class="font-weight-bold d-inline">Artista:</p> {{ band.name }}</span>
+        <span><p class="font-weight-bold d-inline" i18n>Artista:</p> {{ band.name }}</span>
       </div>
       <div class="col-sm-12">
-        <span><p class="font-weight-bold d-inline">Fecha de Formación:</p> {{ band.creationDate }}</span>
+        <span><p class="font-weight-bold d-inline" i18n>Fecha de Formación:</p> {{ band.creationDate }}</span>
       </div>
     </div>
   </div>
@@ -20,21 +20,21 @@
 
   <br>
     <div class="container col-sm-8">
-        <p class="font-weight-bold d-inline">Descripción: </p><p class="d-inline">{{ band.description }}</p>
+        <p class="font-weight-bold d-inline" i18n>Descripción: </p><p class="d-inline">{{ band.description }}</p>
     </div>
   <br>
 
   <div class="col-sm-12 text-center">
       <div *ngIf="prizes.length > 0" class="col-sm-6" style="margin: 0 auto">
         <div class="container col-sm-8">
-          <p class="font-weight-bold ">Premios recibidos: </p>
+          <p class="font-weight-bold " i18n>Premios recibidos: </p>
       </div>
-        <table class="table details-table-striped" aria-label="Detalle de premios recibidos" >
-          <caption>Detalle de premios recibidos</caption>
+        <table class="table details-table-striped" i18n-aria-label aria-label="Detalle de premios recibidos" >
+          <caption i18n>Detalle de premios recibidos</caption>
           <thead class="details">
             <tr>
-              <th scope="col">Nombre</th>
-              <th scope="col">Organización</th>
+              <th scope="col" i18n>Nombre</th>
+              <th scope="col" i18n>Organización</th>
             </tr>
           </thead>
           <tbody  class="details" >

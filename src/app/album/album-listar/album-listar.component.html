@@ -1,24 +1,24 @@
-<h3 class="mt-2">Listado de Albumes</h3>
+<h3 class="mt-2" i18n>Listado de Albumes</h3>
 <div class="alert alert-secondary" role="alert">
-  <span *ngIf=" albums.length > 0 " class="font-weight-bold" > Álbumes (Total encontrados: {{ albums.length }}) </span>
-  <span *ngIf=" albums.length == 0 " class="font-weight-bold" > No se ha encontrado ningun álbum  </span>
+  <span *ngIf=" albums.length > 0 " class="font-weight-bold" >  <ng-container i18n> Álbumes (Total encontrados:</ng-container> {{ albums.length }}) </span>
+  <span *ngIf=" albums.length == 0 " class="font-weight-bold" > <ng-container i18n>No se ha encontrado ningun álbum </ng-container>  </span>
 </div>
-<table id="albumList" class="table table-striped" aria-label="Listado de álbumes">
-  <caption>Listado de álbumes</caption>
+<table id="albumList" class="table table-striped" i18n-aria-label aria-label="Listado de álbumes">
+  <caption i18n>Listado de álbumes</caption>
   <thead>
     <tr>
       <th scope="col"  class="tableExpandColumn" >+/-</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Genero</th>
-      <th scope="col">Discografica</th>
-      <th scope="col">Artista</th>
+      <th scope="col" i18n>Nombre</th>
+      <th scope="col" i18n>Genero</th>
+      <th scope="col" i18n>Discografica</th>
+      <th scope="col" i18n>Artista</th>
     </tr>
   </thead>
   <tbody >
     <ng-container *ngFor="let item of albums">
       <tr>
         <td >
-             <button data-toggle="tooltip" class="gridSelector font-weight-bold" title="Expand/Collapse" style="cursor: pointer;" (click)="displayAlbum(item.id)"  >
+             <button data-toggle="tooltip" class="gridSelector font-weight-bold" i18n-title title="Expand/Collapse" style="cursor: pointer;" (click)="displayAlbum(item.id)"  >
                 {{ CharToShow(item.id) }}
               </button  >
         </td>
