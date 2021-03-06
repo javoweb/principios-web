@@ -26,19 +26,31 @@
 
 
   <br>
-    <div class="col-sm-12">
+    <div class="col-sm-12" *ngIf="!isOnCommentEditMode">
+      <button class="btn btn-primary m-10" (click)="addComment()">
+        <span class="fa fa-plus-circle" aria-hidden="true" ></span>
+        <p class="ml-10 d-inline" i18n> Agregar Comentario</p>
+      </button>
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let item of this.album.comments" ><p class="font-weight-bold d-inline" i18n>Calificación:</p><p class="d-inline">{{ item.rating }}</p><hr> {{ item.description }}</li>
-      </ul>
-
+          <li class="list-group-item" *ngFor="let item of this.album.comments" ><p class="font-weight-bold d-inline" i18n>Calificación: </p><p class="d-inline">{{ item.rating }}</p><hr> {{ item.description }}</li>
+        </ul>
+    </div>
+    <div class="col-sm-12 col-sm-12 border border-primary p-10" *ngIf="isOnCommentEditMode">
+      <app-album-comentarios (SaveCancel)="onCommentStatusChanged($event)" [albumID]=(albumID)></app-album-comentarios>
     </div>
 
 
     <br>
 
-  <div class="col-sm-12 text-center">
+  <div class="col-sm-12 text-center" *ngIf="!isOnTrackEditMode">
+
 
       <div class="col-sm-6" style="margin: 0 auto">
+        <button class="btn btn-primary m-10 f-left" (click)="addTrack()">
+          <span class="fa fa-plus-circle" aria-hidden="true" ></span>
+          <p class="ml-10 d-inline" i18n> Agregar Track</p>
+        </button>
+
         <table class="table details-table-striped" i18n-aria-label aria-label="Detalle de un album" >
           <caption  i18n>Detalle de un album</caption>
           <thead class="details">
@@ -57,6 +69,10 @@
 
       </div>
 
+    </div>
+
+    <div class="col-sm-12 col-sm-12 border border-primary p-10" *ngIf="isOnTrackEditMode">
+      <app-album-tracks (SaveCancel)="onTrackStatusChanged($event)" [albumID]=(albumID)></app-album-tracks>
     </div>
 
 </div>
