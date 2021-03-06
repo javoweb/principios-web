@@ -1,0 +1,41 @@
+
+<ng-container *ngIf="trackForm!=null ">
+  <h4 i18n>Nuevo track</h4>
+  <form [formGroup]="trackForm" (ngSubmit)="!trackForm.invalid && createTrack()">
+
+
+
+    <div class="form-group">
+      <label for="name" i18n>
+          Duración
+      </label>
+      <input class="form-control" name="duration" formControlName="duration" i18n-placeholder placeholder="Duración (00:00)" >
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="trackForm.get('duration').hasError('required') && trackForm.get('duration').touched">
+          <ng-container i18n>Campo Requerido</ng-container>
+      </div>
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="trackForm.get('duration').hasError('pattern') && trackForm.get('duration').touched">
+          <ng-container i18n>Formato incorrecto. Se espera un texto de la forma 00:00</ng-container>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name" i18n>
+          Nombre
+      </label>
+      <input name="name" class="form-control" name="name" formControlName="name" i18n-placeholder placeholder="Nombre" >
+
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="trackForm.get('name').hasError('required') && trackForm.get('name').touched">
+          <ng-container i18n>Campo Requerido</ng-container>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary " [disabled]="!trackForm.valid" i18n>Crear</button>
+      <button type="button" class="btn btn-danger ml-3 " (click)="cancelCreation()" i18n>Cancelar</button>
+    </div>
+
+  </form>
+</ng-container>

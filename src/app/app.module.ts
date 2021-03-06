@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 import { AlbumModule } from './album/album.module';
 import { CollectorModule } from './collector/collector.module';
 import { PerformerModule } from './performer/performer.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +22,9 @@ import { PerformerModule } from './performer/performer.module';
     CollectorModule,
     AppRoutingModule,
     HttpClientModule,
-    PerformerModule
+    PerformerModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]

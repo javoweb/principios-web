@@ -3,8 +3,6 @@
   "outputPath": "/src/locale",
   "fromLanguage": "es",
   "toLanguage": [
-    "en",
-    "fr",
-    "de"
+    "en"
   ]
 }

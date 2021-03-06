@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 import { Album } from './album';
 import { environment } from '../../environments/environment';
+import { Track } from './track';
 
 
 @Injectable({
@@ -20,6 +21,19 @@ export class AlbumService {
 
   public getAlbum(id: number): Observable<Album> {
     return this.http.get<Album>(this.apiUrl + '/' + id);
+  }
+
+
+  public addComment(id: number, newComment: any): Observable<boolean> {
+
+     return this.http.post<true>(this.apiUrl + '/' + id + '/comments' , newComment);
+  }
+
+
+  public addTrack(id: number, newTrack: any): Observable<boolean> {
+    return this.http.post<true>(this.apiUrl + '/' + id + '/tracks' , newTrack);
+
+
   }
 
 }
