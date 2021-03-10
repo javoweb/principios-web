@@ -54,7 +54,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/performer/performer.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">17</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/performer/band-detail/band-detail.component.html</context>
@@ -98,11 +98,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/performer/performer.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">24</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/performer/performer.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ce99fbb2724383169925d4042ed56a458b5cdfc8" datatype="html">
@@ -247,29 +247,36 @@
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="a718ce805b4e3c9f445072a1c4ba676df3e165be" datatype="html">
+        <source> Agregar Premio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/performer.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="29addf769b478b182e493b66c5f5fabcac5f0311" datatype="html">
         <source>Artistas (Total encontrados:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/performer/performer.component.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a8472ae3702d04042c82a28424b2737372d30d34" datatype="html">
         <source>No se ha encontrado ningun artista</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/performer/performer.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="88b513a82a75edcc3bb7b3b3e4a47e8ca4c7affc" datatype="html">
         <source>Listado de artistas</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/performer/performer.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">13</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/performer/performer.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5fd0625acbdc1a0e00ba65fa05accca927f7a579" datatype="html">
@@ -322,6 +329,156 @@
         <source>Organización</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/performer/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ca3e6955fe4e6aae580b2800bb7f86e7a3010ef0" datatype="html">
+        <source>Nuevo Premio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="76d84ed14fbe90b402a32547e1f115be4ca231e7" datatype="html">
+        <source>
+          Organización
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cdfa934a45d8c102c74a9f981a64c4d19ddf32c7" datatype="html">
+        <source>Nombre de la organización</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ac4b1bb60fd6685603a57ae1e618f4237b91986d" datatype="html">
+        <source>Campo Requerido</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-comentarios/album-comentarios.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-comentarios/album-comentarios.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-comentarios/album-comentarios.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-tracks/album-tracks.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-tracks/album-tracks.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="004374c336f34d120d0bc6a9aafadfd4d095c9f6" datatype="html">
+        <source>Debe tener al menos 3 caracteres y máximo 50 </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2365a1096994c6911e3ae16b388022b456f8e879" datatype="html">
+        <source>
+          Nombre del Premio
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6ed6af421b5633db88de10f13d6f8902c7aafb1b" datatype="html">
+        <source>Nombre del premio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="47d337e05b4f7551fb00ea9d0649ba42db9da9e6" datatype="html">
+        <source>
+          Descripción
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-comentarios/album-comentarios.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b0e611b2bfac70d1af43295307e558cbf9f48e57" datatype="html">
+        <source>Descripción</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-comentarios/album-comentarios.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="794b438fcb629d3a0e53b5bfe3df18de49436d94" datatype="html">
+        <source>Maximo 240 caracteres</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-comentarios/album-comentarios.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9aff1f532c9b4b7b54da2f7221cdb8a406b600da" datatype="html">
+        <source>Crear</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-comentarios/album-comentarios.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-tracks/album-tracks.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e8d22cdef9f5780e31395340125d873f9df518c3" datatype="html">
+        <source>Cancelar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-comentarios/album-comentarios.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-tracks/album-tracks.component.html</context>
           <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>

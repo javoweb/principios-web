@@ -17,4 +17,12 @@ export class PrizeService {
     return this.http.get<Prize>(this.apiURL + id.toString());
   }
 
+  createPrize(newPrize: object): Observable<boolean> {
+    return this.http.post<true>(this.apiURL, newPrize);
+  }
+
+  getPrizes(): Observable<Prize[]> {
+    return this.http.get<Prize[]>(this.apiURL);
+  }
+
 }

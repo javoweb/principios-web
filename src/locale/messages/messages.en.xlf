@@ -690,15 +690,65 @@
         <note priority="1" from="description">generalPurpose</note>
         <note priority="1" from="meaning">:generalPurpose</note>
       </trans-unit>
-      <trans-unit id="6940585562191758262" datatype="html">
-        <target>Error saving comment</target>
-        <source>Error guardando el comentario</source>
+      <trans-unit id="a718ce805b4e3c9f445072a1c4ba676df3e165be" datatype="html">
+        <target>Add Prize</target>
+        <source>Agregar Premio</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/album/album-translations/album-translations.component.html</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="sourcefile">src/app/performer/performer.component.html</context>
+          <context context-type="linenumber">6</context>
         </context-group>
-        <note priority="1" from="description">generalPurpose</note>
-        <note priority="1" from="meaning">:generalPurpose</note>
+      </trans-unit>
+      <trans-unit id="ca3e6955fe4e6aae580b2800bb7f86e7a3010ef0" datatype="html">
+        <target>New award</target>
+        <source>Nuevo Premio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="76d84ed14fbe90b402a32547e1f115be4ca231e7" datatype="html">
+        <target>Organization</target>
+        <source>Organización</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cdfa934a45d8c102c74a9f981a64c4d19ddf32c7" datatype="html">
+        <target>Organization name's</target>
+        <source>Nombre de la organización</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="004374c336f34d120d0bc6a9aafadfd4d095c9f6" datatype="html">
+        <target>It must have at least 3 characters and a maximum of 50</target>
+        <source>Debe tener al menos 3 caracteres y máximo 50</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2365a1096994c6911e3ae16b388022b456f8e879" datatype="html">
+        <target>Award Name</target>
+        <source>Nombre del Premio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6ed6af421b5633db88de10f13d6f8902c7aafb1b" datatype="html">
+        <target>Award name</target>
+        <source>Nombre del premio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>
