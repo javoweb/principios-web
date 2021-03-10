@@ -11,7 +11,7 @@ import { PerformerPrize } from '../../performer/performerPrize';
 
 const PERFORMER_PRIZE_OBJECT = new PerformerPrize(12, new Date());
 const FAVORITE_PERFORMER_OBJECT = new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd', [PERFORMER_PRIZE_OBJECT]);
-const SCOLLECTOR_OBJECT: Collector = new Collector(1, 'Juan Perez', 32323, 'p@p.cl', [FAVORITE_PERFORMER_OBJECT]);
+const SCOLLECTOR_OBJECT: Collector = new Collector(1, 'Juan Perez', 32323, 'p@p.cl', [FAVORITE_PERFORMER_OBJECT], []);
 
 
 describe('CollectorDetalleComponent', () => {

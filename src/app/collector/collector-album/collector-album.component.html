@@ -1,0 +1,41 @@
+
+<ng-container *ngIf="albumForm!=null && albums !=null &&  albums.length>0">
+  <h4 i18n>Nuevo Album a Vender</h4>
+  <form [formGroup]="albumForm" (ngSubmit)="!albumForm.invalid && createAlbum()">
+
+    <div class="form-group">
+        <label for="name" i18n>
+            Artista
+        </label>
+        <select formControlName="albumId" class="form-control" >
+          <option value="" hidden i18n>Seleccione un album</option>
+          <option *ngFor="let album of albums" [ngValue]="album.id" (change)="changeAlbum($event)">
+            {{album.name}}
+          </option>
+        </select>
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="albumForm.get('albumId').hasError('required') && albumForm.get('albumId').touched">
+          <ng-container i18n>Campo Requerido</ng-container>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price" i18n>
+        Precio
+      </label>
+      <input name="price" class="form-control" formControlName="price" i18n-placeholder placeholder="Precio" >
+
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="albumForm.get('price').hasError('required') && albumForm.get('price').touched">
+          <ng-container i18n>Campo Requerido</ng-container>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary " [disabled]="!albumForm.valid" i18n>Crear</button>
+      <button type="button" class="btn btn-danger ml-3 " (click)="cancelCreation()" i18n>Cancelar</button>
+    </div>
+
+  </form>
+</ng-container>

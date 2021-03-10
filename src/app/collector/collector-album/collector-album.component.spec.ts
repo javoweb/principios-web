@@ -4,24 +4,45 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { AlbumComentariosComponent } from './album-comentarios.component';
-import { AlbumService } from '../album.service';
+import { CollectorAlbumComponent } from './collector-album.component';
 import { CollectorService } from 'src/app/collector/collector.service';
+import { AlbumService } from 'src/app/album/album.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Collector } from 'src/app/collector/collector';
+import { Album } from 'src/app/album/album';
+import { Track } from 'src/app/album/track';
+import { Performer } from 'src/app/performer/performer';
+import { Comment } from 'src/app/album/comment';
+
+
 import { Observable, of, throwError } from 'rxjs';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+import faker from 'faker';
 
-const COLLECTOR_OBJECT: Collector[] = [new Collector(1, 'Juan Perez', 32323, 'p@p.cl', [], [])];
+const ALBUM_OBJECT: Album = new Album(
+  1,
+  'dfd',
+  'sdfsd',
+  'dfd',
+  'dsfd',
+  'dfsd',
+  'dfds',
+  [new Track(1, 'sdfs', 'sdfsd')],
+  [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd')],
+  [new Comment(1, 'dsfs', 5)]
+);
 
-describe('AlbumComentariosComponent', () => {
-  let component: AlbumComentariosComponent;
-  let fixture: ComponentFixture<AlbumComentariosComponent>;
+const ALBUMS_ARRAY: Album[] = [];
+ALBUMS_ARRAY.push(ALBUM_OBJECT);
+
+
+describe('CollectorAlbumComponent', () => {
+  let component: CollectorAlbumComponent;
+  let fixture: ComponentFixture<CollectorAlbumComponent>;
   let albumService: AlbumService;
   let collectorService: CollectorService;
   let formBuilder: FormBuilder;
-
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -31,30 +52,30 @@ describe('AlbumComentariosComponent', () => {
         ReactiveFormsModule,
         ToastrModule.forRoot()
       ],
-      declarations: [ AlbumComentariosComponent ],
-      providers: [AlbumService, CollectorService, ToastrService, FormBuilder]
+      declarations: [ CollectorAlbumComponent ],
+      providers: [CollectorService, ToastrService, FormBuilder]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AlbumComentariosComponent);
-    albumService = TestBed.inject(AlbumService);
+    fixture = TestBed.createComponent(CollectorAlbumComponent);
     collectorService = TestBed.inject(CollectorService);
+    albumService = TestBed.inject(AlbumService);
     formBuilder = TestBed.inject(FormBuilder);
 
-
-    spyOn(collectorService, 'getCollectors').and.returnValue(of(COLLECTOR_OBJECT));
-
+    spyOn(albumService, 'getAlbums').and.returnValue(of(ALBUMS_ARRAY));
 
     component = fixture.componentInstance;
-    component.albumID = 1;
-    component.collectors = COLLECTOR_OBJECT;
+    component.collectorID = 1;
+    component.albums = ALBUMS_ARRAY;
+
+
     fixture.detectChanges();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AlbumComentariosComponent);
+    fixture = TestBed.createComponent(CollectorAlbumComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -62,7 +83,6 @@ describe('AlbumComentariosComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 
   it('cancel creation', () => {
 
@@ -74,43 +94,33 @@ describe('AlbumComentariosComponent', () => {
     expect(component.SaveCancel.emit).toHaveBeenCalledWith(false);
   });
 
-
-  it('create comment succesfully', () => {
+  it('create album succesfully', () => {
 
     // spy on event emitter
     component = fixture.componentInstance;
-    component.albumID = 1;
+    component.collectorID = 1;
 
-    const spy = spyOn(albumService, 'addComment').and.returnValue(of(true));
-    component.createComment();
+    const spy = spyOn(collectorService, 'addAlbums').and.returnValue(of(true));
+    component.createAlbum();
     expect(spy).toHaveBeenCalled();
 
   });
 
-  it('create comment failure', () => {
-
+  it('create album failure', () => {
     // spy on event emitter
     component = fixture.componentInstance;
-    component.albumID = 1;
+    component.collectorID = 1;
 
-    const spy = spyOn(albumService, 'addComment').and.returnValue(throwError({status: 404}));
-    component.createComment();
+    const spy = spyOn(collectorService, 'addAlbums').and.returnValue(throwError({status: 404}));
+    component.createAlbum();
     expect(spy).toHaveBeenCalled();
-
-
   });
 
-
-  it('change collector', () => {
-
+  it('change album', () => {
     // spy on event emitter
     component = fixture.componentInstance;
-
-    component.changeCollector({ target : {value : 1 } });
-
-    expect(component.commentForm.get('collectorId').value).toBe(1);
-
+    component.changeAlbum({ target : {value : 1 } });
+    expect(component.albumForm.get('albumId').value).toBe(1);
   });
-
 
 });
