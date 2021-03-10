@@ -1,0 +1,56 @@
+<ng-container>
+  <h4 i18n>Nuevo Comentario</h4>
+  <form [formGroup]="createPrizeForm" (ngSubmit)="!createPrizeForm.invalid && createPrize()">
+
+    <div class="form-group">
+      <label for="name" i18n>
+          Organización
+      </label>
+      <input class="form-control" name="organization" formControlName="organization" i18n-placeholder placeholder="Nombre de la organización">
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="createPrizeForm.get('organization').hasError('required') && createPrizeForm.get('organization').touched">
+          <ng-container i18n>Campo Requerido</ng-container>
+      </div>
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="(createPrizeForm.get('organization').hasError('minlength') || createPrizeForm.get('organization').hasError('maxlength'))  && createPrizeForm.get('organization').touched">
+          <ng-container i18n>Debe tener al menos 3 caracteres y máximo 50 </ng-container>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name" i18n>
+          Nombre del Premio
+      </label>
+      <input class="form-control" name="name" formControlName="name" i18n-placeholder placeholder="Nombre del premio">
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="createPrizeForm.get('name').hasError('required') && createPrizeForm.get('name').touched">
+          <ng-container i18n>Campo Requerido</ng-container>
+      </div>
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="(createPrizeForm.get('name').hasError('minlength') || createPrizeForm.get('name').hasError('maxlength'))  && createPrizeForm.get('name').touched">
+          <ng-container i18n>Debe tener al menos 3 caracteres y máximo 50 </ng-container>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name" i18n>
+          Descripción
+      </label>
+      <textarea id="description" maxLength="240" class="form-control" name="description" formControlName="description" i18n-placeholder placeholder="Descripción" ></textarea>
+      <div class="alert alert-danger alert-dismissible fade show"
+        *ngIf="createPrizeForm.get('name').hasError('required') && createPrizeForm.get('name').touched">
+        <ng-container i18n>Campo Requerido</ng-container>
+      </div>
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="createPrizeForm.get('description').hasError('maxlength') && createPrizeForm.get('description').touched">
+          <ng-container i18n>Maximo 240 caracteres</ng-container>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary " [disabled]="!createPrizeForm.valid" i18n>Crear</button>
+      <button type="button" class="btn btn-danger ml-3 " (click)="cancelCreation()" i18n>Cancelar</button>
+    </div>
+
+  </form>
+</ng-container>

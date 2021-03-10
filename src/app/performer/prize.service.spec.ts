@@ -49,4 +49,19 @@ describe('PrizeService', () => {
     expect(req.request.method).toBe('GET');
     req.flush(mockPosts);
   });
+  it('Test Add Prize', () => {
+    const prizeMock = {
+      organization: 'asef',
+      name: 'ksfv',
+      description: 'description'
+    };
+
+    service.createPrize(prizeMock).subscribe(t => {
+      expect('').toBe('');
+    });
+
+    const req = httpMock.expectOne(apiUrl);
+    expect(req.request.method).toEqual('POST');
+    req.flush('');
+  });
 });
