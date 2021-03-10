@@ -16,6 +16,11 @@ export class PerformerComponent implements OnInit {
   musicos: Array<Musician> = [];
   selectedMusician: Musician | null = null;
   selectedBand: Band | null = null;
+  isOnCreatePrizeMode = false;
+
+  createPrizeMode(mode: boolean): void {
+    this.isOnCreatePrizeMode = mode;
+  }
 
   getBandList(): void {
     this.bandaService.getBands().subscribe(bandas => {

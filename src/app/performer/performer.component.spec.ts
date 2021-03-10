@@ -79,4 +79,12 @@ describe('PerformerComponent', () => {
     component.displayBand(0);
     expect(component.charToShow(0, 'band')).toEqual('-');
   });
+
+  it('change create prize mode', () => {
+    component.createPrizeMode(true);
+    expect(component.isOnCreatePrizeMode).toEqual(true);
+    component.createPrizeMode(false);
+    expect(component.isOnCreatePrizeMode).toEqual(false);
+  });
+
 });

@@ -41,10 +41,12 @@ export class PrizeCreateComponent implements OnInit {
         this.SaveCancel.emit(false);
       }
     );
+    this.createPrizeForm.reset();
   }
 
   cancelCreation(): void {
     this.SaveCancel.emit(false);
+    this.createPrizeForm.reset();
   }
 
   ngOnInit(): void {
