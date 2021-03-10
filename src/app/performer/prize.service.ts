@@ -21,4 +21,8 @@ export class PrizeService {
     return this.http.post<true>(this.apiURL, newPrize);
   }
 
+  getPrizes(): Observable<Prize[]> {
+    return this.http.get<Prize[]>(this.apiURL);
+  }
+
 }
