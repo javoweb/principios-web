@@ -1,4 +1,10 @@
 <h3 class="mt-2" i18n>Listado de Artistas</h3>
+<div *ngIf="isOnCreatePrizeMode"><app-prize-create (SaveCancel)="createPrizeMode(false)"></app-prize-create></div>
+<div *ngIf="!isOnCreatePrizeMode">
+  <button class="btn btn-primary m-10" (click)="createPrizeMode(true)">
+    <span class="fa fa-plus-circle" aria-hidden="true" ></span>
+    <p class="ml-10 d-inline" i18n> Agregar Premio</p>
+  </button>
 <div class="alert alert-secondary" role="alert">
   <span *ngIf=" bandas.length > 0 || musicos.length > 0 " class="font-weight-bold" > <ng-container i18n>Artistas (Total encontrados:</ng-container> {{ bandas.length + musicos.length }}) </span>
   <span *ngIf=" bandas.length == 0  && musicos.length == 0" class="font-weight-bold" > <ng-container i18n>No se ha encontrado ningun artista</ng-container></span>
@@ -48,3 +54,4 @@
     </ng-container>
   </tbody>
 </table>
+</div>
