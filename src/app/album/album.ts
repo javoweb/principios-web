@@ -24,7 +24,7 @@ export class Album {
     recordLabel: string,
     tracks: Track[],
     performers: Performer[],
-    comments: Comment[],
+    comments: Comment[]
   )
     {
 
