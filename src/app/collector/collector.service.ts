@@ -22,5 +22,13 @@ export class CollectorService {
     return this.http.get<Collector>(this.apiUrl + '/' + id);
   }
 
+  public addfavoritePerformers(idCollector: number, idPerformer: number, newPerformer: any): Observable<boolean> {
+    return this.http.post<true>(this.apiUrl + '/' + idCollector + '/bands/' + idPerformer, newPerformer);
+  }
+
+  public addCollectorAlbums(id: number, newAlbum: any): Observable<boolean> {
+    return this.http.post<true>(this.apiUrl + '/' + id + '/collectorAlbums' , newAlbum);
+  }
+
 }
 

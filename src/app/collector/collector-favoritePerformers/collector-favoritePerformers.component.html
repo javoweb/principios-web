@@ -1,0 +1,29 @@
+
+<ng-container *ngIf="favoritePerformerForm!=null && bands !=null &&  bands.length>0">
+  <h4 i18n>Nuevo Artista Favorito</h4>
+  <form [formGroup]="favoritePerformerForm" (ngSubmit)="!favoritePerformerForm.invalid && createFavoritePerformer()">
+
+    <div class="form-group">
+        <label for="name" i18n>
+            Artista
+        </label>
+        <select formControlName="performerId" class="form-control" >
+          <option value="" hidden i18n>Seleccione un artista</option>
+          <option *ngFor="let band of bands" [ngValue]="band.id" (change)="changePerformer($event)">
+            {{band.name}}
+          </option>
+      </select>
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="favoritePerformerForm.get('performerId').hasError('required') && favoritePerformerForm.get('performerId').touched">
+          <ng-container i18n>Campo Requerido</ng-container>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary " [disabled]="!favoritePerformerForm.valid" i18n>Crear</button>
+      <button type="button" class="btn btn-danger ml-3 " (click)="cancelCreation()" i18n>Cancelar</button>
+    </div>
+
+  </form>
+</ng-container>
+

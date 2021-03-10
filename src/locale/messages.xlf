@@ -50,7 +50,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/performer/performer.component.html</context>
@@ -222,22 +222,22 @@
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="eb1a4116da02bd9284ee59cd77d82a2fb6e5ab00" datatype="html">
-        <source>Artistas Favoritos: </source>
+      <trans-unit id="f7bcb3fed24b589f34c65cfb8fe0aa69e965b587" datatype="html">
+        <source> Agregar Artista Favorito</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1df96bb3bda704ebfd99e9f1a2211884396d36b6" datatype="html">
         <source>Detalles de un coleccionista</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">20</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e5bb174945d3ab4bee326a155018cfa15861af89" datatype="html">
@@ -465,6 +465,10 @@
           <context context-type="sourcefile">src/app/album/album-tracks/album-tracks.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-favoritePerformers/collector-favoritePerformers.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="57c2fe1467ce5c387828c6f028c73bba94d39636" datatype="html">
         <source>
@@ -526,6 +530,10 @@
           <context context-type="sourcefile">src/app/album/album-tracks/album-tracks.component.html</context>
           <context context-type="linenumber">36</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-favoritePerformers/collector-favoritePerformers.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="e8d22cdef9f5780e31395340125d873f9df518c3" datatype="html">
         <source>Cancelar</source>
@@ -536,6 +544,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/album/album-tracks/album-tracks.component.html</context>
           <context context-type="linenumber">37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-favoritePerformers/collector-favoritePerformers.component.html</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="63c73445d38187d81d821d42f1f0f4e115f3a7d3" datatype="html">
@@ -630,6 +642,29 @@
         </context-group>
         <note priority="1" from="description">generalPurpose</note>
         <note priority="1" from="meaning">:generalPurpose</note>
+      </trans-unit>
+      <trans-unit id="f4f51eaa61b1689a8947eb199b724411ffc52f45" datatype="html">
+        <source>Nuevo Artista Favorito</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-favoritePerformers/collector-favoritePerformers.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="14996664c09113abb9dcddb78c102ff2a49b612e" datatype="html">
+        <source>
+            Artista
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-favoritePerformers/collector-favoritePerformers.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d50b8c8abbef4392ccf1d75d820561eca9fa7dd4" datatype="html">
+        <source>Seleccione un artista</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-favoritePerformers/collector-favoritePerformers.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>
