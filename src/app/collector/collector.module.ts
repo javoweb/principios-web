@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollectorListarComponent } from './collector-listar/collector-listar.component';
 import { CollectorDetalleComponent} from './collector-detalle/collector-detalle.component';
+import { CollectorFavoritePerformersComponent} from './collector-favoritePerformers/collector-favoritePerformers.component';
 import { CollectorRoutingModule } from './collector-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule, CollectorRoutingModule
+    CommonModule, CollectorRoutingModule, FormsModule, ReactiveFormsModule
   ],
-  declarations: [CollectorListarComponent, CollectorDetalleComponent],
+  declarations: [CollectorListarComponent, CollectorDetalleComponent, CollectorFavoritePerformersComponent],
   exports: [CollectorListarComponent, CollectorDetalleComponent]
 })
 export class CollectorModule { }

@@ -48,5 +48,35 @@ describe('CollectorDetalleComponent', () => {
     expect(component.collector).not.toBeNull();
   });
 
+  it('Add FavoritePerformers Button', () => {
+    component.addFavoritePerformers();
+    expect(component.isOnfavoritePerformersEditMode).toBe(true);
+  });
+
+  it('Add CollectorAlbums Button', () => {
+    component.addCollectorAlbums();
+    expect(component.isOncollectorAlbumsEditMode).toBe(true);
+  });
+
+  it('onFavoritePerformersStatusChanged', () => {
+    component.isOnfavoritePerformersEditMode = false;
+    component.onFavoritePerformersStatusChanged(true);
+    expect(component.isOnfavoritePerformersEditMode).toBe(false);
+
+    component.onFavoritePerformersStatusChanged(false);
+    expect(component.isOnfavoritePerformersEditMode).toBe(false);
+  });
+
+  it('onCollectorAlbumsStatusChanged', () => {
+    component.isOncollectorAlbumsEditMode = false;
+    component.onCollectorAlbumsStatusChanged(true);
+    expect(component.isOncollectorAlbumsEditMode).toBe(false);
+
+    component.onCollectorAlbumsStatusChanged(false);
+    expect(component.isOncollectorAlbumsEditMode).toBe(false);
+  });
+
+
+
 
 });

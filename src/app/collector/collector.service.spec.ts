@@ -74,7 +74,6 @@ describe('Service: Collector', () => {
 
   it('Test one Collector', () => {
 
-
     collectorService.getCollector(collector.id).subscribe(t => {
       expect(t).toBe(collector);
     });
@@ -87,7 +86,21 @@ describe('Service: Collector', () => {
     expect(req.request.method).toEqual('GET');
     req.flush(collector);
 
+  });
 
+  it('Test Add favoritePerformers', () => {
+    const performerTest = 100;
+    collectorService.addfavoritePerformers(collector.id, performerTest, []).subscribe(t => {
+      expect('').toBe('');
+    });
+
+    const req = httpMock.expectOne({
+      method: 'POST',
+      url: baseUrl + '/' + collector.id + '/bands/' + performerTest
+    });
+
+    expect(req.request.method).toEqual('POST');
+    req.flush('');
   });
 
 });

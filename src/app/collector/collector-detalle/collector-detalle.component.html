@@ -4,14 +4,18 @@
     <div class="col-sm-12">
       <span><p class="font-weight-bold d-inline" i18n>Nombre:</p> {{this.collector.name}}</span>
     </div>
-    <div class="col-sm-12 text-center" >
-      <p class="font-weight-bold " i18n>Artistas Favoritos: </p>
-    </div>
   </div>
 
-  <div class="col-sm-12 text-center">
+  <div class="col-sm-12 text-center" *ngIf="!isOnfavoritePerformersEditMode"><!-- condicional-->
 
     <div class="col-sm-6" style="margin: 0 auto">
+
+      <button class="btn btn-primary m-10 f-left" (click)="addFavoritePerformers()" >
+        <span class="fa fa-plus-circle" aria-hidden="true" ></span>
+        <p class="ml-10 d-inline" i18n> Agregar Artista Favorito</p>
+      </button>
+
+
       <table id="tblCollectorDetail" class="table details-table-striped" i18n-aria-label aria-label="Detalles de un coleccionista" >
         <caption i18n>Detalles de un coleccionista</caption>
         <thead class="details">
@@ -28,6 +32,10 @@
 
     </div>
 
+  </div><!--fin condicional-->
+
+  <div class="col-sm-12 col-sm-12 border border-primary p-10" *ngIf="isOnfavoritePerformersEditMode">
+    <app-collector-favoriteperformers (SaveCancel)="onFavoritePerformersStatusChanged($event)"  [collectorID]=(collectorID)></app-collector-favoriteperformers>
   </div>
 
 
