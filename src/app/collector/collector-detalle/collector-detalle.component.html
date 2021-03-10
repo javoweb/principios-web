@@ -16,8 +16,8 @@
       </button>
 
 
-      <table id="tblCollectorDetail" class="table details-table-striped" i18n-aria-label aria-label="Detalles de un coleccionista" >
-        <caption i18n>Detalles de un coleccionista</caption>
+      <table id="tblCollectorDetail" class="table details-table-striped" i18n-aria-label aria-label="Nombre Artista" >
+        <caption i18n>Nombre Artista</caption>
         <thead class="details">
           <tr>
             <th scope="col" i18n>Nombre</th>
@@ -36,6 +36,44 @@
 
   <div class="col-sm-12 col-sm-12 border border-primary p-10" *ngIf="isOnfavoritePerformersEditMode">
     <app-collector-favoriteperformers (SaveCancel)="onFavoritePerformersStatusChanged($event)"  [collectorID]=(collectorID)></app-collector-favoriteperformers>
+  </div>
+
+  <br>
+
+  <div class="col-sm-12 text-center" *ngIf="!isOncollectorAlbumsEditMode"><!-- condicional-->
+
+    <div class="col-sm-6" style="margin: 0 auto">
+
+      <button class="btn btn-primary m-10 f-left" (click)="addCollectorAlbums()" >
+        <span class="fa fa-plus-circle" aria-hidden="true" ></span>
+        <p class="ml-10 d-inline" i18n> Agregar Album a vender</p>
+      </button>
+
+
+      <table id="tblCollectorDetail" class="table details-table-striped" i18n-aria-label aria-label="Nombre Album" >
+        <caption i18n>Nombre Album</caption>
+        <thead class="details">
+          <tr>
+            <th scope="col" i18n>Nombre</th>
+          </tr>
+        </thead>
+        <tbody  class="details" >
+          <tr *ngFor="let item of this.collector.collectorAlbums">
+            <td>[{{item.id}}]</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div><!--fin condicional-->
+
+  <div class="col-sm-12 col-sm-12 border border-primary p-10" *ngIf="isOncollectorAlbumsEditMode">
+
+    <app-collector-album (SaveCancel)="onCollectorAlbumsStatusChanged($event)"  [collectorID]=(collectorID)></app-collector-album>
+    <!--
+    <app-collector-album>t</app-collector-album>
+    -->
   </div>
 
 

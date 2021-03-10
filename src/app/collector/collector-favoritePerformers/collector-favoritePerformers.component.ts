@@ -77,7 +77,7 @@ export class CollectorFavoritePerformersComponent implements OnInit {
   }
 
   changePerformer(e): void{
-    this.favoritePerformerForm.get('collectorId').setValue(e.target.value, {
+    this.favoritePerformerForm.get('performerId').setValue(e.target.value, {
       onlySelf: true
     });
   }

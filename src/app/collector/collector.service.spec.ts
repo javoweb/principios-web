@@ -41,7 +41,8 @@ describe('Service: Collector', () => {
       name: 'Juan Perez',
       telephone : 1234555,
       email : 'jp@mail.cl',
-      favoritePerformers: [FAVORITE_PERFORMER_OBJECT]
+      favoritePerformers: [FAVORITE_PERFORMER_OBJECT],
+      collectorAlbums: []
     };
 
     collectors = [];
@@ -97,6 +98,25 @@ describe('Service: Collector', () => {
     const req = httpMock.expectOne({
       method: 'POST',
       url: baseUrl + '/' + collector.id + '/bands/' + performerTest
+    });
+
+    expect(req.request.method).toEqual('POST');
+    req.flush('');
+  });
+
+  it('Test Add AlbumCollecter', () => {
+    const albumTest = 100;
+    const albumData = {
+      price: 1500,
+      status: 'Active'
+    };
+    collectorService.addAlbums(collector.id, albumTest, albumData).subscribe(t => {
+      expect('').toBe('');
+    });
+
+    const req = httpMock.expectOne({
+      method: 'POST',
+      url: baseUrl + '/' + collector.id + '/albums/' + albumTest
     });
 
     expect(req.request.method).toEqual('POST');

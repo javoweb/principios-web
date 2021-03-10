@@ -26,8 +26,8 @@ export class CollectorService {
     return this.http.post<true>(this.apiUrl + '/' + idCollector + '/bands/' + idPerformer, newPerformer);
   }
 
-  public addCollectorAlbums(id: number, newAlbum: any): Observable<boolean> {
-    return this.http.post<true>(this.apiUrl + '/' + id + '/collectorAlbums' , newAlbum);
+  public addAlbums(idCollector: number, idAlbum: number, newAlbum: any): Observable<boolean> {
+    return this.http.post<true>(this.apiUrl + '/' + idCollector + '/albums/' + idAlbum , newAlbum);
   }
 
 }
