@@ -11,6 +11,9 @@ export class CollectorDetalleComponent implements OnInit {
   @Input() collectorID: number | null = null;
   collector: Collector = null;
 
+  isOnfavoritePerformersEditMode: boolean;
+  isOncollectorAlbumsEditMode: boolean;
+
   constructor(private collectorService: CollectorService) { }
 
   ngOnInit(): void {
@@ -27,5 +30,31 @@ export class CollectorDetalleComponent implements OnInit {
     }
 
   }
+
+  public addFavoritePerformers(): void {
+    this.isOnfavoritePerformersEditMode = true;
+  }
+
+  public addCollectorAlbums(): void {
+    this.isOncollectorAlbumsEditMode = true;
+  }
+
+  public onFavoritePerformersStatusChanged(status: boolean): void {
+    this.isOnfavoritePerformersEditMode = false;
+    if (status) {
+      this.getCollector();
+    }
+  }
+
+
+  public onCollectorAlbumsStatusChanged(status: boolean): void {
+    this.isOncollectorAlbumsEditMode = false;
+    if (status) {
+      this.getCollector();
+    }
+  }
+
+
+
 
 }
