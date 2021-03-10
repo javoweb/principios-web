@@ -57,4 +57,28 @@ describe('CollectorFavoritePerformersComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('create favorite Performer', () => {
+
+    // spy on event emitter
+    component = fixture.componentInstance;
+
+    const spy = spyOn(collectorService, 'addfavoritePerformers').and.returnValue(throwError({status: 404}));
+    component.createFavoritePerformer();
+    expect(spy).toHaveBeenCalled();
+
+
+  });
+
+
+  it('cancel creation', () => {
+
+    // spy on event emitter
+    component = fixture.componentInstance;
+    spyOn(component.SaveCancel, 'emit');
+    component.cancelCreation();
+    fixture.detectChanges();
+    expect(component.SaveCancel.emit).toHaveBeenCalledWith(false);
+  });
+
 });
