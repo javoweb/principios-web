@@ -8,6 +8,9 @@ import { PrizeService } from '../prize.service';
 import { of, throwError } from 'rxjs';
 import { DatePipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Prize } from '../prize';
+
+let PRIZE_OBJECT = new Prize(1, 'hj', 'sda', 'asdf', []);
 
 describe('PrizeAssignComponent', () => {
   let component: PrizeAssignComponent;
@@ -31,6 +34,7 @@ describe('PrizeAssignComponent', () => {
 
   beforeEach(() => {
     service = TestBed.inject(PrizeService);
+    spyOn(service, 'getPrizes').and.returnValue(of([PRIZE_OBJECT]))
     fixture = TestBed.createComponent(PrizeAssignComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
