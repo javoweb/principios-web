@@ -898,6 +898,90 @@
         <note priority="1" from="description">generalPurpose</note>
         <note priority="1" from="meaning">:generalPurpose</note>
       </trans-unit>
+      <trans-unit id="a1460c6792723c85d3e2f3b32f208bd9808f15e5" datatype="html">
+        <target>Assign Prize</target>
+        <source>Asignar Premio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-assign/prize-assign.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="969146fbdcf3b2c252e1972cfe2a546ebed28b35" datatype="html">
+        <target>Prize</target>
+        <source>Premio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-assign/prize-assign.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1b43da7f6f9a41448b11a70addfb571b775bde64" datatype="html">
+        <target>Select an award</target>
+        <source>Seleccione un premio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-assign/prize-assign.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7e37672f8c6ec91ecc9e3cbd2d6a6d028514ce20" datatype="html">
+        <target>Award Selector</target>
+        <source>Selector de Premio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-assign/prize-assign.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d9f0bb44d5f8fcd4a73a7c196fc060a2a208d830" datatype="html">
+        <target>Award date</target>
+        <source>Fecha de premiación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-assign/prize-assign.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b173ec5192470d6b2da768338bc24a965d7e001c" datatype="html">
+        <target>Date</target>
+        <source>Fecha</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-assign/prize-assign.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="91f1678d5a6d56867805a2056e053db69d3342d8" datatype="html">
+        <target>Invalid Format</target>
+        <source>Formato Inválido</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-assign/prize-assign.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1085ad737edbd03dc05f5dc5fa4621fb897bf591" datatype="html">
+        <target>To assign</target>
+        <source>Asignar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/prize-assign/prize-assign.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PremioAsignadoConExito" datatype="html">
+        <target>Successfully created award</target>
+        <source>Premio creado exitosamente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-translations/album-translations.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">generalPurpose</note>
+        <note priority="1" from="meaning">:generalPurpose</note>
+      </trans-unit>
+      <trans-unit id="ErrorAsignandoPremio" datatype="html">
+        <target>Error creating prize</target>
+        <source>Error creando premio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-translations/album-translations.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">generalPurpose</note>
+        <note priority="1" from="meaning">:generalPurpose</note>
+      </trans-unit>
     </body>
   </file>
 </xliff>
