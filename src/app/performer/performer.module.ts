@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { BandDetailComponent } from './band-detail/band-detail.component';
 import { MusicianDetailComponent } from './musician-detail/musician-detail.component';
 import { NgModule } from '@angular/core';
@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule, ReactiveFormsModule
   ],
   declarations: [PerformerComponent, BandDetailComponent, MusicianDetailComponent, PrizeCreateComponent, PrizeAssignComponent],
-  exports: [PerformerComponent, BandDetailComponent, MusicianDetailComponent, PrizeCreateComponent, PrizeAssignComponent]
+  exports: [PerformerComponent, BandDetailComponent, MusicianDetailComponent, PrizeCreateComponent, PrizeAssignComponent],
+  providers: [DatePipe]
 })
 export class PerformerModule { }

@@ -1,5 +1,6 @@
+import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Prize } from '../prize';
 import { PrizeService } from '../prize.service';
@@ -19,12 +20,18 @@ export class PrizeAssignComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private prizeService: PrizeService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private datePipe: DatePipe
   ) { }
 
   assignPrize(): void {
+    const dateArr = this.assignPrizeForm.get('date').value.split('/');
+    const dateStr = dateArr[2] + '-' + dateArr[1] + '-' + dateArr[0];
+    console.log(dateStr);
+    const date = new Date(dateStr);
+    console.log(date);
     const toBeSaved = {
-      premiationDate: this.assignPrizeForm.get('date').value
+      premiationDate: date
     };
     this.prizeService.assignPrize(toBeSaved, this.performerId, this.assignPrizeForm.get('prizeId').value, this.kind).subscribe(
       (status: boolean) => {
@@ -35,7 +42,7 @@ export class PrizeAssignComponent implements OnInit {
         this.SaveCancel.emit(true);
       },
       error => {
-        const message = $localize`:generalPurpose|generalPurpose@@:Error asignando premio ` + error.message;
+        const message = $localize`:generalPurpose|generalPurpose@@ErrorAsignandoPremio:Error asignando premio ` + error.message;
         this.toastrService.error(message, $localize`:generalPurpose|generalPurpose@@Error:Error`, {
           closeButton: true
         });
@@ -50,13 +57,21 @@ export class PrizeAssignComponent implements OnInit {
     this.assignPrizeForm.reset();
   }
 
+  changePrize(event):void {
+    this.assignPrizeForm.get('prizeId').setValue(event.target.value, {
+      onlySelf: true
+    });
+    console.log(event.target.value);
+  }
+
   ngOnInit(): void {
     this.prizeService.getPrizes().subscribe($prizes => {
       this.prizes = $prizes;
+      console.log(this.prizes);
     });
     this.assignPrizeForm = this.formBuilder.group({
-      prizeId: ['', [Validators.required, Validators.min(0)]],
-      date: ['', Validators.required]
+      prizeId: [null , [Validators.required, Validators.min(0)]],
+      date: new FormControl(this.datePipe.transform(new Date(), 'dd/MM/yyyy'), [Validators.required, Validators.pattern(/^(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/[0-9]{4}$/)])
     });
   }
 

@@ -33,7 +33,8 @@ describe('PrizeService', () => {
   it('getPrize() should return correct records', () => {
 
     const mockPosts = new Prize(
-    faker.name.findName(),
+      faker.random.number(),
+      faker.name.findName(),
       faker.name.findName(),
       faker.lorem.sentence(),
       []
@@ -53,7 +54,8 @@ describe('PrizeService', () => {
   it('getPrizes() should return correct records', () => {
 
     const mockPosts = [new Prize(
-    faker.name.findName(),
+      faker.random.number(),
+      faker.name.findName(),
       faker.name.findName(),
       faker.lorem.sentence(),
       []

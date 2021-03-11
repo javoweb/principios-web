@@ -1,3 +1,44 @@
-<p>
-  prize-assign works!
-</p>
+
+<ng-container *ngIf="assignPrizeForm!=null && prizes != null && prizes.length > 0">
+  <h4 i18n>Asignar Premio</h4>
+  <form [formGroup]="assignPrizeForm" (ngSubmit)="!assignPrizeForm.invalid && assignPrize()">
+
+    <div class="form-group">
+        <label for="name" i18n>
+            Premio
+        </label>
+        <select formControlName="prizeId" class="form-control" i18n-aria-label aria-label="Selector de Premio">
+          <option value="" hidden i18n>Seleccione un premio</option>
+          <option *ngFor="let prize of prizes" [ngValue]="prize.id" (change)="changePrize($event)">
+            {{prize.name}}
+          </option>
+      </select>
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="assignPrizeForm.get('prizeId').hasError('required') && assignPrizeForm.get('prizeId').touched">
+          <ng-container i18n>Campo Requerido</ng-container>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name" i18n>
+          Fecha de premiación
+      </label>
+      <input class="form-control" name="date" formControlName="date" i18n-placeholder placeholder="Fecha">
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="assignPrizeForm.get('date').hasError('required') && assignPrizeForm.get('date').touched">
+          <ng-container i18n>Campo Requerido</ng-container>
+      </div>
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="assignPrizeForm.get('date').hasError('pattern') && assignPrizeForm.get('date').touched">
+          <ng-container i18n>Formato Inválido</ng-container><p> (dd/MM/yyyy)</p>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary " [disabled]="!assignPrizeForm.valid" i18n>Crear</button>
+      <button type="button" class="btn btn-danger ml-3 " (click)="cancelAssignment()" i18n>Cancelar</button>
+    </div>
+
+  </form>
+</ng-container>
