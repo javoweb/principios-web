@@ -1,5 +1,5 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import faker from 'faker';
 import { environment } from 'src/environments/environment';
 import { PerformerPrize } from './performerPrize';
@@ -24,7 +24,7 @@ describe('Service: PerformerPrize', () => {
     const mockPosts = [new PerformerPrize(
       faker.random.number(),
       new Date(),
-      []
+      null
     )]
 
     service.getPerformerPrizes().subscribe((prizes) => {

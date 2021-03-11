@@ -9,11 +9,11 @@ import { PerformerPrize } from '../performerPrize';
 import { PrizeService } from '../prize.service';
 import { BandService } from '../band.service';
 
-const PERFORMERPRIZE_OBJECT = new PerformerPrize(12, new Date());
+const PRIZE_OBJECT = new Prize(1, 'sdaf', 'sadf', 'asdf', []);
+
+const PERFORMERPRIZE_OBJECT = new PerformerPrize(12, new Date(), PRIZE_OBJECT);
 
 const BANDA_OBJECT = new Band(13, '12432', '2135', '1325', new Date(), [], [PERFORMERPRIZE_OBJECT]);
-
-const PRIZE_OBJECT = new Prize(1, 'sdaf', 'sadf', 'asdf', []);
 
 describe('BandDetailComponent', () => {
   let component: BandDetailComponent;
@@ -46,6 +46,7 @@ describe('BandDetailComponent', () => {
 
   it('getPrizes', () => {
     component.band = BANDA_OBJECT;
+    component.performerPrizes = [PERFORMERPRIZE_OBJECT];
     component.getPrizes();
     expect(component.prizes).not.toBeNull();
   });

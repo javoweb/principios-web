@@ -60,13 +60,11 @@ export class PrizeAssignComponent implements OnInit {
     this.assignPrizeForm.get('prizeId').setValue(event.target.value, {
       onlySelf: true
     });
-    console.log(event.target.value);
   }
 
   ngOnInit(): void {
     this.prizeService.getPrizes().subscribe($prizes => {
       this.prizes = $prizes;
-      console.log(this.prizes);
     });
     this.assignPrizeForm = this.formBuilder.group({
       prizeId: [null , [Validators.required, Validators.min(0)]],
