@@ -7,7 +7,7 @@
         <label for="name" i18n>
             Coleccionista
         </label>
-        <select formControlName="collectorId" class="form-control" >
+        <select formControlName="collectorId" class="form-control" i18n-aria-label aria-label="Coleccionista" >
           <option value="" hidden i18n>Seleccione un coleccionista</option>
           <option *ngFor="let collector of collectors" [ngValue]="collector.id" (change)="changeCollector($event)">
             {{collector.name}}
