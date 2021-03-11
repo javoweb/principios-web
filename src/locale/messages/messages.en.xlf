@@ -246,26 +246,6 @@
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="eb1a4116da02bd9284ee59cd77d82a2fb6e5ab00" datatype="html">
-        <target>Favourite artists:</target>
-        <source>Artistas Favoritos:</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="1df96bb3bda704ebfd99e9f1a2211884396d36b6" datatype="html">
-        <target>Details of a collector</target>
-        <source>Detalles de un coleccionista</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
-          <context context-type="linenumber">16</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="e5bb174945d3ab4bee326a155018cfa15861af89" datatype="html">
         <target>List of Artists</target>
         <source>Listado de Artistas</source>
@@ -749,6 +729,174 @@
           <context context-type="sourcefile">src/app/performer/prize-create/prize-create.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="f7bcb3fed24b589f34c65cfb8fe0aa69e965b587" datatype="html">
+        <target>Add Favorite Artist</target>
+        <source>Agregar Artista Favorito</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6165bba9c83262d2212ec524986f696f825af956" datatype="html">
+        <target>Artist Name</target>
+        <source>Nombre Artista</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="26300600f6b562bf00d513a6ffdee07c88eeeb32" datatype="html">
+        <target>Add Album to sell</target>
+        <source>Agregar Album a vender</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b887a4873130b8575b9f466bd9eae82195cdd430" datatype="html">
+        <target>Album Name</target>
+        <source>Nombre Album</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d9dae38756843b388b1de1897953d19f4dcedbeb" datatype="html">
+        <target>Collector</target>
+        <source>Coleccionista</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-comentarios/album-comentarios.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f4f51eaa61b1689a8947eb199b724411ffc52f45" datatype="html">
+        <target>New Favorite Artist</target>
+        <source>Nuevo Artista Favorito</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-favoritePerformers/collector-favoritePerformers.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="14996664c09113abb9dcddb78c102ff2a49b612e" datatype="html">
+        <target>Artist</target>
+        <source>Artista</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-favoritePerformers/collector-favoritePerformers.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-album/collector-album.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d50b8c8abbef4392ccf1d75d820561eca9fa7dd4" datatype="html">
+        <target>Select an artist</target>
+        <source>Seleccione un artista</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-favoritePerformers/collector-favoritePerformers.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ebdf5344ccb579a7db3d8f46946632833d86ed0d" datatype="html">
+        <target>New Album to Sell</target>
+        <source>Nuevo Album a Vender</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-album/collector-album.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5cff23922f6b1eb2d43de3e716bb3e568ce928aa" datatype="html">
+        <target>Select an album</target>
+        <source>Seleccione un album</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-album/collector-album.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="36c55f8e68b2722c276a28fea9c66117939c491c" datatype="html">
+        <target>Price</target>
+        <source>Precio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-album/collector-album.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d57ce960cceac0877b71d11a9931887f9c86ec73" datatype="html">
+        <target>Price</target>
+        <source>Precio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-album/collector-album.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ArtistaFavoritoCreadoConExito" datatype="html">
+        <target>Favorite artist added successfully</target>
+        <source>Artista favorito agregado exitosamente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-translations/album-translations.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">generalPurpose</note>
+        <note priority="1" from="meaning">:generalPurpose</note>
+      </trans-unit>
+      <trans-unit id="AlbumCollectorCreadoConExito" datatype="html">
+        <target>Album to sell successfully added</target>
+        <source>Album a vender agregado exitosamente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-translations/album-translations.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">generalPurpose</note>
+        <note priority="1" from="meaning">:generalPurpose</note>
+      </trans-unit>
+      <trans-unit id="PremioCreadoConExito" datatype="html">
+        <target>Successfully created award</target>
+        <source>Premio creado exitosamente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-translations/album-translations.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">generalPurpose</note>
+        <note priority="1" from="meaning">:generalPurpose</note>
+      </trans-unit>
+      <trans-unit id="ErrorGuardandoArtistaFavorito" datatype="html">
+        <target>Error saving favorite artist</target>
+        <source>Error guardando el artista favorito</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-translations/album-translations.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">generalPurpose</note>
+        <note priority="1" from="meaning">:generalPurpose</note>
+      </trans-unit>
+      <trans-unit id="ErrorGuardandoAlbumAVender" datatype="html">
+        <target>Error saving album to sell</target>
+        <source>Error guardando album a vender</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-translations/album-translations.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">generalPurpose</note>
+        <note priority="1" from="meaning">:generalPurpose</note>
+      </trans-unit>
+      <trans-unit id="ErrorCreandoPremio" datatype="html">
+        <target>Error creating prize</target>
+        <source>Error creando premio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/album/album-translations/album-translations.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description">generalPurpose</note>
+        <note priority="1" from="meaning">:generalPurpose</note>
       </trans-unit>
     </body>
   </file>

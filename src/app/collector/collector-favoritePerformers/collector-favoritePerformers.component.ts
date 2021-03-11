@@ -65,7 +65,10 @@ export class CollectorFavoritePerformersComponent implements OnInit {
         this.SaveCancel.emit(true);
       },
       error => {
-        const message = $localize`:generalPurpose|generalPurpose@@:Error guardando el artista favorito ` + error.message;
+        const message =
+        $localize`:generalPurpose|generalPurpose@@ErrorGuardandoArtistaFavorito:Error guardando el artista favorito ` +
+        error.message;
+
         this.toastrService.error(message, $localize`:generalPurpose|generalPurpose@@Error:Error`, {
           closeButton: true
         });
