@@ -40,6 +40,7 @@ describe('MusicianDetailComponent', () => {
     spyOn(prizeService, 'getPrize').and.returnValue(of(PRIZE_OBJECT));
     spyOn(performerPrizeService, 'getPerformerPrizes').and.returnValue(of([PERFORMERPRIZE_OBJECT]));
     spyOn(musicianService, 'getMusicians').and.returnValue(of([MUSICIAN_OBJECT]));
+    spyOn(musicianService, 'getMusician').and.returnValue(of(MUSICIAN_OBJECT));
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -52,5 +53,28 @@ describe('MusicianDetailComponent', () => {
     component.musician = MUSICIAN_OBJECT;
     component.getPerformerPrizes();
     expect(component.prizes).not.toBeNull();
+  });
+
+  it('change create prize mode', () => {
+    component.assignPrizeMode(true);
+    expect(component.isOnAssignPrizeMode).toEqual(true);
+    component.assignPrizeMode(false);
+    expect(component.isOnAssignPrizeMode).toEqual(false);
+  });
+
+  it('update prize tables', () => {
+    component.musician = MUSICIAN_OBJECT;
+    component.assignPrizeMode(true);
+    expect(component.isOnAssignPrizeMode).toEqual(true);
+    component.changePrizesState(true);
+    expect(component.isOnAssignPrizeMode).toEqual(false);
+  });
+
+  it('not update prize tables', () => {
+    component.musician = MUSICIAN_OBJECT;
+    component.assignPrizeMode(true);
+    expect(component.isOnAssignPrizeMode).toEqual(true);
+    component.changePrizesState(false);
+    expect(component.isOnAssignPrizeMode).toEqual(false);
   });
 });

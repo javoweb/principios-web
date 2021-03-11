@@ -12,58 +12,77 @@ import { Band } from './band';
 import { environment } from '../../environments/environment';
 
 describe('BandService', () => {
- let service: BandService;
- let httpMock: HttpTestingController;
- const apiUrl = environment.baseUrl + 'bands';
+  let service: BandService;
+  let httpMock: HttpTestingController;
+  const apiUrl = environment.baseUrl + 'bands/';
 
- beforeEach(() => {
-   TestBed.configureTestingModule({
-     imports: [HttpClientTestingModule],
-     providers: [BandService],
-   });
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [BandService],
+    });
 
-   service = TestBed.inject(BandService);
-   httpMock = TestBed.inject(HttpTestingController);
- });
-
- afterEach(() => {
-   httpMock.verify();
- });
-
- it('getBands() should return 10 records', () => {
-   const mockPosts: Band[] = [];
-
-   for (let i = 0; i < 10; i++) {
-
-     const banda = new Band(
-       faker.random.number(),
-       faker.name.findName(),
-       faker.internet.url(),
-       faker.lorem.sentence(),
-       faker.date.past(),
-       []
-     );
-     mockPosts.push(banda);
-   }
-
-   service.getBands().subscribe((bandas) => {
-     expect(bandas.length).toBe(10);
-   });
-
-   const req = httpMock.expectOne(apiUrl);
-   expect(req.request.method).toBe('GET');
-   req.flush(mockPosts);
- });
-
- it('getBands() should return 0 records', () => {
-  const mockPosts: Band[] = [];
-
-  service.getBands().subscribe((bandas) => {
-    expect(bandas.length).toBe(0);
+    service = TestBed.inject(BandService);
+    httpMock = TestBed.inject(HttpTestingController);
   });
 
-  const req = httpMock.expectOne(apiUrl);
-  expect(req.request.method).toBe('GET');
-  req.flush(mockPosts);
-});
+  afterEach(() => {
+    httpMock.verify();
+  });
+
+  it('getBands() should return 10 records', () => {
+    const mockPosts: Band[] = [];
+
+    for (let i = 0; i < 10; i++) {
+
+      const banda = new Band(
+        faker.random.number(),
+        faker.name.findName(),
+        faker.internet.url(),
+        faker.lorem.sentence(),
+        faker.date.past(),
+        []
+      );
+      mockPosts.push(banda);
+    }
+
+    service.getBands().subscribe((bandas) => {
+      expect(bandas.length).toBe(10);
+    });
+
+    const req = httpMock.expectOne(apiUrl);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockPosts);
+  });
+
+  it('getBands() should return 0 records', () => {
+    const mockPosts: Band[] = [];
+
+    service.getBands().subscribe((bandas) => {
+      expect(bandas.length).toBe(0);
+    });
+
+    const req = httpMock.expectOne(apiUrl);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockPosts);
+  });
+
+  it('getBand() should return record', () => {
+    const mockPost = new Band(
+      faker.random.number(),
+      faker.name.findName(),
+      faker.internet.url(),
+      faker.lorem.sentence(),
+      faker.date.past(),
+      []
+    );
+
+    service.getBand(1).subscribe((band) => {
+      expect(band.id).toBe(mockPost.id);
+    });
+
+    const req = httpMock.expectOne(apiUrl + '1');
+    expect(req.request.method).toBe('GET');
+    req.flush(mockPost);
+  });
 });

@@ -24,27 +24,31 @@
     </div>
   <br>
 
-  <div class="col-sm-12 text-center">
-    <app-prize-assign [performerId]=(band.id) [kind]=(kind)></app-prize-assign>
-      <div *ngIf="prizes.length > 0" class="col-sm-6" style="margin: 0 auto">
-        <div class="container col-sm-8">
-          <p class="font-weight-bold " i18n>Premios recibidos: </p>
+  <div *ngIf="isOnAssignPrizeMode" class="container"><app-prize-assign (SaveCancel)="changePrizesState($event)" [performerId]=(band.id) [kind]=(kind) ></app-prize-assign></div>
+  <div *ngIf="prizes.length > 0 && !isOnAssignPrizeMode" class="col-sm-6" style="margin: 0 auto">
+    <button class="btn btn-primary m-10" (click)="assignPrizeMode(true)">
+      <span class="fa fa-plus-circle" aria-hidden="true" ></span>
+      <p class="ml-10 d-inline" i18n> Agregar Premio</p>
+    </button>
+    <div class="col-sm-12 text-center">
+      <div class="container col-sm-8">
+        <p class="font-weight-bold " i18n>Premios recibidos: </p>
       </div>
-        <table class="table details-table-striped" i18n-aria-label aria-label="Detalle de premios recibidos" >
-          <caption i18n>Detalle de premios recibidos</caption>
-          <thead class="details">
-            <tr>
-              <th scope="col" i18n>Nombre</th>
-              <th scope="col" i18n>Organización</th>
-            </tr>
-          </thead>
-          <tbody  class="details" >
-            <tr *ngFor="let item of prizes">
-              <td>{{item.name}}</td>
-              <td>{{item.organization}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <table class="table details-table-striped" i18n-aria-label aria-label="Detalle de premios recibidos" >
+        <caption i18n>Detalle de premios recibidos</caption>
+        <thead class="details">
+          <tr>
+            <th scope="col" i18n>Nombre</th>
+            <th scope="col" i18n>Organización</th>
+          </tr>
+        </thead>
+        <tbody  class="details" >
+          <tr *ngFor="let item of prizes">
+            <td>{{item.name}}</td>
+            <td>{{item.organization}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>
