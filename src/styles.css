@@ -178,3 +178,10 @@ caption
 {
   float: left;
 }
+
+
+.btn-primary.disabled, .btn-primary:disabled
+{
+  background-color: #c1c1c1 !important;
+  color: #000;
+}

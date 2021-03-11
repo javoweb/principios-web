@@ -34,7 +34,7 @@ export class PrizeCreateComponent implements OnInit {
         this.SaveCancel.emit(true);
       },
       error => {
-        const message = $localize`:generalPurpose|generalPurpose@@:Error creando premio ` + error.message;
+        const message = $localize`:generalPurpose|generalPurpose@@ErrorCreandoPremio:Error creando premio ` + error.message;
         this.toastrService.error(message, $localize`:generalPurpose|generalPurpose@@Error:Error`, {
           closeButton: true
         });

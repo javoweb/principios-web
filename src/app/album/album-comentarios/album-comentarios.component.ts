@@ -66,7 +66,7 @@ export class AlbumComentariosComponent implements OnInit {
         this.SaveCancel.emit(true);
       },
       error => {
-        const message = $localize`:generalPurpose|generalPurpose@@:Error guardando el comentario ` + error.message;
+        const message = $localize`:generalPurpose|generalPurpose@@ErrorGuardandoComentario:Error guardando el comentario ` + error.message;
         this.toastrService.error(message, $localize`:generalPurpose|generalPurpose@@Error:Error`, {
           closeButton: true
         });

@@ -60,7 +60,10 @@ export class CollectorAlbumComponent implements OnInit {
         this.SaveCancel.emit(true);
       },
       error => {
-        const message = $localize`:generalPurpose|generalPurpose@@:Error guardando album a vender ` + error.message;
+        const message =
+        $localize`:generalPurpose|generalPurpose@@ErrorGuardandoAlbumAVender:Error guardando album a vender ` +
+        error.message;
+
         this.toastrService.error(message, $localize`:generalPurpose|generalPurpose@@Error:Error`, {
           closeButton: true
         });
