@@ -49,7 +49,7 @@ describe('PrizeCreateComponent', () => {
   });
 
 
-  it('create comment succesfully', () => {
+  it('create prize succesfully', () => {
 
     // spy on event emitter
     component = fixture.componentInstance;
@@ -60,7 +60,7 @@ describe('PrizeCreateComponent', () => {
 
   });
 
-  it('create comment failure', () => {
+  it('create prize failure', () => {
 
     // spy on event emitter
     component = fixture.componentInstance;
