@@ -6,11 +6,13 @@ describe('workspace-project App', () => {
 
   beforeEach(() => {
     page = new AppPage();
+    browser.waitForAngularEnabled(true);
   });
 
   it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('front app is running!');
+    browser.get("/");
+      browser.driver.sleep(5000);
+    expect(page.getTitleText()).toEqual('My Vinyls');
   });
 
   afterEach(async () => {
