@@ -83,4 +83,17 @@ describe('PrizeService', () => {
     expect(req.request.method).toEqual('POST');
     req.flush('');
   });
+  it('Test Assign Prize', () => {
+    const prizeMock = {
+      premiationDate: 'asef'
+    };
+
+    service.assignPrize(prizeMock, 1, 1, 'ds').subscribe(t => {
+      expect('').toBe('');
+    });
+
+    const req = httpMock.expectOne(apiUrl + '1/ds/1');
+    expect(req.request.method).toEqual('POST');
+    req.flush('');
+  });
 });

@@ -53,7 +53,7 @@ describe('PrizeAssignComponent', () => {
     // spy on event emitter
     component = fixture.componentInstance;
 
-    const spy = spyOn(service, 'createPrize').and.returnValue(of(true));
+    const spy = spyOn(service, 'assignPrize').and.returnValue(of(true));
     component.assignPrize();
     expect(spy).toHaveBeenCalled();
 
@@ -64,7 +64,7 @@ describe('PrizeAssignComponent', () => {
     // spy on event emitter
     component = fixture.componentInstance;
 
-    const spy = spyOn(service, 'createPrize').and.returnValue(throwError({status: 404}));
+    const spy = spyOn(service, 'assignPrize').and.returnValue(throwError({status: 404}));
     component.assignPrize();
     expect(spy).toHaveBeenCalled();
 

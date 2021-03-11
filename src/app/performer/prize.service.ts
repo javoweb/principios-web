@@ -25,4 +25,9 @@ export class PrizeService {
     return this.http.get<Prize[]>(this.apiURL);
   }
 
+  assignPrize(newAssigment: object, performerId: number, prizeId: number, kind: string) {
+    const postUrl = this.apiURL + prizeId.toString() + '/' + kind + '/' + performerId.toString();
+    return this.http.post<true>(postUrl, newAssigment);
+  }
+
 }

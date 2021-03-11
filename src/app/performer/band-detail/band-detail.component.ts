@@ -13,6 +13,7 @@ export class BandDetailComponent implements OnInit {
   @Input()
   band: Band | null = null;
   prizes: Prize[] = [];
+  kind = "bands"
 
   public getPrizes(): void {
     this.prizes = [];

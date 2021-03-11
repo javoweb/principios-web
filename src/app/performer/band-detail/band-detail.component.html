@@ -25,6 +25,7 @@
   <br>
 
   <div class="col-sm-12 text-center">
+    <app-prize-assign [performerId]=(band.id) [kind]=(kind)></app-prize-assign>
       <div *ngIf="prizes.length > 0" class="col-sm-6" style="margin: 0 auto">
         <div class="container col-sm-8">
           <p class="font-weight-bold " i18n>Premios recibidos: </p>
