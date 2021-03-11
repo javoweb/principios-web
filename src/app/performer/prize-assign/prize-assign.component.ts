@@ -54,6 +54,7 @@ export class PrizeAssignComponent implements OnInit {
   cancelAssignment(): void {
     this.SaveCancel.emit(false);
     this.assignPrizeForm.reset();
+    this.assignPrizeForm.get('date').setValue(this.datePipe.transform(new Date(), 'dd/MM/yyyy'));
   }
 
   changePrize(event): void {

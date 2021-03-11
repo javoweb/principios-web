@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Band } from '../band';
 import { Prize } from '../prize';
 import { PrizeService } from '../prize.service';
-import { PerformerPrizeService } from '../performerPrize.service'
+import { PerformerPrizeService } from '../performerPrize.service';
 import { PerformerPrize } from '../performerPrize';
 
 @Component({
@@ -15,7 +15,7 @@ export class BandDetailComponent implements OnInit {
   @Input()
   band: Band | null = null;
   prizes: Prize[] = [];
-  performerPrizes: PerformerPrize[] = []
+  performerPrizes: PerformerPrize[] = [];
   kind = 'bands';
 
   public getPrizes(): void {
@@ -28,10 +28,12 @@ export class BandDetailComponent implements OnInit {
   }
 
   public getPerformerPrizes(): void {
-    this.performerPrizeService.getPerformerPrizes().subscribe(performerPrizes => {
-      this.performerPrizes = performerPrizes;
-      this.getPrizes();
-    });
+    if (this.band != null) {
+      this.performerPrizeService.getPerformerPrizes().subscribe(performerPrizes => {
+        this.performerPrizes = performerPrizes;
+        this.getPrizes();
+      });
+    }
   }
 
   public getPrizeId(performerPrize: PerformerPrize): number {
@@ -39,9 +41,7 @@ export class BandDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.band != null) {
-      this.getPerformerPrizes();
-    }
+    this.getPerformerPrizes();
   }
 
 }

@@ -7,6 +7,7 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { PrizeService } from '../prize.service';
 import { of, throwError } from 'rxjs';
 import { DatePipe } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('PrizeAssignComponent', () => {
   let component: PrizeAssignComponent;
@@ -19,7 +20,8 @@ describe('PrizeAssignComponent', () => {
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        BrowserAnimationsModule
       ],
       declarations: [ PrizeAssignComponent ],
       providers: [ FormBuilder, PrizeService, ToastrService, DatePipe ]
@@ -39,8 +41,6 @@ describe('PrizeAssignComponent', () => {
   });
 
   it('cancel assignment', () => {
-
-    // spy on event emitter
     component = fixture.componentInstance;
     spyOn(component.SaveCancel, 'emit');
     component.cancelAssignment();
@@ -50,10 +50,7 @@ describe('PrizeAssignComponent', () => {
 
 
   it('assign prize succesfully', () => {
-
-    // spy on event emitter
     component = fixture.componentInstance;
-
     const spy = spyOn(service, 'assignPrize').and.returnValue(of(true));
     component.assignPrize();
     expect(spy).toHaveBeenCalled();
@@ -61,14 +58,18 @@ describe('PrizeAssignComponent', () => {
   });
 
   it('assign prize failure', () => {
-
-    // spy on event emitter
     component = fixture.componentInstance;
-
     const spy = spyOn(service, 'assignPrize').and.returnValue(throwError({status: 404}));
     component.assignPrize();
     expect(spy).toHaveBeenCalled();
 
 
   });
+
+  it('change prize', () => {
+    component = fixture.componentInstance;
+    component.changePrize({ target : {value : 1 } });
+    expect(component.assignPrizeForm.get('prizeId').value).toBe(1);
+  });
+
 });

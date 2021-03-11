@@ -11,6 +11,7 @@ import { MusicianService } from './musician.service';
 import { BandService } from './band.service';
 
 import { PerformerComponent } from './performer.component';
+import { PerformerPrizeService } from './performerPrize.service';
 
 const PERFORMERPRIZE_OBJECT = new PerformerPrize(12, new Date());
 
@@ -24,6 +25,7 @@ describe('PerformerComponent', () => {
   let component: PerformerComponent;
   let fixture: ComponentFixture<PerformerComponent>;
   let prizeService: PrizeService;
+  let performerPrizeService: PerformerPrizeService;
   let musicianService: MusicianService;
   let bandService: BandService;
 
@@ -39,9 +41,11 @@ describe('PerformerComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PerformerComponent);
     prizeService = TestBed.inject(PrizeService);
+    performerPrizeService = TestBed.inject(PerformerPrizeService);
     musicianService = TestBed.inject(MusicianService);
     bandService = TestBed.inject(BandService);
     spyOn(prizeService, 'getPrize').and.returnValue(of(PRIZE_OBJECT));
+    spyOn(performerPrizeService, 'getPerformerPrizes').and.returnValue(of([PERFORMERPRIZE_OBJECT]));
     spyOn(musicianService, 'getMusicians').and.returnValue(of([MUSICIAN_OBJECT]));
     spyOn(bandService, 'getBands').and.returnValue(of([BANDA_OBJECT]));
     component = fixture.componentInstance;

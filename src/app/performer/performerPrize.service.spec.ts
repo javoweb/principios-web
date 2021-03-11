@@ -25,11 +25,11 @@ describe('Service: PerformerPrize', () => {
       faker.random.number(),
       new Date(),
       null
-    )]
+    )];
 
     service.getPerformerPrizes().subscribe((prizes) => {
       expect(prizes.length).toBe(1);
-      expect(prizes[0].id).toBe(mockPosts[0].id)
+      expect(prizes[0].id).toBe(mockPosts[0].id);
     });
 
     const req = httpMock.expectOne(apiUrl);

@@ -1,9 +1,9 @@
-<div id="albumDetails" *ngIf="musician !== null">
+<div id="musicianDetails" *ngIf="musician !== null">
 
   <div class="row">
     <div class="col-sm-12 col-md-6 text-center">
-      <img *ngIf="musician.image.length > 10" alt="Imagen de la musiciana" src="{{ musician.image }}" style="max-width: 30%;" />
-      <img *ngIf="musician.image.length <= 10" alt="Imagen de la musiciana no disponible"
+      <img *ngIf="musician.image.length > 10" alt="Imagen del músico" src="{{ musician.image }}" style="max-width: 30%;" />
+      <img *ngIf="musician.image.length <= 10" alt="Imagen del músico no disponible"
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/300px-Imagen_no_disponible.svg.png" style="max-width: 30%;" />
     </div>
 
@@ -25,6 +25,7 @@
   <br>
 
   <div class="col-sm-12 text-center">
+    <app-prize-assign [performerId]=(musician.id) [kind]=(kind)></app-prize-assign>
       <div *ngIf="prizes.length > 0" class="col-sm-6" style="margin: 0 auto">
         <div class="container col-sm-8">
           <p class="font-weight-bold ">Premios recibidos: </p>
