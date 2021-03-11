@@ -1,6 +1,6 @@
-<h3 class="mt-2" i18n>Listado de Artistas</h3>
 <div *ngIf="isOnCreatePrizeMode"><app-prize-create (SaveCancel)="createPrizeMode(false)"></app-prize-create></div>
 <div *ngIf="!isOnCreatePrizeMode">
+  <h3 class="mt-2" i18n>Listado de Artistas</h3>
   <button class="btn btn-primary m-10" (click)="createPrizeMode(true)">
     <span class="fa fa-plus-circle" aria-hidden="true" ></span>
     <p class="ml-10 d-inline" i18n> Agregar Premio</p>
