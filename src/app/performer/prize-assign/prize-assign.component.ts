@@ -27,10 +27,9 @@ export class PrizeAssignComponent implements OnInit {
   assignPrize(): void {
     const dateArr = this.assignPrizeForm.get('date').value.split('/');
     const dateStr = dateArr[2] + '-' + dateArr[1] + '-' + dateArr[0];
-    console.log(dateStr);
     const date = new Date(dateStr);
-    console.log(date);
     const toBeSaved = {
+      id: this.assignPrizeForm.get('prizeId').value,
       premiationDate: date
     };
     this.prizeService.assignPrize(toBeSaved, this.performerId, this.assignPrizeForm.get('prizeId').value, this.kind).subscribe(
@@ -57,7 +56,7 @@ export class PrizeAssignComponent implements OnInit {
     this.assignPrizeForm.reset();
   }
 
-  changePrize(event):void {
+  changePrize(event): void {
     this.assignPrizeForm.get('prizeId').setValue(event.target.value, {
       onlySelf: true
     });

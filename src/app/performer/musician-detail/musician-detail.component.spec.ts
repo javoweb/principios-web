@@ -13,7 +13,7 @@ const PERFORMERPRIZE_OBJECT = new PerformerPrize(12, new Date());
 
 const MUSICIAN_OBJECT = new Musician(13, '12432', '2135', '1325', new Date(), [PERFORMERPRIZE_OBJECT]);
 
-const PRIZE_OBJECT = new Prize('sdaf', 'sadf', 'asdf', []);
+const PRIZE_OBJECT = new Prize(1, 'sdaf', 'sadf', 'asdf', []);
 
 describe('MusicianDetailComponent', () => {
   let component: MusicianDetailComponent;

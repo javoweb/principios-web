@@ -6,6 +6,7 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { PrizeService } from '../prize.service';
 import { of, throwError } from 'rxjs';
+import { DatePipe } from '@angular/common';
 
 describe('PrizeAssignComponent', () => {
   let component: PrizeAssignComponent;
@@ -21,7 +22,7 @@ describe('PrizeAssignComponent', () => {
         ToastrModule.forRoot()
       ],
       declarations: [ PrizeAssignComponent ],
-      providers: [ FormBuilder, PrizeService, ToastrService ]
+      providers: [ FormBuilder, PrizeService, ToastrService, DatePipe ]
     })
     .compileComponents();
   }));

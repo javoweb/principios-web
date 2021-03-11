@@ -11,7 +11,6 @@ import { MusicianService } from './musician.service';
 import { BandService } from './band.service';
 
 import { PerformerComponent } from './performer.component';
-import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
 
 const PERFORMERPRIZE_OBJECT = new PerformerPrize(12, new Date());
 
@@ -19,7 +18,7 @@ const BANDA_OBJECT = new Band(13, '12432', '2135', '1325', new Date(), [], [PERF
 
 const MUSICIAN_OBJECT = new Musician(13, '12432', '2135', '1325', new Date(), [PERFORMERPRIZE_OBJECT]);
 
-const PRIZE_OBJECT = new Prize('sdaf', 'sadf', 'asdf', []);
+const PRIZE_OBJECT = new Prize(1, 'sdaf', 'sadf', 'asdf', []);
 
 describe('PerformerComponent', () => {
   let component: PerformerComponent;
