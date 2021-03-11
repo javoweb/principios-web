@@ -12,7 +12,11 @@ import { PrizeService } from '../prize.service';
 })
 export class MusicianDetailComponent implements OnInit {
 
-  constructor( private prizeService: PrizeService, private performerPrizeService: PerformerPrizeService, private musicianService: MusicianService) { }
+  constructor(
+    private prizeService: PrizeService,
+    private performerPrizeService: PerformerPrizeService,
+    private musicianService: MusicianService
+  ) { }
   @Input()
   musician: Musician | null = null;
   performerPrizes: PerformerPrize[] = [];

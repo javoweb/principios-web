@@ -12,7 +12,11 @@ import { BandService } from '../band.service';
 })
 export class BandDetailComponent implements OnInit {
 
-  constructor(private prizeService: PrizeService, private performerPrizeService: PerformerPrizeService, private bandService: BandService) { }
+  constructor(
+    private prizeService: PrizeService,
+    private performerPrizeService: PerformerPrizeService,
+    private bandService: BandService
+  ) { }
   @Input()
   band: Band | null = null;
   prizes: Prize[] = [];
