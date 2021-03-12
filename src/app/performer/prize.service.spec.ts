@@ -33,7 +33,8 @@ describe('PrizeService', () => {
   it('getPrize() should return correct records', () => {
 
     const mockPosts = new Prize(
-    faker.name.findName(),
+      faker.random.number(),
+      faker.name.findName(),
       faker.name.findName(),
       faker.lorem.sentence(),
       []
@@ -53,7 +54,8 @@ describe('PrizeService', () => {
   it('getPrizes() should return correct records', () => {
 
     const mockPosts = [new Prize(
-    faker.name.findName(),
+      faker.random.number(),
+      faker.name.findName(),
       faker.name.findName(),
       faker.lorem.sentence(),
       []
@@ -80,6 +82,19 @@ describe('PrizeService', () => {
     });
 
     const req = httpMock.expectOne(apiUrl);
+    expect(req.request.method).toEqual('POST');
+    req.flush('');
+  });
+  it('Test Assign Prize', () => {
+    const prizeMock = {
+      premiationDate: 'asef'
+    };
+
+    service.assignPrize(prizeMock, 1, 1, 'ds').subscribe(t => {
+      expect('').toBe('');
+    });
+
+    const req = httpMock.expectOne(apiUrl + '1/ds/1');
     expect(req.request.method).toEqual('POST');
     req.flush('');
   });

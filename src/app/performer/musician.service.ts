@@ -9,12 +9,16 @@ import { environment } from '../../environments/environment';
 })
 export class MusicianService {
 
-  private apiUrl = environment.baseUrl + 'musicians';
+  private apiUrl = environment.baseUrl + 'musicians/';
 
   constructor(private http: HttpClient) { }
 
   getMusicians(): Observable<Musician[]> {
     return this.http.get<Musician[]>(this.apiUrl);
-}
+  }
+
+  getMusician(id: number): Observable<Musician> {
+    return this.http.get<Musician>(this.apiUrl + id.toString());
+  }
 
 }

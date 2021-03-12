@@ -12,57 +12,76 @@ import { Musician } from './musician';
 import { environment } from '../../environments/environment';
 
 describe('MusicianService', () => {
- let service: MusicianService;
- let httpMock: HttpTestingController;
- const apiUrl = environment.baseUrl + 'musicians';
+  let service: MusicianService;
+  let httpMock: HttpTestingController;
+  const apiUrl = environment.baseUrl + 'musicians/';
 
- beforeEach(() => {
-   TestBed.configureTestingModule({
-     imports: [HttpClientTestingModule],
-     providers: [MusicianService],
-   });
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [MusicianService],
+    });
 
-   service = TestBed.inject(MusicianService);
-   httpMock = TestBed.inject(HttpTestingController);
- });
-
- afterEach(() => {
-   httpMock.verify();
- });
-
- it('getMusicians() should return 10 records', () => {
-   const mockPosts: Musician[] = [];
-
-   for (let i = 0; i < 10; i++) {
-
-     const musico = new Musician(
-       faker.random.number(),
-       faker.name.findName(),
-       faker.internet.url(),
-       faker.lorem.sentence(),
-       faker.date.past()
-     );
-     mockPosts.push(musico);
-   }
-
-   service.getMusicians().subscribe((musicos) => {
-     expect(musicos.length).toBe(10);
-   });
-
-   const req = httpMock.expectOne(apiUrl);
-   expect(req.request.method).toBe('GET');
-   req.flush(mockPosts);
- });
-
- it('getMusicians() should return 0 records', () => {
-  const mockPosts: Musician[] = [];
-
-  service.getMusicians().subscribe((musicos) => {
-    expect(musicos.length).toBe(0);
+    service = TestBed.inject(MusicianService);
+    httpMock = TestBed.inject(HttpTestingController);
   });
 
-  const req = httpMock.expectOne(apiUrl);
-  expect(req.request.method).toBe('GET');
-  req.flush(mockPosts);
-});
+  afterEach(() => {
+    httpMock.verify();
+  });
+
+  it('getMusicians() should return 10 records', () => {
+    const mockPosts: Musician[] = [];
+
+    for (let i = 0; i < 10; i++) {
+
+      const musico = new Musician(
+        faker.random.number(),
+        faker.name.findName(),
+        faker.internet.url(),
+        faker.lorem.sentence(),
+        faker.date.past()
+      );
+      mockPosts.push(musico);
+    }
+
+    service.getMusicians().subscribe((musicos) => {
+      expect(musicos.length).toBe(10);
+    });
+
+    const req = httpMock.expectOne(apiUrl);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockPosts);
+  });
+
+  it('getMusicians() should return 0 records', () => {
+    const mockPosts: Musician[] = [];
+
+    service.getMusicians().subscribe((musicos) => {
+      expect(musicos.length).toBe(0);
+    });
+
+    const req = httpMock.expectOne(apiUrl);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockPosts);
+  });
+
+  it('getMusician() should return record', () => {
+    const mockPost = new Musician(
+      faker.random.number(),
+      faker.name.findName(),
+      faker.internet.url(),
+      faker.lorem.sentence(),
+      faker.date.past(),
+      []
+    );
+
+    service.getMusician(1).subscribe((music) => {
+      expect(music.id).toBe(mockPost.id);
+    });
+
+    const req = httpMock.expectOne(apiUrl + '1');
+    expect(req.request.method).toBe('GET');
+    req.flush(mockPost);
+  });
 });

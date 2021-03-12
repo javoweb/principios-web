@@ -9,12 +9,16 @@ import { Observable } from 'rxjs';
 })
 export class BandService {
 
-  private apiUrl = environment.baseUrl + 'bands';
+  private apiUrl = environment.baseUrl + 'bands/';
 
   constructor(private http: HttpClient) { }
 
   getBands(): Observable<Band[]>{
     return this.http.get<Band[]>(this.apiUrl);
+  }
+
+  getBand(id: number): Observable<Band>{
+    return this.http.get<Band>(this.apiUrl + id.toString());
   }
 
 }
