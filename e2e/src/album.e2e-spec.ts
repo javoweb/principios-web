@@ -37,7 +37,7 @@ describe('Workflows relacinados con albumes', () => {
 
     //Ir al detalle de un album
     page.ShowFirstAlbumDetails();
-    console.log("Expand details");
+
     browser.driver.sleep(1000);
 
     /**Debe tener una portada */
@@ -65,7 +65,7 @@ describe('Workflows relacinados con albumes', () => {
 
     //Ir al detalle de un album
     page.ShowFirstAlbumDetails();
-    console.log("Expand details");
+
     browser.driver.sleep(1000);
 
     /**Click en el botono añadir track*/
@@ -76,8 +76,8 @@ describe('Workflows relacinados con albumes', () => {
     expect(page.crearButtonIsDisabled()).toBe('true');
 
     /**Verificar que los campos duracion y nombre son requeridos**/
-    expect(page.getAlertFor("duration")).toContain("Campo Requerido");
-    expect(page.getAlertFor("name")).toContain("Campo Requerido");
+    expect(page.getAlertFor("#albumDetails","duration","name")).toContain("Campo Requerido");
+    expect(page.getAlertFor("#albumDetails","name","name")).toContain("Campo Requerido");
 
     let trackName=ngfaker.name.firstName();
     let trackDuration =
@@ -93,17 +93,54 @@ describe('Workflows relacinados con albumes', () => {
 
     page.populateTrackFields(trackName,trackDuration);
 
-    page.saveNewTrack();
-
-
-    //**Verifica que la alerta de guardado se ha mostrado **/
-    expect( page.getSavingMessage() ).toContain("Exito");
+    page.saveItem();
 
 
     //**Verifica que el item se encuentra en la tabla **/
     expect( page.confirmSavedTrack(trackName) ).toContain(trackName);
 
   });
+
+  it('HU09- Agregar un comentario a un álbum ', () => {
+    browser.get("/albums");
+    browser.driver.sleep(1000);
+
+    //Ir al detalle de un album
+    page.ShowFirstAlbumDetails();
+    browser.driver.sleep(1000);
+
+    /**Click en el botono añadir track*/
+    page.goAndClickButton('Agregar Comentario');
+    browser.driver.sleep(1000);
+
+    /**El boton crear debe estar deshabilitado por defecto**/
+    expect(page.crearButtonIsDisabled()).toBe('true');
+
+    /**Verificar que los campos duracion y nombre son requeridos**/
+    expect(page.getAlertFor("#albumDetails","collectorId","ng-reflect-name")).toContain("Campo Requerido");
+    expect(page.getAlertFor("#albumDetails","rating","ng-reflect-name")).toContain("Campo Requerido");
+    expect(page.getAlertFor("#albumDetails","description","ng-reflect-name")).toContain("Campo Requerido");
+
+    browser.driver.sleep(1000);
+
+    let comment=ngfaker.lorem.phrase();
+    let rating =
+        ngfaker.random.number({
+          'min': 0,
+          'max': 5
+      });
+
+
+    page.populateComments(comment,rating);
+
+    page.saveItem();
+
+    //**Verifica que el item se muestra en la tabla **/
+    expect( page.confirmSavedComment(comment) ).toContain(comment);
+
+  });
+
+
 
 
 
