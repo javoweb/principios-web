@@ -76,11 +76,7 @@
   </div><!--fin condicional-->
 
   <div class="col-sm-12 col-sm-12 border border-primary p-10" *ngIf="isOncollectorAlbumsEditMode">
-
     <app-collector-album (SaveCancel)="onCollectorAlbumsStatusChanged($event)"  [collectorID]=(collectorID)></app-collector-album>
-    <!--
-    <app-collector-album>t</app-collector-album>
-    -->
   </div>
 
 
