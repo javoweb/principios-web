@@ -5,6 +5,10 @@ import { environment } from 'src/environments/environment';
 import { CollectorService } from './collector.service';
 import { Performer } from './../performer/performer';
 import { PerformerPrize } from './../performer/performerPrize';
+import { CollectorAlbum } from './collectorAlbum';
+import { Album } from '../album/album';
+import { Track } from '../album/track';
+import { Comment } from '../album/comment';
 
 
 import {
@@ -36,13 +40,29 @@ describe('Service: Collector', () => {
     const PERFORMER_PRIZE_OBJECT = new PerformerPrize(12, new Date());
     const FAVORITE_PERFORMER_OBJECT = new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd', [PERFORMER_PRIZE_OBJECT]);
 
+    const ALBUM_OBJECT: Album = new Album(
+      1,
+      'dfd',
+      'sdfsd',
+      'dfd',
+      'dsfd',
+      'dfsd',
+      'dfds',
+      [new Track(1, 'sdfs', 'sdfsd')],
+      [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd')],
+      [new Comment(1, 'dsfs', 5)]
+    );
+    const SCOLLECTORALBUM_OBJECT: CollectorAlbum = new CollectorAlbum(1, 500, 'Active', ALBUM_OBJECT);
+    const COLLECTORALBUM_ARRAY: CollectorAlbum[] = [];
+    COLLECTORALBUM_ARRAY.push(SCOLLECTORALBUM_OBJECT);
+
     collector = {
       id: 100,
       name: 'Juan Perez',
       telephone : 1234555,
       email : 'jp@mail.cl',
       favoritePerformers: [FAVORITE_PERFORMER_OBJECT],
-      collectorAlbums: []
+      collectorAlbums: [SCOLLECTORALBUM_OBJECT]
     };
 
     collectors = [];
@@ -86,6 +106,22 @@ describe('Service: Collector', () => {
 
     expect(req.request.method).toEqual('GET');
     req.flush(collector);
+
+  });
+
+  it('Test Collector Album', () => {
+
+    collectorService.getAlbumFromCollector(collector.id).subscribe(t => {
+      expect(t).toBe(collector.collectorAlbums);
+    });
+
+    const req = httpMock.expectOne({
+      method: 'GET',
+      url: baseUrl + '/' + collector.id + '/albums'
+    });
+
+    expect(req.request.method).toEqual('GET');
+    req.flush(collector.collectorAlbums);
 
   });
 

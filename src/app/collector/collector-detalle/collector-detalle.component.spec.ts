@@ -8,10 +8,30 @@ import { Observable } from 'rxjs';
 import { Collector } from '../collector';
 import { Performer } from '../../performer/performer';
 import { PerformerPrize } from '../../performer/performerPrize';
+import { CollectorAlbum } from '../collectorAlbum';
+import { Album } from '../../album/album';
+import { Track } from '../../album/track';
+import { Comment } from '../../album/comment';
 
 const PERFORMER_PRIZE_OBJECT = new PerformerPrize(12, new Date());
 const FAVORITE_PERFORMER_OBJECT = new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd', [PERFORMER_PRIZE_OBJECT]);
 const SCOLLECTOR_OBJECT: Collector = new Collector(1, 'Juan Perez', 32323, 'p@p.cl', [FAVORITE_PERFORMER_OBJECT], []);
+
+const ALBUM_OBJECT: Album = new Album(
+  1,
+  'dfd',
+  'sdfsd',
+  'dfd',
+  'dsfd',
+  'dfsd',
+  'dfds',
+  [new Track(1, 'sdfs', 'sdfsd')],
+  [new Performer(1, 'sdfsd', 'sdfsd', 'sdfsd')],
+  [new Comment(1, 'dsfs', 5)]
+);
+const SCOLLECTORALBUM_OBJECT: CollectorAlbum = new CollectorAlbum(1, 500, 'Active', ALBUM_OBJECT);
+const COLLECTORALBUM_ARRAY: CollectorAlbum[] = [];
+COLLECTORALBUM_ARRAY.push(SCOLLECTORALBUM_OBJECT);
 
 
 describe('CollectorDetalleComponent', () => {
@@ -33,6 +53,7 @@ describe('CollectorDetalleComponent', () => {
     fixture = TestBed.createComponent(CollectorDetalleComponent);
     collectorService = TestBed.inject(CollectorService);
     spyOn(collectorService, 'getCollector').and.returnValue(of(SCOLLECTOR_OBJECT));
+    spyOn(collectorService, 'getAlbumFromCollector').and.returnValue(of(COLLECTORALBUM_ARRAY));
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -46,6 +67,12 @@ describe('CollectorDetalleComponent', () => {
     component.collectorID = 1;
     component.getCollector();
     expect(component.collector).not.toBeNull();
+  });
+
+  it('Get Collector Album', () => {
+    component.collectorID = 1;
+    component.getCollector();
+    expect(component.albumsFromCollector).not.toBeNull();
   });
 
   it('Add FavoritePerformers Button', () => {
