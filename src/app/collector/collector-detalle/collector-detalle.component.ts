@@ -30,7 +30,7 @@ export class CollectorDetalleComponent implements OnInit {
         this.collector = collector;
       });
 
-      //se obtienen los albumes relacionados
+      // se obtienen los albumes relacionados
       this.collectorService.getAlbumFromCollector(this.collectorID).subscribe(albumsFromCollector => {
         this.albumsFromCollector = albumsFromCollector;
       });

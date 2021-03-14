@@ -3,13 +3,13 @@ import { Album } from '../album/album';
 export class CollectorAlbum {
 
   id: number;
-  price:number;
+  price: number;
   status: string;
   album: Album;
 
   constructor(
     id: number,
-    price:number,
+    price: number,
     status: string,
     album: Album
   ){
