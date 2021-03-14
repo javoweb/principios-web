@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Collector } from './collector';
+import { CollectorAlbum } from './collectorAlbum';
 import { environment } from '../../environments/environment';
 
 
@@ -20,6 +21,10 @@ export class CollectorService {
 
   public getCollector(id: number): Observable<Collector> {
     return this.http.get<Collector>(this.apiUrl + '/' + id);
+  }
+
+  public getAlbumFromCollector(id: number): Observable<CollectorAlbum[]> {
+    return this.http.get<CollectorAlbum[]>(this.apiUrl + '/' + id + '/albums');
   }
 
   public addfavoritePerformers(idCollector: number, idPerformer: number, newPerformer: any): Observable<boolean> {

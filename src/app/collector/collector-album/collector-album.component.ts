@@ -32,7 +32,9 @@ export class CollectorAlbumComponent implements OnInit {
 
     this.albumForm = this.formBuilder.group({
       albumId: [null, Validators.required],
-      price: [null, Validators.required]
+      price: [null,
+        [Validators.required, Validators.min(1), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]
+      ]
     });
   }
 

@@ -55,11 +55,18 @@
         <thead class="details">
           <tr>
             <th scope="col" i18n>Nombre</th>
+            <th scope="col" i18n>Precio</th>
+            <th scope="col" i18n></th>
           </tr>
         </thead>
         <tbody  class="details" >
-          <tr *ngFor="let item of this.collector.collectorAlbums">
-            <td>[{{item.id}}]</td>
+          <tr *ngFor="let item of this.albumsFromCollector">
+
+            <td>{{item.album.name}}</td>
+            <td>{{item.price}}</td>
+            <td style="width:50%;">
+              <div><img alt="Album's Cover" src="{{item.album.cover}}" style="max-width: 30%;" /></div>
+            </td>
           </tr>
 
         </tbody>
@@ -69,11 +76,7 @@
   </div><!--fin condicional-->
 
   <div class="col-sm-12 col-sm-12 border border-primary p-10" *ngIf="isOncollectorAlbumsEditMode">
-
     <app-collector-album (SaveCancel)="onCollectorAlbumsStatusChanged($event)"  [collectorID]=(collectorID)></app-collector-album>
-    <!--
-    <app-collector-album>t</app-collector-album>
-    -->
   </div>
 
 
