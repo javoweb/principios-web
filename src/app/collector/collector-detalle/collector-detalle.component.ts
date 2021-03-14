@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Collector } from '../collector';
+import { CollectorAlbum } from '../collectorAlbum';
 import { CollectorService } from '../collector.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class CollectorDetalleComponent implements OnInit {
 
   @Input() collectorID: number | null = null;
   collector: Collector = null;
+  albumsFromCollector: Array<CollectorAlbum> = [];
 
   isOnfavoritePerformersEditMode: boolean;
   isOncollectorAlbumsEditMode: boolean;
@@ -27,6 +29,13 @@ export class CollectorDetalleComponent implements OnInit {
       this.collectorService.getCollector(this.collectorID).subscribe(collector => {
         this.collector = collector;
       });
+
+      //se obtienen los albumes relacionados
+      this.collectorService.getAlbumFromCollector(this.collectorID).subscribe(albumsFromCollector => {
+        this.albumsFromCollector = albumsFromCollector;
+      });
+
+
     }
 
   }
