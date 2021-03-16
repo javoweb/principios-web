@@ -130,6 +130,10 @@
           <context context-type="sourcefile">src/app/performer/band-detail/band-detail.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="28d00e5dce8834b29addda7bb63bb3b04f84b521" datatype="html">
         <source>Fecha Lanzamiento:</source>
@@ -266,6 +270,17 @@
           <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="d57ce960cceac0877b71d11a9931887f9c86ec73" datatype="html">
+        <source>Precio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-detalle/collector-detalle.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-album/collector-album.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="e5bb174945d3ab4bee326a155018cfa15861af89" datatype="html">
         <source>Listado de Artistas</source>
         <context-group purpose="location">
@@ -340,6 +355,10 @@
           <context context-type="sourcefile">src/app/performer/band-detail/band-detail.component.html</context>
           <context context-type="linenumber">23</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="8bcc3c64060e3a01a92e031bcb8e5a3a7f3563c4" datatype="html">
         <source>Premios recibidos: </source>
@@ -380,6 +399,27 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/performer/musician-detail/musician-detail.component.html</context>
           <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bf3e47c91b7d490ca97eea6259af288b6fc376c6" datatype="html">
+        <source>Imagen del músico</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b0720917fc643ed3c2c0871193fda290c9832aef" datatype="html">
+        <source>Imagen del músico no disponible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2f381ce2cd665820039fbfd38329397e13bf211f" datatype="html">
+        <source>Fecha de Nacimiento:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3b3edcd12989970e591eb2efaf9acb7f063d55a6" datatype="html">
@@ -846,9 +886,9 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="14996664c09113abb9dcddb78c102ff2a49b612e" datatype="html">
+      <trans-unit id="ee1a6b586f934cbca063fd032e7c8c174249731b" datatype="html">
         <source>
-            Artista
+            Nombre
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/collector/collector-favoritePerformers/collector-favoritePerformers.component.html</context>
@@ -887,13 +927,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/collector/collector-album/collector-album.component.html</context>
           <context context-type="linenumber">23</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="d57ce960cceac0877b71d11a9931887f9c86ec73" datatype="html">
-        <source>Precio</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/collector/collector-album/collector-album.component.html</context>
-          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ca3e6955fe4e6aae580b2800bb7f86e7a3010ef0" datatype="html">

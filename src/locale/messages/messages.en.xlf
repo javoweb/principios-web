@@ -786,18 +786,6 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="14996664c09113abb9dcddb78c102ff2a49b612e" datatype="html">
-        <target>Artist</target>
-        <source>Artista</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/collector/collector-favoritePerformers/collector-favoritePerformers.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/collector/collector-album/collector-album.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="d50b8c8abbef4392ccf1d75d820561eca9fa7dd4" datatype="html">
         <target>Select an artist</target>
         <source>Seleccione un artista</source>
@@ -981,6 +969,42 @@
         </context-group>
         <note priority="1" from="description">generalPurpose</note>
         <note priority="1" from="meaning">:generalPurpose</note>
+      </trans-unit>
+      <trans-unit id="bf3e47c91b7d490ca97eea6259af288b6fc376c6" datatype="html">
+        <target>Musician image</target>
+        <source>Imagen del músico</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b0720917fc643ed3c2c0871193fda290c9832aef" datatype="html">
+        <target>Musician image not available</target>
+        <source>Imagen del músico no disponible</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2f381ce2cd665820039fbfd38329397e13bf211f" datatype="html">
+        <target>Date of Birth:</target>
+        <source>Fecha de Nacimiento:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/performer/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ee1a6b586f934cbca063fd032e7c8c174249731b" datatype="html">
+        <target>Name</target>
+        <source>Nombre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-favoritePerformers/collector-favoritePerformers.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/collector/collector-album/collector-album.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>
