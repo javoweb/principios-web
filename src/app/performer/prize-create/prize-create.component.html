@@ -1,6 +1,6 @@
 <ng-container>
   <h4 i18n>Nuevo Premio</h4>
-  <form [formGroup]="createPrizeForm" (ngSubmit)="!createPrizeForm.invalid && createPrize()">
+  <form id="crearPremio" [formGroup]="createPrizeForm" (ngSubmit)="!createPrizeForm.invalid && createPrize()">
 
     <div class="form-group">
       <label for="name" i18n>

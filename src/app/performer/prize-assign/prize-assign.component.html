@@ -1,13 +1,13 @@
 
 <ng-container *ngIf="assignPrizeForm!=null && prizes != null && prizes.length > 0">
   <h4 i18n>Asignar Premio</h4>
-  <form [formGroup]="assignPrizeForm" (ngSubmit)="!assignPrizeForm.invalid && assignPrize()">
+  <form id="prizeAssign" [formGroup]="assignPrizeForm" (ngSubmit)="!assignPrizeForm.invalid && assignPrize()">
 
     <div class="form-group">
         <label for="name" i18n>
             Premio
         </label>
-        <select formControlName="prizeId" class="form-control" i18n-aria-label aria-label="Selector de Premio">
+        <select formControlName="prizeId" name="prizeId" class="form-control" i18n-aria-label aria-label="Selector de Premio">
           <option value="" hidden i18n>Seleccione un premio</option>
           <option *ngFor="let prize of prizes" [ngValue]="prize.id" (change)="changePrize($event)">
             {{prize.name}}
