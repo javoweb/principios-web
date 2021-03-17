@@ -33,3 +33,4 @@ jobs:
       name: Run unittests
     - run: npm run lint
       name: Style check
+    - run: npm run e2e
