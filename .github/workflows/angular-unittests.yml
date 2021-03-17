@@ -34,3 +34,4 @@ jobs:
     - run: npm run lint
       name: Style check
     - run: npm run e2e
+      name: Run e2e tests
