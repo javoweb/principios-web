@@ -127,6 +127,9 @@ describe('Workflows relacinados con albumes', () => {
      */
     page.saveItem();
 
+    console.log("trackName: "+trackName+"|||trackDuration:"+trackDuration);
+    browser.sleep(3000);
+    console.log("trackName: "+trackName+"|||trackDuration:"+trackDuration);
     /**
      * Verifica que el item se encuentra en la tabla
      */
