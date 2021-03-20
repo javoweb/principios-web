@@ -185,3 +185,17 @@ caption
   background-color: #c1c1c1 !important;
   color: #000;
 }
+
+
+.rotate {
+  animation: rotation 20s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

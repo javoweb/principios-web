@@ -113,7 +113,7 @@ describe('Workflows relacinados con albumes', () => {
       }) +
       ':' +
       ngfaker.random.number({
-        min: 0,
+        min: 10,
         max: 59
       });
 
